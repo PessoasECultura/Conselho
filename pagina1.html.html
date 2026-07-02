@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talent Review | Conselho Executivo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="topnav">
+  <div class="nav-brand">Talent Review</div>
+  <div class="nav-tabs">
+    <a class="tab" href="#contexto">Visão Geral</a>
+    <a class="tab" href="#talentos">Talentos</a>
+    <a class="tab" href="#solucoes">Soluções</a>
+    <a class="tab" href="#risco">Mapa de Risco</a>
+    <a class="tab" href="#resumo">Resumo</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ══ CAPA ══ -->
+  <section class="section capa-section" id="capa">
+    <div class="capa-wrap">
+      <p class="capa-label">Yandeh · Pessoas & Cultura · Confidencial</p>
+      <h1 class="capa-title">Talent Review</h1>
+      <p class="capa-sub">Conselho Executivo</p>
+      <div class="capa-divider"></div>
+      <p class="capa-date" id="capaDate"></p>
+    </div>
+  </section>
+
+
+  <!-- ══ CONTEXTO ══ -->
+  <section class="section" id="contexto">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-tag">Contexto</span>
+        <h2 class="page-title">Visão Geral do Programa</h2>
+      </div>
+
+      <!-- 3 cards centralizados -->
+      <div class="apres-grid apres-3col">
+        <div class="apres-card">
+          <div class="apres-icon">01</div>
+          <h3>Metodologia</h3>
+          <p>Os talentos foram identificados pela área de Pessoas & Cultura com base em critério de criticidade de entrega, potencial de desenvolvimento e dependência organizacional.</p>
+        </div>
+        <div class="apres-card">
+          <div class="apres-icon">02</div>
+          <h3>Confidencialidade</h3>
+          <p>Este material é de uso restrito ao Conselho Executivo e à equipe de P&C. O mapeamento não é comunicado aos profissionais identificados.</p>
+        </div>
+        <div class="apres-card">
+          <div class="apres-icon">03</div>
+          <h3>Próximos Passos</h3>
+          <p>Com base neste diagnóstico, serão desenhadas ações individuais de retenção, desenvolvimento e planejamento sucessório para os talentos mapeados.</p>
+        </div>
+      </div>
+
+      <!-- 3 KPI cards -->
+      <div class="ctx-single-card">
+
+        <div class="ctx-item">
+          <div class="ctx-num" id="kCtxTal">—</div>
+          <div class="ctx-label">Talentos Estratégicos</div>
+          <div class="ctx-legend" id="lgCtxTal"></div>
+        </div>
+
+        <div class="ctx-separator"></div>
+
+        <div class="ctx-item highlight-alto">
+          <div class="ctx-num" id="kCtxAlto">—</div>
+          <div class="ctx-label">Em Risco Médio</div>
+          <div class="ctx-legend" id="lgCtxAlto"></div>
+        </div>
+
+        <div class="ctx-separator"></div>
+
+        <div class="ctx-item">
+          <div class="ctx-num" id="kCtxSuc">—</div>
+          <div class="ctx-label">Sucessão Mapeada</div>
+          <div class="ctx-legend" id="lgCtxSuc"></div>
+        </div>
+
+        <div class="ctx-separator"></div>
+
+        <div class="ctx-item">
+          <div class="ctx-num" id="kCtxTech">—</div>
+          <div class="ctx-label">Tech Solutions</div>
+          <div class="ctx-legend" id="lgCtxTech"></div>
+        </div>
+
+        <div class="ctx-separator"></div>
+
+        <div class="ctx-item ctx-item-clickable" onclick="openTurnoverModal()">
+          <div class="ctx-num" id="kCtxTurnover">—</div>
+          <div class="ctx-label">Turnover H1/2026</div>
+          <div class="ctx-legend" id="lgCtxTurnover"></div>
+          <div class="ctx-cta">Ver detalhes →</div>
+        </div>
+
+      </div></div>
+  </section>
+
+  <!-- ══ TALENTOS ══ -->
+  <section class="section section-alt" id="talentos">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-tag">01</span>
+        <h2 class="page-title" id="ttlTalentos">Talentos Mapeados</h2>
+      </div>
+      <div class="nivel-grid">
+        <div class="nivel-card" id="card-head">
+          <div class="nivel-label">Heads</div>
+          <div class="nivel-num">—</div>
+          <div class="nivel-pct">—</div>
+          <div class="nivel-cta">Ver talentos ↓</div>
+        </div>
+        <div class="nivel-card" id="card-gerente">
+          <div class="nivel-label">Gerentes</div>
+          <div class="nivel-num">—</div>
+          <div class="nivel-pct">—</div>
+          <div class="nivel-cta">Ver talentos ↓</div>
+        </div>
+        <div class="nivel-card" id="card-coordenador">
+          <div class="nivel-label">Coordenadores</div>
+          <div class="nivel-num">—</div>
+          <div class="nivel-pct">—</div>
+          <div class="nivel-cta">Ver talentos ↓</div>
+        </div>
+        <div class="nivel-card" id="card-nao-lideranca">
+          <div class="nivel-label">Analista & Especialista</div>
+          <div class="nivel-num">—</div>
+          <div class="nivel-pct">—</div>
+          <div class="nivel-cta">Ver talentos ↓</div>
+        </div>
+      </div>
+      <!-- drills via modal -->
+    </div>
+  </section>
+
+  <!-- ══ SOLUÇÕES ══ -->
+  <section class="section" id="solucoes">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-tag">02</span>
+        <h2 class="page-title">Soluções & Responsáveis</h2>
+      </div>
+      <div class="sol-grid" id="solGrid"></div>
+      <div class="drill" id="drill-sol"></div>
+    </div>
+  </section>
+
+  <!-- ══ MAPA DE RISCO ══ -->
+  <section class="section section-alt" id="risco">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-tag">03</span>
+        <h2 class="page-title">Mapa de Risco</h2>
+      </div>
+      <div class="risco-tabs">
+        <button class="risco-tab active" data-risco="matriz">Matriz de Risco</button>
+        <button class="risco-tab" data-risco="plano">Matriz de Plano de Ação</button>
+      </div>
+      <div id="matrizGrid"></div>
+      <div id="planoGrid" style="display:none"></div>
+    </div>
+  </section>
+
+
+  <!-- ══ RESUMO ══ -->
+  <section class="section section-alt" id="resumo">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="page-tag">Resumo</span>
+        <h2 class="page-title">Talentos Estratégicos</h2>
+      </div>
+      <div class="fotos-card">
+        <div class="resumo-fotos-grid" id="fotosGrid"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- MODAL OVERLAY (talentos + risco) -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box" id="modalBox"></div>
+</div>
+
+<footer class="footer">
+  <span>Yandeh · <strong>Pessoas & Cultura</strong></span>
+  <span id="footerDate"></span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
