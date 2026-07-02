@@ -308,7 +308,7 @@ header {
 .highlight-red { background: var(--red-soft); border-left: 3px solid var(--red); }
 .highlight-yellow { background: var(--yellow-soft); border-left: 3px solid #D4900A; }
 .highlight-green { background: var(--green-soft); border-left: 3px solid var(--green); }
-.highlight-pink { background: var(--pink-soft); border-left: 5px solid var(--pink); }
+.highlight-pink { background: #ede7ee; border-left: 5px solid var(--text-3); }
 
 .highlight h4 {
   font-size: 15px;
@@ -478,19 +478,22 @@ header {
   color: var(--text-2);
   line-height: 1.3;
 }
-/* linha de média ponderada (horizontal, rosa) — atravessa todo o quadro */
-.vbar-avg {
-  position: absolute;
-  left: 0;
-  right: 0;
-  border-top: 2px dashed var(--pink);
-}
+
 .avg-note {
   font-size: 11px;
   color: var(--pink);
   margin-top: 10px;
   text-align: right;
 }
+
+.btn-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+}
+
+
 .btn-fullscreen {
   display: inline-flex;
   align-items: center;
@@ -535,12 +538,12 @@ header {
   <div class="grid-2" style="margin-bottom: 20px;">
     <div class="stat-card">
       <div class="stat-label">Custo Total Previsto (H1)</div>
-      <div class="stat-value">R$ 1.967.786</div>
+      <div class="stat-value" style="color: #e44369;">R$ 1.967.786</div>
       <div class="stat-desc">bônus estimado, todas as áreas</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Atingimento Médio Ponderado</div>
-      <div class="stat-value">37,6%</div>
+      <div class="stat-value" style="color: #e44369;">37,6%</div>
       <div class="stat-desc">média ponderada por custo, exceto Diretoria</div>
     </div>
     <div class="stat-card">
@@ -556,8 +559,45 @@ header {
   </div>
 
   <div class="highlight highlight-pink">
-    <h4>Leitura do período</h4>
     <p>43% do custo total está concentrado em Tech Solutions. O bônus H1 equivale a cerca de 1/3 do custo de um mês de folha da YH.</p>
+  </div>
+</section>
+
+
+<!-- ══════════════ SLIDE 4 — ATINGIMENTO DE OKR ══════════════ -->
+<section class="page" id="atingimento">
+  <div class="page-title">Atingimento de OKR H1 <em>(Prévia)</em> por Área</div>
+  <div class="page-sub">Percentual de atingimento preliminar, por centro de custo: média ponderada geral de 37,6%.</div>
+
+  <div class="card">
+    <div class="vbar-plot" id="ating-plot"></div>
+    <div class="vbar-labels" id="ating-labels"></div>
+  </div>
+</section>
+
+<!-- ══════════════ SLIDE 5 — CUSTO DE BÔNUS POR ÁREA ══════════════ -->
+<section class="page" id="custo">
+  <div class="page-title">Custo de Bônus <em>por Área</em></div>
+  <div class="page-sub">Custo total previsto H1 2026, por área: R$ 1.967.786 no total.</div>
+
+  <div class="card">
+    <table class="pulse-table">
+      <thead>
+        <tr>
+          <th>Área</th>
+          <th>% do Total</th>
+          <th style="text-align:right;">Custo (R$)</th>
+        </tr>
+      </thead>
+      <tbody id="custo-rows"></tbody>
+      <tfoot>
+        <tr class="total-row">
+          <td>Total</td>
+          <td>100%</td>
+          <td style="text-align:right;">R$ 1.967.786</td>
+        </tr>
+      </tfoot>
+    </table>
   </div>
 </section>
 
@@ -629,80 +669,11 @@ header {
   </div>
 </section>
 
-<!-- ══════════════ SLIDE 4 — ATINGIMENTO DE OKR ══════════════ -->
-<section class="page" id="atingimento">
-  <div class="page-title">Atingimento de OKR H1 <em>(Prévia)</em> por Área</div>
-  <div class="page-sub">Percentual de atingimento preliminar, por centro de custo: média ponderada geral de 37,6%.</div>
-
-  <div class="card">
-    <div class="vbar-plot" id="ating-plot"></div>
-    <div class="vbar-labels" id="ating-labels"></div>
-    <div class="avg-note">┈┈ linha tracejada = média ponderada geral (37,6%)</div>
-  </div>
-</section>
-
-<!-- ══════════════ SLIDE 5 — CUSTO DE BÔNUS POR ÁREA ══════════════ -->
-<section class="page" id="custo">
-  <div class="page-title">Custo de Bônus <em>por Área</em></div>
-  <div class="page-sub">Custo total previsto H1 2026, por área: R$ 1.967.786 no total.</div>
-
-  <div class="card">
-    <table class="pulse-table">
-      <thead>
-        <tr>
-          <th>Área</th>
-          <th>% do Total</th>
-          <th style="text-align:right;">Custo (R$)</th>
-        </tr>
-      </thead>
-      <tbody id="custo-rows"></tbody>
-      <tfoot>
-        <tr class="total-row">
-          <td>Total</td>
-          <td>100%</td>
-          <td style="text-align:right;">R$ 1.967.786</td>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
-</section>
-
-<!-- ══════════════ SLIDE 6 — OBSERVAÇÕES E PRÓXIMOS PASSOS ══════════════ -->
-<section class="page" id="observacoes">
-  <div class="page-title">Observações e <em>Próximos Passos</em></div>
-  <div class="page-sub">Pontos de atenção para leitura do Conselho e marcos seguintes do ciclo.</div>
-
-  <div class="card">
-    <div class="decision-item">
-      <div class="decision-num">1</div>
-      <div class="decision-body">
-        <h4>Valores ainda são uma prévia</h4>
-        <p>Os valores apresentados são uma prévia: o atingimento final de OKRs H1 2026 será apurado ao fechamento do período, podendo alterar o custo de bônus.</p>
-      </div>
-    </div>
-    <div class="decision-item">
-      <div class="decision-num">2</div>
-      <div class="decision-body">
-        <h4>Variação de atingimento entre áreas</h4>
-        <p>A variação de atingimento entre áreas operacionais (27,3% a 40,3%) reflete diferenças reais de performance de OKR por centro de custo — recomenda-se atenção a Girotrade CD.</p>
-      </div>
-    </div>
-    <div class="decision-item">
-      <div class="decision-num">3</div>
-      <div class="decision-body">
-        <h4>Custo da Diretoria segue governança própria</h4>
-        <p>O custo da Diretoria (R$ 240.203) é direto e não passa pela apuração de OKR por centro de custo; segue avaliação e governança próprias.</p>
-      </div>
-    </div>
-    <div class="decision-item">
-      <div class="decision-num">4</div>
-      <div class="decision-body">
-        <h4>Próximo marco</h4>
-        <p>Fechamento oficial de OKRs H1 e apuração final do bônus, com nova visão a ser apresentada ao conselho.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="btn-center">
+  <a href="https://pessoasecultura.github.io/Conselho/" class="btn-fullscreen">
+    Voltar Home Page
+  </a>
+</div>
 
 <script>
 // ── NAV: rolagem suave até a seção + destaque da seção visível ──
@@ -748,12 +719,6 @@ const atingPlot = document.getElementById('ating-plot');
 const atingLabels = document.getElementById('ating-labels');
 const avgPct = (mediaGeral / maxAting) * 100;
 
-// linha de média ponderada (horizontal, rosa) — atravessa todo o quadro
-const avgLine = document.createElement('div');
-avgLine.className = 'vbar-avg';
-avgLine.style.bottom = avgPct + '%';
-atingPlot.appendChild(avgLine);
-avgLine.style.opacity = '0.7';
 
 atingimento.forEach(item => {
   const pct = (item.valor / maxAting) * 100;
