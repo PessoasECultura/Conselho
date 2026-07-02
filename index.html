@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu Principal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ground:#E7E6E1;
+    --ink:#16150F;
+    --muted:#8C8A80;
+    --slate:#5B6470;
+    --dark:#1A1917;
+    --cream:#E9E5D9;
+    --line:#D3D1C8;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding:32px;
+  }
+
+  .card{
+    width:100%;
+    max-width:1040px;
+    background:#E4E3DD;
+    border:1px solid var(--line);
+    border-radius:28px;
+    padding:56px;
+    display:grid;
+    grid-template-columns:1fr 0.85fr;
+    gap:48px;
+    align-items:stretch;
+  }
+
+  .lado-texto{
+    display:flex;
+    flex-direction:column;
+  }
+  .overline{
+    font-size:.95rem;
+    font-weight:500;
+    letter-spacing:.01em;
+    color:var(--muted);
+    margin-bottom:28px;
+  }
+  h1{
+    font-size:clamp(3rem, 6vw, 4.6rem);
+    font-weight:800;
+    line-height:.98;
+    letter-spacing:-.03em;
+    color:var(--ink);
+  }
+  .subtitulo{
+    margin-top:26px;
+    font-size:1.35rem;
+    line-height:1.4;
+    font-weight:500;
+    color:var(--slate);
+    max-width:34ch;
+  }
+  .subtitulo strong{ color:var(--ink); font-weight:700; }
+
+  .botoes{
+    margin-top:auto;
+    padding-top:40px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .botao{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 22px;
+    font-size:1rem;
+    font-weight:600;
+    letter-spacing:-.01em;
+    color:var(--ink);
+    text-decoration:none;
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:14px;
+    transition:background .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .botao .seta{ opacity:.4; transition:transform .18s ease, opacity .18s ease; }
+  .botao:hover{ background:var(--dark); color:var(--cream); border-color:var(--dark); }
+  .botao:hover .seta{ opacity:.8; transform:translateX(4px); }
+  .botao:focus-visible{ outline:3px solid #6E6A5C; outline-offset:3px; }
+
+  .painel{
+    background:var(--dark);
+    border-radius:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:420px;
+  }
+  .painel .logo{ width:120px; height:120px; }
+
+  @media (max-width:820px){
+    .card{
+      grid-template-columns:1fr;
+      padding:36px;
+      gap:32px;
+    }
+    .painel{ min-height:240px; order:-1; }
+    .painel .logo{ width:88px; height:88px; }
+    .botoes{ padding-top:24px; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .botao,.botao .seta{ transition:none; }
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="lado-texto">
+      <p class="overline">Reunião de Conselho · jul/26</p>
+
+      <h1>Pessoas<br>&amp; Cultura</h1>
+
+      <div class="botoes">
+        <a href="pagina1.html" class="botao">Pulse H1<span class="seta">&rarr;</span></a>
+        <a href="pagina2.html" class="botao">Key Talents<span class="seta">&rarr;</span></a>
+        <a href="pagina3.html" class="botao">Prévia Apuração OKRs<span class="seta">&rarr;</span></a>
+      </div>
+    </div>
+
+    <div class="painel">
+      <svg class="logo" viewBox="0 0 120 120" fill="none" stroke="#E9E5D9" stroke-width="12" stroke-linecap="round" aria-label="Yandeh">
+        <line x1="60" y1="60" x2="25" y2="40"/>
+        <line x1="60" y1="60" x2="95" y2="40"/>
+        <line x1="60" y1="60" x2="60" y2="100"/>
+        <line x1="60" y1="36" x2="60" y2="16"/>
+        <line x1="80" y1="72" x2="97" y2="82"/>
+        <line x1="40" y1="72" x2="23" y2="82"/>
+      </svg>
+    </div>
+
+  </div>
+</body>
+</html>
