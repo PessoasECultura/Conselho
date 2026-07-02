@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prévia Apuração OKRs H1 2026 — Conselho Yandeh</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F2F2F0;
+  --surface: #FAFAF8;
+  --white: #FFFFFF;
+  --border: #F3C5DA;
+  --border-strong: #E8006A;
+  --text: #1C1C1A;
+  --text-2: #5A5A56;
+  --text-3: #9A9A96;
+  --pink: #E8006A;
+  --pink-soft: #FFE8F2;
+  --orange: #D45A1A;
+  --orange-soft: #FFF0E8;
+  --green: #1A7840;
+  --green-soft: #E6F4EC;
+  --red: #C42020;
+  --red-soft: #FDEAEA;
+  --yellow: #A06010;
+  --yellow-soft: #FFF8E8;
+  --blue: #1A4878;
+  --blue-soft: #EAF0FA;
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --r: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.logo{
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  height:32px;
+  width:auto;
+  display:block;
+}
+
+.logo-mark {
+  width: 30px; height: 30px; border-radius: 8px;
+  background: var(--pink);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white); font-weight: 700; font-size: 14px;
+  font-family: 'Instrument Serif', serif;
+}
+.logo-text { font-weight: 700; font-size: 15px; letter-spacing: 0.2px; }
+
+.header-badge {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-3);
+  letter-spacing: 0.5px;
+}
+
+/* ── NAV TABS ── */
+.nav-tabs {
+  background: var(--text);
+  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  position: sticky;
+  top: 60px;
+  z-index: 190;
+}
+
+.nav-tabs::-webkit-scrollbar { display: none; }
+
+.nav-tab {
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-3);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.nav-tab:hover { color: var(--white); }
+.nav-tab.active { color: var(--pink); border-bottom-color: var(--pink); }
+
+/* ── PAGE CONTAINER (rolagem única) ── */
+.page {
+  display: block;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 40px 48px 60px;
+  scroll-margin-top: 120px; /* compensa header + nav fixos ao ancorar */
+}
+
+/* divisória sutil entre seções na rolagem contínua */
+.page + .page { border-top: 1px solid var(--border); }
+
+/* ── TYPOGRAPHY ── */
+.page-title {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 34px;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+
+.page-title em { font-style: italic; color: var(--text-2); }
+
+.page-sub {
+  font-size: 15px;
+  color: var(--text-3);
+  margin-bottom: 22px;
+}
+
+/* ── GRID HELPERS ── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); width: 100%; gap: 14px; }
+
+/* ── CARD ── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 24px;
+}
+
+.card-sm { padding: 18px 20px; }
+
+/* ── STAT CARD ── */
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-label {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-3);
+}
+
+.stat-value {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.stat-delta {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.delta-up { color: var(--green); }
+.delta-down { color: var(--red); }
+.delta-neutral { color: var(--text-3); }
+
+.stat-desc {
+  font-size: 14px;
+  color: var(--text-3);
+  margin-top: 2px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+/* ── MICROINSIGHT ── */
+.microinsight {
+  font-size: 13px;
+  color: var(--yellow);
+  background: var(--yellow-soft);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-top: 4px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ── TAG / BADGE ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.badge-red { background: var(--red-soft); color: var(--red); }
+.badge-yellow { background: var(--yellow-soft); color: var(--yellow); }
+.badge-green { background: var(--green-soft); color: var(--green); }
+.badge-blue { background: var(--blue-soft); color: var(--blue); }
+.badge-gray { background: #EBEBEA; color: var(--text-2); }
+
+/* ── TABLE ── */
+.pulse-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.pulse-table th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-3);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.pulse-table th:first-child { border-radius: 8px 0 0 0; }
+.pulse-table th:last-child { border-radius: 0 8px 0 0; }
+
+.pulse-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.pulse-table tr:last-child td { border-bottom: none; }
+.pulse-table tr:hover td { background: var(--bg); }
+
+.pulse-table tr.total-row td {
+  border-top: 2px solid var(--text);
+  font-weight: 700;
+  background: var(--bg);
+}
+
+.cell-score {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.cell-score.very-fav { color: var(--green); }
+.cell-score.fav { color: #1A5080; }
+.cell-score.unfav { color: var(--red); }
+
+.cell-prev { font-size: 14px; color: var(--text-3); }
+.cell-arrow { font-size: 13px; margin-left: 2px; }
+.cell-arrow.up { color: var(--green); }
+.cell-arrow.down { color: var(--red); }
+
+.area-name { font-weight: 500; color: var(--text); }
+
+/* ── TABELA CENTRO DE CUSTO (slide 3) ── */
+.pulse-table th.th-hl { background: var(--orange); color: var(--white); }
+.pulse-table tr.shade td { background: #ECECEA; }
+.pulse-table tr.shade:hover td { background: #E3E3E1; }
+.pulse-table td.grp-name { font-weight: 600; vertical-align: middle; border-right: 1px solid var(--border); }
+.pulse-table td.grp-top { border-top: 2px solid var(--border); }
+.cc-val { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 600; }
+
+/* ── HORIZONTAL BAR ── */
+.bar-wrap { display: flex; align-items: center; gap: 10px; }
+.bar-track { flex: 1; height: 6px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 4px; background: var(--text); }
+.bar-fill.green { background: var(--green); }
+.bar-fill.yellow { background: #E0A020; }
+.bar-fill.red { background: var(--red); }
+
+/* ── HIGHLIGHT BOX ── */
+.highlight { border-radius: var(--r); padding: 20px 22px; margin-bottom: 16px; }
+.highlight-red { background: var(--red-soft); border-left: 3px solid var(--red); }
+.highlight-yellow { background: var(--yellow-soft); border-left: 3px solid #D4900A; }
+.highlight-green { background: var(--green-soft); border-left: 3px solid var(--green); }
+.highlight-pink { background: var(--pink-soft); border-left: 5px solid var(--pink); }
+
+.highlight h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.highlight p, .highlight ul {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+.highlight ul { padding-left: 16px; }
+
+/* ── SECTION HEADER ── */
+.section-head { margin-bottom: 14px; }
+.section-head h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+.section-head p { font-size: 14px; color: var(--text-3); }
+
+/* ── DECISION / OBS CARDS ── */
+.decision-item {
+  display: flex;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.decision-item:last-child { border-bottom: none; }
+
+.decision-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--text); color: var(--white);
+  font-weight: 700; font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-family: 'Rethink Sans', sans-serif;
+}
+
+.decision-body { flex: 1; }
+.decision-body p { font-size: 15px; color: var(--text-2); margin-top: 4px; line-height: 1.6; }
+.decision-body h4 { font-size: 15px; font-weight: 700; color: var(--text); }
+
+/* ── CONTEXT BOX ── */
+.context-box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 28px 32px;
+  margin-bottom: 20px;
+}
+.context-box p { font-size: 16px; color: var(--text-2); line-height: 1.8; margin-bottom: 12px; }
+.context-box p:last-child { margin-bottom: 0; }
+.context-box strong { color: var(--text); font-weight: 600; }
+
+/* ── COVER PAGE ── */
+.cover {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 48px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.cover .kicker {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 18px;
+}
+.cover h1 {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 52px;
+  line-height: 1.08;
+  letter-spacing: -1px;
+  color: var(--text);
+  margin-bottom: 18px;
+  max-width: 780px;
+}
+.cover h2 {
+  font-size: 21px;
+  font-weight: 400;
+  color: var(--text-2);
+  margin-bottom: 28px;
+}
+.cover .meta {
+  font-size: 14px;
+  color: var(--text-3);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  width: 100%;
+  max-width: 480px;
+}
+
+/* footnote under table */
+.table-footnote {
+  font-size: 13px;
+  color: var(--text-3);
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.editorial-note {
+  font-size: 13px;
+  color: var(--yellow);
+  background: var(--yellow-soft);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 14px;
+  line-height: 1.6;
+}
+
+/* ── ATINGIMENTO (gráfico de colunas vertical) ── */
+.vbar-plot {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  height: 300px;
+  padding-top: 8px;
+  border-bottom: 2px solid var(--text);
+}
+.vbar-col {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.vbar-fill {
+  width: 100%;
+  max-width: 70px;
+  border-radius: 6px 6px 0 0;
+  background: var(--text-3);
+}
+.vbar-fill.grey   { background: var(--text-3); }
+.vbar-fill.green  { background: var(--green); }
+.vbar-fill.yellow { background: #E0A020; }
+.vbar-fill.red    { background: var(--red); }
+.vbar-score {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.vbar-labels {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+.vbar-label {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-2);
+  line-height: 1.3;
+}
+/* linha de média ponderada (horizontal, rosa) — atravessa todo o quadro */
+.vbar-avg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 2px dashed var(--pink);
+}
+.avg-note {
+  font-size: 11px;
+  color: var(--pink);
+  margin-top: 10px;
+  text-align: right;
+}
+.btn-fullscreen {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border-strong);
+  background: var(--white);
+  color: var(--text-2);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+} 
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">
+  <img src="https://yandeh.com/assets/yandeh-logo-DDlTLquC.svg" alt="Yandeh Logo">
+</div>
+  <div class="header-right">
+    <span class="header-badge">Pulse H1 2026</span>
+    <button class="btn-fullscreen" onclick="toggleFullscreen()">
+      <span id="fs-icon">⛶</span><span id="fs-label">Tela cheia</span>
+    </button>
+  </div>
+</header>
+
+<!-- ══════════════ SLIDE 1 — CAPA ══════════════ -->
+<section class="page" id="visao-geral">
+    <div class="kicker" color:var(--pink)>Pessoas &amp; Cultura&nbsp; |&nbsp; Julho 2026</div>
+    <h1>Apuração OKRs H1 2026</h1>
+  </div>
+
+<section class="page" id="visao-geral">
+  <div class="page-sub">Prévia de custo de bônus H1 2026, calculada sobre o atingimento preliminar de OKRs por centro de custo.</div>
+
+  <div class="grid-2" style="margin-bottom: 20px;">
+    <div class="stat-card">
+      <div class="stat-label">Custo Total Previsto (H1)</div>
+      <div class="stat-value">R$ 1.967.786</div>
+      <div class="stat-desc">bônus estimado, todas as áreas</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Atingimento Médio Ponderado</div>
+      <div class="stat-value">37,6%</div>
+      <div class="stat-desc">média ponderada por custo, exceto Diretoria</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Áreas no Escopo</div>
+      <div class="stat-value">8</div>
+      <div class="stat-desc">+ Diretoria (governança própria)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Bônus vs. Folha de Pagamento</div>
+      <div class="stat-value">32,3%</div>
+      <div class="stat-desc">da folha de maio/2026 (R$ 6.100.653)</div>
+    </div>
+  </div>
+
+  <div class="highlight highlight-pink">
+    <h4>Leitura do período</h4>
+    <p>43% do custo total está concentrado em Tech Solutions. O bônus H1 equivale a cerca de 1/3 do custo de um mês de folha da YH.</p>
+  </div>
+</section>
+
+<!-- ══════════════ SLIDE 3 — PESO DAS DIMENSÕES ══════════════ -->
+<section class="page" id="pesos">
+  <div class="page-title">Atingimento por <em>Centro de Custo</em></div>
+  <div class="page-sub">Prévia de atingimento de OKR H1 2026 por centro de custo, agrupado por área.</div>
+
+  <div class="card">
+    <table class="pulse-table">
+      <thead>
+        <tr>
+          <th>Área 2025</th>
+          <th>Centro de Custo H1 2026</th>
+          <th class="th-hl" style="text-align:right;">H1 (Prévia)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- ABASTECESHOP -->
+        <tr><td class="area-name grp-name grp-top" rowspan="5">AbasteceShop</td><td class="grp-top">CS Varejo Externo</td><td class="cc-val grp-top">37,3%</td></tr>
+        <tr><td>Inside Sales</td><td class="cc-val">37,3%</td></tr>
+        <tr><td>3P Sellers</td><td class="cc-val">39,3%</td></tr>
+        <tr><td>3P Atac, Ind &amp; Distr</td><td class="cc-val">39,3%</td></tr>
+        <tr><td>Operações de Vendas</td><td class="cc-val">37,3%</td></tr>
+
+        <!-- BUSINESS SOLUTIONS -->
+        <tr class="shade"><td class="area-name grp-name grp-top" rowspan="1">Business Solutions</td><td class="grp-top">BS Business Solutions</td><td class="cc-val grp-top">40,3%</td></tr>
+
+        <!-- FINANÇAS -->
+        <tr><td class="area-name grp-name grp-top" rowspan="2">Finanças</td><td class="grp-top">Serviços Financeiros</td><td class="cc-val grp-top">35,8%</td></tr>
+        <tr><td>Controladoria</td><td class="cc-val">35,8%</td></tr>
+
+        <!-- GIROTRADE -->
+        <tr class="shade"><td class="area-name grp-name grp-top" rowspan="5">Girotrade</td><td class="grp-top">Estratégia Comercial</td><td class="cc-val grp-top">37,3%</td></tr>
+        <tr class="shade"><td>Desenvolvimento Comercial</td><td class="cc-val">35,3%</td></tr>
+        <tr class="shade"><td>SAC</td><td class="cc-val">35,8%</td></tr>
+        <tr class="shade"><td>Supply Chain</td><td class="cc-val">27,3%</td></tr>
+        <tr class="shade"><td>Business Intelligence</td><td class="cc-val">35,8%</td></tr>
+
+        <!-- GIROTRADE CD -->
+        <tr><td class="area-name grp-name grp-top" rowspan="6">Girotrade CD</td><td class="grp-top">Operações Blue Collor</td><td class="cc-val grp-top">27,3%</td></tr>
+        <tr><td>Operações White Collor</td><td class="cc-val">27,3%</td></tr>
+        <tr><td>Operações Liderança</td><td class="cc-val">27,3%</td></tr>
+        <tr><td>Transporte Liderança</td><td class="cc-val">27,3%</td></tr>
+        <tr><td>Transporte Blue Collor</td><td class="cc-val">27,3%</td></tr>
+        <tr><td>Desempenho e Qualidade</td><td class="cc-val">27,3%</td></tr>
+
+        <!-- PESSOAS & CULTURA -->
+        <tr class="shade"><td class="area-name grp-name grp-top" rowspan="1">Pessoas &amp; Cultura</td><td class="grp-top">Pessoas &amp; Cultura</td><td class="cc-val grp-top">35,8%</td></tr>
+
+        <!-- TECH SOLUTIONS -->
+        <tr><td class="area-name grp-name grp-top" rowspan="14">Tech Solutions</td><td class="grp-top">Smartplace</td><td class="cc-val grp-top">39,3%</td></tr>
+        <tr><td>Tech Leadership</td><td class="cc-val">35,8%</td></tr>
+        <tr><td>New Products and Innovation</td><td class="cc-val">41,3%</td></tr>
+        <tr><td>Smartcenter</td><td class="cc-val">40,3%</td></tr>
+        <tr><td>Smartforce</td><td class="cc-val">41,3%</td></tr>
+        <tr><td>Data Integration</td><td class="cc-val">40,3%</td></tr>
+        <tr><td>Datahub</td><td class="cc-val">35,8%</td></tr>
+        <tr><td>Arty</td><td class="cc-val">35,8%</td></tr>
+        <tr><td>Sist de Supply e Op</td><td class="cc-val">27,3%</td></tr>
+        <tr><td>Product Delivery</td><td class="cc-val">40,3%</td></tr>
+        <tr><td>Product Bureau</td><td class="cc-val">39,3%</td></tr>
+        <tr><td>Product Support</td><td class="cc-val">35,8%</td></tr>
+        <tr><td>SAC</td><td class="cc-val">35,8%</td></tr>
+        <tr><td>Operational Systems</td><td class="cc-val">27,3%</td></tr>
+      </tbody>
+    </table>
+    <div class="table-footnote">Valores preliminares de atingimento de OKR H1 2026 por centro de custo. Sujeitos a alteração no fechamento oficial do período.</div>
+  </div>
+</section>
+
+<!-- ══════════════ SLIDE 4 — ATINGIMENTO DE OKR ══════════════ -->
+<section class="page" id="atingimento">
+  <div class="page-title">Atingimento de OKR H1 <em>(Prévia)</em> por Área</div>
+  <div class="page-sub">Percentual de atingimento preliminar, por centro de custo: média ponderada geral de 37,6%.</div>
+
+  <div class="card">
+    <div class="vbar-plot" id="ating-plot"></div>
+    <div class="vbar-labels" id="ating-labels"></div>
+    <div class="avg-note">┈┈ linha tracejada = média ponderada geral (37,6%)</div>
+  </div>
+</section>
+
+<!-- ══════════════ SLIDE 5 — CUSTO DE BÔNUS POR ÁREA ══════════════ -->
+<section class="page" id="custo">
+  <div class="page-title">Custo de Bônus <em>por Área</em></div>
+  <div class="page-sub">Custo total previsto H1 2026, por área: R$ 1.967.786 no total.</div>
+
+  <div class="card">
+    <table class="pulse-table">
+      <thead>
+        <tr>
+          <th>Área</th>
+          <th>% do Total</th>
+          <th style="text-align:right;">Custo (R$)</th>
+        </tr>
+      </thead>
+      <tbody id="custo-rows"></tbody>
+      <tfoot>
+        <tr class="total-row">
+          <td>Total</td>
+          <td>100%</td>
+          <td style="text-align:right;">R$ 1.967.786</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════ SLIDE 6 — OBSERVAÇÕES E PRÓXIMOS PASSOS ══════════════ -->
+<section class="page" id="observacoes">
+  <div class="page-title">Observações e <em>Próximos Passos</em></div>
+  <div class="page-sub">Pontos de atenção para leitura do Conselho e marcos seguintes do ciclo.</div>
+
+  <div class="card">
+    <div class="decision-item">
+      <div class="decision-num">1</div>
+      <div class="decision-body">
+        <h4>Valores ainda são uma prévia</h4>
+        <p>Os valores apresentados são uma prévia: o atingimento final de OKRs H1 2026 será apurado ao fechamento do período, podendo alterar o custo de bônus.</p>
+      </div>
+    </div>
+    <div class="decision-item">
+      <div class="decision-num">2</div>
+      <div class="decision-body">
+        <h4>Variação de atingimento entre áreas</h4>
+        <p>A variação de atingimento entre áreas operacionais (27,3% a 40,3%) reflete diferenças reais de performance de OKR por centro de custo — recomenda-se atenção a Girotrade CD.</p>
+      </div>
+    </div>
+    <div class="decision-item">
+      <div class="decision-num">3</div>
+      <div class="decision-body">
+        <h4>Custo da Diretoria segue governança própria</h4>
+        <p>O custo da Diretoria (R$ 240.203) é direto e não passa pela apuração de OKR por centro de custo; segue avaliação e governança próprias.</p>
+      </div>
+    </div>
+    <div class="decision-item">
+      <div class="decision-num">4</div>
+      <div class="decision-body">
+        <h4>Próximo marco</h4>
+        <p>Fechamento oficial de OKRs H1 e apuração final do bônus, com nova visão a ser apresentada ao conselho.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ── NAV: rolagem suave até a seção + destaque da seção visível ──
+const navTabs = Array.from(document.querySelectorAll('.nav-tab'));
+
+navTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = document.getElementById(tab.dataset.page);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// scrollspy: marca como ativa a aba da seção mais próxima do topo
+const sections = navTabs
+  .map(tab => document.getElementById(tab.dataset.page))
+  .filter(Boolean);
+
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      navTabs.forEach(t => t.classList.toggle('active', t.dataset.page === id));
+    }
+  });
+}, { rootMargin: '-120px 0px -60% 0px', threshold: 0 });
+
+sections.forEach(sec => spy.observe(sec));
+
+// ── DADOS: ATINGIMENTO DE OKR POR ÁREA (slide 4, gráfico original) ──
+const atingimento = [
+  { area: 'Business Solutions', valor: 40.3 },
+  { area: 'Tech Solutions',     valor: 38.8 },
+  { area: 'AbasteceShop',       valor: 38.2 },
+  { area: 'Girotrade',          valor: 36.1 },
+  { area: 'Pessoas & Cultura',  valor: 35.8 },
+  { area: 'Finanças',           valor: 35.8 },
+  { area: 'Girotrade CD',       valor: 27.3 },
+];
+const mediaGeral = 37.6;
+const maxAting = 45; // teto de escala visual
+
+const atingPlot = document.getElementById('ating-plot');
+const atingLabels = document.getElementById('ating-labels');
+const avgPct = (mediaGeral / maxAting) * 100;
+
+// linha de média ponderada (horizontal, rosa) — atravessa todo o quadro
+const avgLine = document.createElement('div');
+avgLine.className = 'vbar-avg';
+avgLine.style.bottom = avgPct + '%';
+atingPlot.appendChild(avgLine);
+avgLine.style.opacity = '0.7';
+
+atingimento.forEach(item => {
+  const pct = (item.valor / maxAting) * 100;
+  let colorClass = 'grey';
+  if (item.valor < 30) colorClass = 'grey';
+  else if (item.valor < 37) colorClass = 'grey';
+
+  // coluna vertical
+  const col = document.createElement('div');
+  col.className = 'vbar-col';
+  col.innerHTML = `
+    <div class="vbar-score">${item.valor.toString().replace('.', ',')}%</div>
+    <div class="vbar-fill ${colorClass}" style="height:${pct}%;"></div>
+  `;
+  atingPlot.appendChild(col);
+
+  // rótulo do eixo X
+  const label = document.createElement('div');
+  label.className = 'vbar-label';
+  label.textContent = item.area;
+  atingLabels.appendChild(label);
+});
+
+// ── DADOS: CUSTO DE BÔNUS POR ÁREA (slide 5) ──
+const custo = [
+  { area: 'Tech Solutions',     pct: 43.4, valor: 853092 },
+  { area: 'Girotrade',          pct: 12.2, valor: 240431 },
+  { area: 'Diretoria',          pct: 12.2, valor: 240203 },
+  { area: 'Business Solutions', pct: 9.8,  valor: 192123 },
+  { area: 'AbasteceShop',       pct: 8.8,  valor: 172841 },
+  { area: 'Girotrade CD',       pct: 5.2,  valor: 101840 },
+  { area: 'Pessoas & Cultura',  pct: 4.4,  valor: 85799 },
+  { area: 'Finanças',           pct: 4.1,  valor: 81458 },
+];
+
+const custoContainer = document.getElementById('custo-rows');
+custo.forEach(item => {
+  const tr = document.createElement('tr');
+  const valorFmt = 'R$ ' + item.valor.toLocaleString('pt-BR');
+  tr.innerHTML = `
+    <td class="area-name">${item.area}</td>
+    <td>
+      <div class="bar-wrap" style="max-width:220px;">
+        <div class="bar-track"><div class="bar-fill" style="width:${item.pct}%; background: var(--text);"></div></div>
+        <span style="font-weight:600; font-size:14px; width:44px; flex-shrink:0;">${item.pct.toString().replace('.', ',')}%</span>
+      </div>
+    </td>
+    <td style="text-align:right; font-weight:600;">${valorFmt}</td>
+  `;
+  custoContainer.appendChild(tr);
+});
+
+// ── TELA CHEIA ── (chamada pelo onclick do botão)
+function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(err => {
+      console.warn('Não foi possível entrar em tela cheia:', err);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}
+
+// atualiza o rótulo do botão conforme entra/sai da tela cheia
+document.addEventListener('fullscreenchange', () => {
+  const label = document.getElementById('fs-label');
+  if (label) label.textContent = document.fullscreenElement ? 'Sair' : 'Tela cheia';
+});
+</script>
+
+</body>
+</html>
