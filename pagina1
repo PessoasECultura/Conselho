@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse H1 2026 — Conselho Yandeh</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F2F2F0;
+  --surface: #FAFAF8;
+  --white: #FFFFFF;
+  --border: #F3C5DA;
+  --border-strong: #E8006A;
+  --text: #1C1C1A;
+  --text-2: #5A5A56;
+  --text-3: #9A9A96;
+  --pink: #E8006A;
+  --pink-soft: #FFE8F2;
+  --orange: #D45A1A;
+  --orange-soft: #FFF0E8;
+  --green: #1A7840;
+  --green-soft: #E6F4EC;
+  --red: #C42020;
+  --red-soft: #FDEAEA;
+  --yellow: #A06010;
+  --yellow-soft: #FFF8E8;
+  --blue: #1A4878;
+  --blue-soft: #EAF0FA;
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --r: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.header-badge {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-3);
+  letter-spacing: 0.5px;
+}
+
+/* ── NAV TABS ── */
+.nav-tabs {
+  background: var(--text);
+  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+}
+
+.nav-tabs::-webkit-scrollbar { display: none; }
+
+.nav-tab {
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-3);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+  user-select: none;
+}
+.wrapper {
+  padding: 8px 0 24px;
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.block {
+  position: relative;
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--white);
+  padding: 24px 22px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.block:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.09);
+}
+.block-step {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--text-muted);
+  opacity: .5;
+}
+.block-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.block-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: currentColor;
+}
+.block-icon.blue   { background: #fae6fb; color: #ff0077; }
+.block-icon.green  { background: #f5e1e1; color: #6e0f0f; }
+.block-icon.purple { background: #faedfe; color: #884ab7; }
+@media (prefers-color-scheme: dark) {
+  .block-icon.blue   { background: #7c0c51; color: #f4b5dd; }
+  .block-icon.green  { background: #500808; color: #e19f9f; }
+  .block-icon.purple { background: #723489; color: #CECBF6; }
+}
+.block-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+.block-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.flow-connector {
+  flex: 0 0 40px;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  opacity: .38;
+}
+.flow-connector svg { width: 24px; height: 24px; stroke: currentColor; }
+@media (max-width: 720px) {
+  .wrapper { flex-direction: column; }
+  .flow-connector { flex: 0 0 30px; transform: rotate(90deg); }
+}
+
+
+.logo{
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  height:32px;
+  width:auto;
+  display:block;
+}
+
+.nav-tab:hover { color: var(--white); }
+.nav-tab.active { color: var(--pink); border-bottom-color: var(--pink); }
+
+/* ── PAGE CONTAINER ── */
+.page {
+  display: none;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 40px 48px 60px;
+  animation: fadeIn 0.25s ease;
+}
+
+.page.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── TYPOGRAPHY ── */
+.page-title {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 34px;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+
+.page-title em { font-style: italic; color: var(--text-2); }
+
+.page-sub {
+  font-size: 15px;
+  color: var(--text-3);
+  margin-bottom: 22px;
+}
+
+/* ── GRID HELPERS ── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.grid-4{  display:grid;  grid-template-columns:repeat(4, minmax(0, 1fr));
+  width:100%;
+  gap:14px;}
+
+/* ── CARD ── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 24px;
+}
+
+.card-sm { padding: 18px 20px; }
+
+/* ── STAT CARD ── */
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-label {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-3);
+}
+
+.stat-value {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 50px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: var(--text);
+}
+
+.stat-delta {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.delta-up { color: var(--green); }
+.delta-down { color: var(--red); }
+.delta-neutral { color: var(--text-3); }
+
+.stat-desc {
+  font-size: 14px;
+  color: var(--text-3);
+  margin-top: 2px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+/* ── MICROINSIGHT ── */
+.microinsight {
+  font-size: 13px;
+  color: var(--yellow);
+  background: var(--yellow-soft);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-top: 4px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ── TAG / BADGE ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.badge-red { background: var(--red-soft); color: var(--red); }
+.badge-yellow { background: var(--yellow-soft); color: var(--yellow); }
+.badge-green { background: var(--green-soft); color: var(--green); }
+.badge-blue { background: var(--blue-soft); color: var(--blue); }
+.badge-gray { background: #EBEBEA; color: var(--text-2); }
+
+/* ── TABLE ── */
+.pulse-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.pulse-table th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-3);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.pulse-table th:first-child { border-radius: 8px 0 0 0; }
+.pulse-table th:last-child { border-radius: 0 8px 0 0; }
+
+.pulse-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.pulse-table tr:last-child td { border-bottom: none; }
+.pulse-table tr:hover td { background: var(--bg); }
+
+.cell-score {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.cell-score.very-fav { color: var(--green); }
+.cell-score.fav { color: #1A5080; }
+.cell-score.unfav { color: var(--red); }
+
+.cell-prev {
+  font-size: 14px;
+  color: var(--text-3);
+}
+
+.cell-arrow { font-size: 13px; margin-left: 2px; }
+.cell-arrow.up { color: var(--green); }
+.cell-arrow.down { color: var(--red); }
+
+/* ── AREA ROW ── */
+.area-name {
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ── HORIZONTAL BAR ── */
+.bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bar-track {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--text);
+}
+
+.bar-fill.green { background: var(--green); }
+.bar-fill.yellow { background: #E0A020; }
+.bar-fill.red { background: var(--red); }
+
+/* ── HIGHLIGHT BOX ── */
+.highlight {
+  border-radius: var(--r);
+  padding: 20px 22px;
+  margin-bottom: 16px;
+}
+
+.highlight-red { background: var(--red-soft); border-left: 3px solid var(--red); }
+.highlight-yellow { background: var(--yellow-soft); border-left: 3px solid #D4900A; }
+.highlight-green { background: var(--green-soft); border-left: 3px solid var(--green); }
+.highlight-pink { background: var(--pink-soft); border-left: 5px solid var(--pink); }
+
+.highlight h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.highlight ul {
+  padding-left: 16px;
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+/* ── SECTION HEADER ── */
+.section-head {
+  margin-bottom: 14px;
+}
+
+.section-head h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.section-head p {
+  font-size: 14px;
+  color: var(--text-3);
+}
+
+/* ── SECTION DIVIDER ── */
+.section-divider {
+  margin: 40px 0 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-divider .section-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 6px;
+}
+
+.section-divider h2 {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 24px;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.section-divider h2 em { font-style: italic; color: var(--text-2); }
+
+.section-divider p {
+  font-size: 15px;
+  color: var(--text-3);
+  margin-top: 4px;
+}
+
+/* ── TOGGLE (accordion) ── */
+.accordion {
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--white);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.accordion-header:hover { background: var(--bg); }
+
+.accordion-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.accordion-title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.accordion-icon {
+  font-size: 18px;
+  color: var(--text-3);
+  transition: transform 0.2s;
+}
+
+.accordion.open .accordion-icon { transform: rotate(180deg); }
+
+.accordion-body {
+  display: none;
+  padding: 0 20px 20px;
+  border-top: 1px solid var(--border);
+  background: var(--white);
+}
+
+.accordion.open .accordion-body { display: block; }
+
+/* ── ENPS BARS ── */
+.enps-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.enps-row:last-child { border-bottom: none; }
+
+.enps-name {
+  font-size: 14px;
+  color: var(--text-2);
+  width: 130px;
+  flex-shrink: 0;
+}
+
+.enps-score {
+  font-weight: 700;
+  font-size: 17px;
+  width: 32px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.enps-segments {
+  flex: 1;
+  height: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  cursor: help;
+}
+
+.seg-p { background: #1A7840; }
+.seg-n { background: #E0E0DC; }
+.seg-d { background: #C42020; }
+
+.enps-prev {
+  font-size: 11px;
+  color: var(--text-3);
+  width: 55px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* tooltip com nº de pessoas por segmento (aparece no hover da linha) */
+.enps-tooltip {
+  position: absolute;
+  left: 174px;
+  bottom: calc(100% - 4px);
+  z-index: 30;
+  min-width: 170px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.14);
+  padding: 10px 12px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity .15s ease, transform .15s ease;
+  pointer-events: none;
+}
+.enps-row:hover .enps-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.enps-tt-head {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  margin-bottom: 6px;
+}
+.enps-tt-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+}
+.enps-tt-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.enps-tt-num {
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ── RISK CARD ── */
+.risk-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 22px 24px;
+  position: relative;
+}
+
+.risk-level {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.risk-title {
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.risk-metric {
+  font-size: 15px;
+  color: var(--text-2);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.risk-desc {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+.risk-card.critical { border-top: 3px solid var(--red); }
+.risk-card.attention { border-top: 3px solid #D4900A; }
+.risk-card.monitor { border-top: 3px solid var(--green); }
+
+/* ── ACTION CARD ── */
+.action-block {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 22px 24px;
+}
+
+.action-block h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.action-block li {
+  font-size: 14px;
+  color: var(--text-2);
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.action-block li:last-child { border-bottom: none; }
+
+/* ── TIMELINE ── */
+.timeline {
+  display: flex;
+  gap: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+  z-index: 0;
+}
+
+.timeline-step {
+  flex: 1;
+  position: relative;
+  padding-top: 44px;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  background: var(--white);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-2);
+}
+
+.timeline-dot.active {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--white);
+}
+
+.timeline-content {
+  padding: 0 12px 0 24px;
+}
+
+.timeline-date {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-3);
+  margin-bottom: 5px;
+}
+
+.timeline-title {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.timeline-items {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+/* ── DECISION CARDS ── */
+.decision-item {
+  display: flex;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+
+.decision-item:last-child { border-bottom: none; }
+
+.decision-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--text);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family:  'Rethink Sans', sans-serif;
+}
+
+.decision-body { flex: 1; }
+
+.decision-body p {
+  font-size: 15px;
+  color: var(--text-2);
+  margin-top: 4px;
+  line-height: 1.6;
+}
+
+.decision-body h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ── SPLIT CARD ── */
+.split-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+
+.split-card-half {
+  padding: 22px 24px;
+}
+
+.split-card-half:first-child {
+  border-right: 1px solid var(--border);
+}
+
+.split-card-half h5 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 10px;
+}
+
+.split-card-half.pos h5 { color: var(--green); }
+.split-card-half.neg h5 { color: var(--orange); }
+
+.split-card-half ul {
+  list-style: none;
+  padding: 0;
+}
+
+.split-card-half li {
+  font-size: 14px;
+  color: var(--text-2);
+  padding: 5px 0 5px 14px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.5;
+}
+
+.split-card-half li:last-child { border-bottom: none; }
+.split-card-half.pos li::before { content: '+'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+.split-card-half.neg li::before { content: '·'; position: absolute; left: 0; color: var(--orange); font-size: 16px; font-weight: 700; line-height: 1.2; }
+
+/* ── DIMENSION TABS ── */
+.dim-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.dim-tab {
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--text-2);
+  transition: all 0.15s;
+}
+
+.dim-tab:hover { background: var(--bg); }
+.dim-tab.active {
+  background: var(--pink);
+  color: var(--white);
+  border-color: var(--pink);
+}
+
+.dim-panel { display: none; }
+.dim-panel.active { display: block; }
+
+/* ── INLINE METRIC ── */
+.inline-metric {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.inline-metric .num {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.inline-metric .unit {
+  font-size: 14px;
+  color: var(--text-3);
+}
+
+/* ── PARTICIPATION BARS ── */
+.part-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 0;
+}
+
+.part-name { font-size: 14px; color: var(--text-2); width: 140px; flex-shrink: 0; }
+.part-pct { font-weight: 700; font-size: 15px; width: 38px; flex-shrink: 0; text-align: right; }
+.part-bar { flex: 1; height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.part-bar-fill { height: 100%; background: var(--text); border-radius: 3px; }
+.part-nums { font-size: 13px; color: var(--text-3); white-space: nowrap; }
+
+/* ── CONTEXT BOX ── */
+.context-box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 28px 32px;
+  margin-bottom: 20px;
+}
+
+.context-box p {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.context-box p:last-child { margin-bottom: 0; }
+
+.context-box strong { color: var(--text); font-weight: 600; }
+
+/* ══════════════════════════════════════
+   NOVAS SEÇÕES
+══════════════════════════════════════ */
+
+/* ── AREA FILTER PILLS ── */
+.area-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.filter-pill {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--text-2);
+  transition: all 0.18s ease;
+  user-select: none;
+}
+
+.filter-pill:hover { border-color: var(--border-strong); color: var(--text); }
+
+.filter-pill.active {
+  background: var(--pink);
+  color: var(--white);
+  border-color: var(--pink);
+}
+
+/* ── ORG INSIGHT CARDS ── */
+.insight-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.insight-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 24px;
+  transition: box-shadow 0.2s;
+}
+
+.insight-card:hover { box-shadow: var(--shadow); }
+
+.insight-number {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 15px;
+  color: var(--text-3);
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.insight-title {
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--text);
+  margin-bottom: 10px;
+  letter-spacing: -0.2px;
+}
+
+.insight-body {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+.insight-lead {
+  display: block;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+.insight-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.insight-tag {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--orange);
+  background: var(--bg);
+  border-radius: 4px;
+  padding: 3px 8px;
+}
+
+/* ── STRUCTURAL RISK CARDS ── */
+.struct-risk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.struct-risk-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 28px 26px;
+  position: relative;
+  overflow: hidden;
+}
+
+.struct-risk-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+
+.struct-risk-card.risk-operacional::before { background: var(--red); }
+.struct-risk-card.risk-estrutural::before { background: #D4900A; }
+.struct-risk-card.risk-evasao::before { background: var(--blue); }
+
+.struct-risk-area {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-3);
+  margin-bottom: 8px;
+}
+
+.struct-risk-title {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 20px;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.struct-risk-points {
+  list-style: none;
+  padding: 0;
+}
+
+.struct-risk-points li {
+  font-size: 14px;
+  color: var(--text-2);
+  padding: 6px 0 6px 16px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  line-height: 1.5;
+}
+
+.struct-risk-points li:last-child { border-bottom: none; }
+
+.struct-risk-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--border-strong);
+}
+
+/* ── QUALITATIVE CONTRADICTION CARDS ── */
+.contrast-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.contrast-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+
+.contrast-left {
+  background: var(--bg);
+  padding: 28px 24px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contrast-area-name {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.contrast-kpi-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 2px;
+}
+
+.contrast-kpi-value {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--green);
+  margin-bottom: 4px;
+}
+
+.contrast-kpi-note {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.contrast-right {
+  padding: 28px 28px;
+}
+
+.contrast-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.contrast-header-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--red);
+}
+
+.contrast-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.contrast-body {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+.contrast-body strong { color: var(--text); font-weight: 600; }
+
+/* ── FLOWCHART (CICLO DE CLIMA) ── */
+.flow {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 8px;
+}
+
+.flow-step {
+  flex: 1;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* fundo colorido bem clarinho por tipo de etapa */
+.flow-step.pulse { background: var(--pink-soft); border-color: #F8C8DD; }
+.flow-step.clima { background: var(--blue-soft); border-color: #CFE0F5; }
+
+
+.flow-period {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.flow-tag {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.flow-step.pulse .flow-tag { background: var(--pink-soft); color: var(--pink); }
+.flow-step.clima .flow-tag { background: var(--blue-soft); color: var(--blue); }
+
+.flow-title {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 22px;
+  letter-spacing: -0.3px;
+  position: center;
+  color: var(--text);
+  line-height: 1.15;
+}
+
+.flow-desc {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.55;
+  position: center;
+}
+
+.flow-arrow {
+  flex: 0 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--border-strong);
+  font-weight: 700;
+}
+
+/* ── PAGE FOOTER NAV ── */
+.page-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.btn-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 24px;
+  border: none;
+  background: var(--text);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.18s, transform 0.18s;
+}
+
+.btn-next:hover { opacity: 0.88; transform: translateX(2px); }
+.btn-next .next-label { font-weight: 400; color: rgba(255,255,255,0.65); }
+
+/* ── FULLSCREEN BUTTON ── */
+.btn-fullscreen {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border-strong);
+  background: var(--white);
+  color: var(--text-2);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-fullscreen:hover { background: var(--bg); color: var(--text); border-color: var(--text-3); }
+
+/* ── ESTADO "APERTADO" DOS BOTÕES (rosa) ── */
+.btn-next:active,
+.btn-fullscreen:active {
+  background: var(--pink);
+  color: var(--white);
+  border-color: var(--pink);
+}
+
+/* ── PLANO EXECUTIVO (donos R/S nas ações) ── */
+.plan-item {
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.plan-item:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: none; }
+.plan-item p {
+  font-size: 14.5px;
+  color: var(--text-2);
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+.owners { display: flex; flex-wrap: wrap; gap: 6px; }
+.status {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.status-andamento { background: var(--yellow-soft); color: var(--yellow); }
+.status-planejado { background: #EBEBEA; color: var(--text-2); }
+.status-concluido { background: var(--green-soft); color: var(--green); }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .flow { flex-direction: column; }
+  .flow-arrow { transform: rotate(90deg); flex-basis: 28px; }
+  header, .nav-tabs { padding: 0 20px; }
+  .page { padding: 24px 20px 48px; }
+  .grid-2, .grid-3, .grid-4, .plan-cols { grid-template-columns: 1fr; }
+  .insight-grid { grid-template-columns: 1fr; }
+  .struct-risk-grid { grid-template-columns: 1fr; }
+  .contrast-card { grid-template-columns: 1fr; }
+  .contrast-left { border-right: none; border-bottom: 1px solid var(--border); }
+  .split-card { grid-template-columns: 1fr; }
+  .split-card-half:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+  .timeline { flex-direction: column; }
+  .timeline::before { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="logo">
+  <img src="https://yandeh.com/assets/yandeh-logo-DDlTLquC.svg" alt="Yandeh Logo">
+</div>
+  <div class="header-right">
+    <span class="header-badge">Pulse H1 2026</span>
+    <button class="btn-fullscreen" onclick="toggleFullscreen()">
+      <span id="fs-icon">⛶</span><span id="fs-label">Tela cheia</span>
+    </button>
+  </div>
+</header>
+
+<!-- NAV TABS -->
+<nav class="nav-tabs">
+  <div class="nav-tab active" onclick="showPage('contexto', this)">01 · Contexto</div>
+  <div class="nav-tab" onclick="showPage('snapshot', this)">02 · Metodologia</div>
+  <div class="nav-tab" onclick="showPage('forcas', this)">03 · Quantitativo</div>
+  <div class="nav-tab" onclick="showPage('qualitativo', this)">04 · Qualitativo</div>
+  <div class="nav-tab" onclick="showPage('plano', this)">05 · Plano</div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     PAGE 01 — CONTEXTO
+══════════════════════════════════════ -->
+<div id="page-contexto" class="page active">
+  <h1 class="page-title">Por que clima é <em>estratégico</em></h1>
+  <p class="page-sub">Pulse realizada de 09 a 16 de março de 2026, com foco em Alta Liderança, Desempenho, Comunicação e Pessoas e Cultura.</p>
+  
+  <!-- Versão reduzida do contexto -->
+  <div class="context-box">
+    <p>Crescimento, mudanças de estrutura e novas lideranças redefinem a forma como as pessoas vivenciam a organização.</p>
+    <p>Os resultados desta pesquisa oferecem uma visão clara sobre o que está fortalecendo a cultura da Yandeh e onde existem oportunidades para acelerar engajamento, retenção e desempenho coletivo.</p>
+  </div>
+
+  <div class="section-head" style="margin-top:32px;margin-bottom:14px;">
+    <h3>Como medimos clima ao longo do ano</h3>
+    <p>Três instrumentos complementares formam o ciclo anual de escuta da Yandeh.</p>
+  </div>
+  <div class="flow" style="margin-bottom:24px;">
+    <div class="flow-step pulse">
+      <div class="flow-period">1º Semestre · Março</div>
+      <span class="flow-tag">Pulse</span>
+      <div class="flow-title">Pulse H1</div>
+      <div class="flow-desc">Pesquisa rápida e com menor quantidade de dimensões. Contém sempre cerca de 10 perguntas.</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step clima">
+      <div class="flow-period">Meio do Ano · Julho</div>
+      <span class="flow-tag">Pesquisa de Clima</span>
+      <div class="flow-title">Clima Completo</div>
+      <div class="flow-desc">Diagnóstico aprofundado de toda a organização. Cerca de 35 perguntas, abordando 8 dimensões.</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step pulse">
+      <div class="flow-period">2º Semestre · Outubro</div>
+      <span class="flow-tag">Pulse</span>
+      <div class="flow-title">Pulse H2</div>
+      <div class="flow-desc">Nova leitura rápida que fecha o ciclo, acompanha a evolução e prepara o planejamento do ano seguinte, as perguntas e dimensões abordadas provem da Pesquisa de Clima.</div>
+    </div>
+  </div>
+  <div class="section-head" style="margin-top:32px;margin-bottom:14px;">
+    <h3>Contexto Organizacional</h3>
+  </div>
+
+  <div class="grid-3" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="stat-label" style="margin-bottom:10px;">Headcount recente</div>
+      <div style="font-family:'Rethink Sans',sans-serif;font-size:38px;line-height:1;">51%</div>
+      <div style="font-size:14px;color:var(--text-3);margin-top:6px;">dos elegíveis possuem menos de 1 ano de Yandeh.</div>
+    </div>
+    <div class="card">
+      <div class="stat-label" style="margin-bottom:10px;">Reestruturações de liderança</div>
+      <div style="font-family:'Rethink Sans',sans-serif;font-size:38px;line-height:1;">17</div>
+      <div style="font-size:14px;color:var(--text-3);margin-top:6px;">lideres que saíram da Yandeh em 2026. <br> Aproximadamente 80 movimentações de gestão.</div>
+    </div>
+    <div class="card">
+      <div class="stat-label" style="margin-bottom:10px;">Percentual de Turnover</div>
+      <div style="font-family:'Rethink Sans',sans-serif;font-size:38px;line-height:1;">19,3%</div>
+      <div style="font-size:14px;color:var(--text-3);margin-top:6px;">(De janeiro a maio) <br>O Turnover corporativo da Yandeh em 2026.</div>
+    </div>
+  </div>
+
+
+  <div class="page-nav">
+    <button class="btn-next" onclick="nextPage()"><span class="next-label">Próxima ·</span> Metodologia →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 02 — SNAPSHOT
+══════════════════════════════════════ -->
+<div id="page-snapshot" class="page">
+  <h1 class="page-title">Pulse H1 2026 - Metodologia</h1>
+  <p class="page-sub">Visão consolidada dos principais indicadores do ciclo, o que perguntamos e o que os números mostram.</p>
+
+ 
+  <div class="section-head" style="margin-top:18px;margin-bottom:6px;">
+    <h3>Como foi a metodologia da Pulse?</h3>
+    <p>9 perguntas separadas em 4 dimensões: perguntas de múltipla escolha e e-NPS que compõem os índices desta Pulse.</p>
+  </div>
+
+ <div class="wrapper">
+
+  <div class="block">
+    <div class="block-icon blue">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"/>
+        <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"/>
+        <path d="M9 12l.01 0"/><path d="M13 12l2 0"/><path d="M9 16l.01 0"/><path d="M13 16l2 0"/>
+      </svg>
+    </div>
+    <div class="block-title">Questionário quantitativo</div>
+    <div class="block-sub">9 perguntas em 4 dimensões, em escala de favorabilidade.</div>
+  </div>
+
+  <div class="flow-connector">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+      <path d="M12 5v14M5 12h14"/>
+    </svg>
+  </div>
+
+  <div class="block">
+    <div class="block-icon green">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 13a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"/>
+        <path d="M15 9a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"/>
+        <path d="M9 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"/>
+        <path d="M4 20h14"/>
+      </svg>
+    </div>
+    <div class="block-title">e-NPS</div>
+    <div class="block-sub">Mede o quanto os Yandecos recomendam a empresa.</div>
+  </div>
+
+  <div class="flow-connector">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+    <path d="M12 5v14M5 12h14"/>
+    </svg>
+  </div>
+
+  <div class="block">
+    <div class="block-icon purple">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/>
+        <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"/>
+      </svg>
+    </div>
+    <div class="block-title">Grupos focais</div>
+    <div class="block-sub">21 bate-papos para aprofundar os porquês dos números.</div>
+  </div>
+
+</div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="dim-tabs" id="dim-tabs">
+      <div class="dim-tab active" onclick="showDim('lideranca', this)">Alta Liderança</div>
+      <div class="dim-tab" onclick="showDim('desempenho', this)">Desempenho</div>
+      <div class="dim-tab" onclick="showDim('comunicacao', this)">Comunicação</div>
+      <div class="dim-tab" onclick="showDim('pessoas', this)">Pessoas e Cultura</div>
+    </div>
+    <div class="dim-panel active" id="dim-panel-lideranca">
+      <ul style="list-style:none;padding:0;">
+        <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--text-2);line-height:1.6;">Confio nas decisões e direcionamentos da liderança executiva (diretor, head, gerente executivo) da Yandeh.</li>
+        <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--text-2);line-height:1.6;">A liderança executiva (diretor, head, gerente executivo) da Yandeh é acessível aos colaboradores.</li>
+        <li style="padding:10px 0;font-size:15px;color:var(--text-2);line-height:1.6;">A liderança executiva (diretor, head, gerente executivo) da minha área apoia a equipe nas tomadas de decisão e soluções de problemas quando necessário.</li>
+      </ul>
+    </div>
+    <div class="dim-panel" id="dim-panel-desempenho">
+      <ul style="list-style:none;padding:0;">
+        <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--text-2);line-height:1.6;">Entendo como o meu trabalho impacta nas metas da Yandeh.</li>
+        <li style="padding:10px 0;font-size:15px;color:var(--text-2);line-height:1.6;">Entendo como acontece a Avaliação de Desempenho na Yandeh e como sou avaliado.</li>
+      </ul>
+    </div>
+    <div class="dim-panel" id="dim-panel-comunicacao">
+      <ul style="list-style:none;padding:0;">
+        <li style="padding:10px 0;font-size:15px;color:var(--text-2);line-height:1.6;">Os rituais da Yandeh, como YH Junto! e Summit, me ajudam a entender o posicionamento da empresa e quais são os próximos passos.</li>
+      </ul>
+    </div>
+    <div class="dim-panel" id="dim-panel-pessoas">
+      <ul style="list-style:none;padding:0;">
+        <li style="padding:10px 0;font-size:15px;color:var(--text-2);line-height:1.6;">O time de Pessoas & Cultura fornece orientações claras, apoia nas demandas do dia a dia e atua com iniciativa na condução dos temas.</li>
+      </ul>
+    </div>
+  </div>
+
+      <div class="context-box" style="margin-bottom:20px;">
+       <div class="section-head" style="color: var(--text);
+  font-weight: 700;
+  font-size: 18px; ">
+        <p>e-NPS</p></div>
+    <p>Eu indico a Yandeh como um bom lugar para se trabalhar.</p>
+    <p>Score e-NPS = %promotores - %detratores</p>
+  </div>
+
+    <div class="context-box" style="margin-bottom:20px;">
+       <div class="section-head" style="color: var(--text);
+  font-weight: 700;
+  font-size: 18px; ">
+        <p>Focus Group</p></div>
+    <p>Além da pesquisa, foram realizados 21 bate-papos, englobando todos os Yandecos das áreas. O objetivo foi entender em profundidade a queda nos pontos de e-NPS e mapear a dimensão mais crítica e a mais forte apontadas pela pesquisa.</p>
+    <p>Os resultados foram compartilhados previamente com todas as lideranças, em um bate-papo inicial sobre os possíveis fatores que influenciaram as respostas dos times.</p>
+  </div>
+
+   <div class="section-head">
+     <h3 style="font-size: 30px;">Overview Quantitativo</h3>
+    </div>
+
+  <div class="grid-3" style="margin-bottom:20px;">
+    <div class="stat-card">
+      <div class="stat-label">e-NPS Geral</div>
+      <div class="stat-value" style="color:var(--text);">43,3</div>
+      <div class="stat-delta delta-down">▼ 5,8 pts vs 2025 (era 49,1)</div>
+      <div class="stat-desc">59% promotores, 15% detratores. Queda moderada mas consistente.</div>
+      <div class="microinsight">Número ainda saudável <br><span style="font-size:11px;opacity:0.8;">(Fonte: SurveyMonkey, pesquisa de 2025).</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Favorabilidade Geral</div>
+      <div class="stat-value">86%</div>
+      <div class="stat-delta delta-up">▲ Alta Liderança com maior ganho</div>
+      <div class="stat-desc">"Desempenho" foi a dimensão com maior favorabilidade.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Participação</div>
+      <div class="stat-value">75%</div>
+      <div class="stat-delta delta-up">▲ +12 p.p. vs Pulse anterior (era 63%)</div>
+      <div class="stat-desc">208 respondentes.<br> Maior adesão gera dados mais representativos.</div>
+    </div>
+  </div>
+
+ <div class="section-head">
+  <h3>Participação por Área</h3></div>
+  <div class="card">
+    <div class="part-row">
+      <div class="part-name">Business Solutions</div>
+      <div class="part-pct">100%</div>
+      <div class="part-bar"><div class="part-bar-fill" style="width:100%"></div></div>
+      <div class="part-nums">13 respondentes</div>
+    </div>
+    <div class="part-row">
+      <div class="part-name">Finanças</div>
+      <div class="part-pct">100%</div>
+      <div class="part-bar"><div class="part-bar-fill" style="width:100%"></div></div>
+      <div class="part-nums">14 respondentes</div>
+    </div>
+    <div class="part-row">
+      <div class="part-name">Pessoas e Cultura</div>
+      <div class="part-pct">100%</div>
+      <div class="part-bar"><div class="part-bar-fill" style="width:100%"></div></div>
+      <div class="part-nums">9 respondentes</div>
+    </div>
+    <div class="part-row">
+      <div class="part-name">Abasteceshop</div>
+      <div class="part-pct">89%</div>
+      <div class="part-bar"><div class="part-bar-fill" style="width:89%"></div></div>
+      <div class="part-nums">34 de 38 respondentes</div>
+    </div>
+    <div class="part-row">
+      <div class="part-name">Girotrade</div>
+      <div class="part-pct">78%</div>
+      <div class="part-bar"><div class="part-bar-fill" style="width:78%"></div></div>
+      <div class="part-nums">26 de 33 respondentes</div>
+    </div>
+    <div class="part-row">
+      <div class="part-name">Girotrade CD</div>
+      <div class="part-pct">69%</div>
+      <div class="part-bar"><div class="part-bar-fill" style="width:69%"></div></div>
+      <div class="part-nums">50 de 72 respondentes</div>
+    </div>
+    <div class="part-row">
+      <div class="part-name">Tech Solutions</div>
+      <div class="part-pct" >66%</div>
+      <div class="part-bar"><div class="part-bar-fill" style="width:66%"></div></div>
+      <div class="part-nums">62 de 93 respondentes</div>
+    </div>
+  </div>
+
+
+  <div class="section-head" style="margin-top:20px;">
+    <h3>Favorabilidade por Dimensão</h3><p>Comparativo 2026 vs 2025</p></div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="pulse-table">
+      <thead>
+        <tr>
+          <th>Dimensão</th>
+          <th>2026</th>
+          <th>2025</th>
+          <th>Variação</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="area-name">Alta Liderança</td>
+          <td><span class="cell-score fav">86%</span></td>
+          <td class="cell-prev">77%</td>
+          <td><span class="cell-arrow up">▲ +9 p.p.</span></td>
+          <td><span class="badge badge-blue">Favorável</span></td>
+        </tr>
+        <tr>
+          <td class="area-name">Desempenho</td>
+          <td><span class="cell-score very-fav">92%</span></td>
+          <td class="cell-prev">-</td>
+          <td><span class="cell-arrow neutral" style="color:var(--text-3)">Sem comparativo</span></td>
+          <td><span class="badge badge-green">Muito favorável</span></td>
+        </tr>
+        <tr>
+          <td class="area-name">Comunicação</td>
+          <td><span class="cell-score fav">89%</span></td>
+          <td class="cell-prev">-</td>
+          <td><span class="cell-arrow neutral" style="color:var(--text-3)">Sem comparativo</span></td>
+          <td><span class="badge badge-blue">Favorável</span></td>
+        </tr>
+        <tr>
+          <td class="area-name">Pessoas e Cultura</td>
+          <td><span class="cell-score fav">79%</span></td>
+          <td class="cell-prev">77%</td>
+          <td><span class="cell-arrow up">▲ +2 p.p.</span></td>
+          <td><span class="badge badge-yellow">Atenção</span></td>
+        </tr>
+      </tbody>
+    </table>    
+    <div style="margin-top:12px;font-size:13px;color:var(--text-3);display:flex;gap:16px;flex-wrap:wrap;">
+      <span>🟢 Acima de 90%, muito favorável</span>
+      <span>🔵 75 a 89%, favorável</span>
+      <span>🔴 Abaixo de 75%, desfavorável</span>
+    </div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn-next" onclick="nextPage()"><span class="next-label">Próxima ·</span> Quantitativo →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 03 — QUANTITATIVO
+══════════════════════════════════════ -->
+<div id="page-forcas" class="page">
+  <h1 class="page-title">Resultados <em>quantitativos</em></h1>
+  <p class="page-sub">Resultados acima da média em dimensões-chave, com pontos fortes a preservar. Ainda assim, o e-NPS recua apesar da alta favorabilidade.</p>
+
+  <div class="grid-3" style="margin-bottom:16px;">
+    <div class="risk-card monitor" style="border-top-color:var(--green)">
+      <div class="risk-title">Alta Liderança, 86%</div>
+      <div class="risk-metric">Maior ganho do ciclo - +9 p.p. vs 2025 · </div>
+      <div class="risk-desc">Confiança nas decisões estratégicas cresceu expressivamente. Alta liderança percebida como acessível e decisiva.</div>
+    </div>
+    <div class="risk-card monitor" style="border-top-color:var(--green)">
+      <div class="risk-title">Desempenho, 92%</div>
+      <div class="risk-metric">Dimensão mais forte - Acima de 90%</div>
+      <div class="risk-desc">Yandecos entendem como seu trabalho impacta as metas da Yandeh.</div>
+    </div>
+    <div class="risk-card monitor" style="border-top-color:var(--green)">
+      <div class="risk-title">Comunicação, 89%</div>
+      <div class="risk-metric">Rituais bem avaliados por todos os times</div>
+      <div class="risk-desc">YH Junto! e Summit funcionam como âncoras de alinhamento estratégico. Yandecos se sentem conectados ao posicionamento da empresa.</div>
+    </div>
+  </div>
+
+  <div class="section-head" style="margin-top:20px;"><h3>e-NPS: Você indicaria a Yandeh como um bom lugar para trabalhar?</h3></div>
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;font-size:13px;color:var(--text-3);">
+      <span>e-NPS por Área, Comparativo</span>
+      <div style="display:flex;gap:12px;margin-left:auto;">
+        <span><span style="display:inline-block;width:8px;height:8px;border-radius:1px;background:var(--green);margin-right:4px;"></span>Promotores</span>
+        <span><span style="display:inline-block;width:8px;height:8px;border-radius:1px;background:#E0E0DC;margin-right:4px;"></span>Neutros</span>
+        <span><span style="display:inline-block;width:8px;height:8px;border-radius:1px;background:var(--red);margin-right:4px;"></span>Detratores</span>
+      </div>
+    </div>
+    <div class="enps-row">
+      <div class="enps-name" style="font-weight:600;">Yandeh</div>
+      <div class="enps-score">43,3</div>
+      <div class="enps-segments"><div class="seg-p" style="width:59%"></div><div class="seg-n" style="width:26%"></div><div class="seg-d" style="width:15%"></div></div>
+      <div class="enps-prev">▼ 5,8 pts</div>
+      <div class="enps-tooltip">
+        <div class="enps-tt-head">208 respondentes</div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#1A7840"></span>Promotores<span class="enps-tt-num">123</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#E0E0DC"></span>Neutros<span class="enps-tt-num">54</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#C42020"></span>Detratores<span class="enps-tt-num">31</span></div>
+      </div>
+    </div>
+    <div class="enps-row">
+      <div class="enps-name">P&C</div>
+      <div class="enps-score" style="color:var(--green)">89</div>
+      <div class="enps-segments"><div class="seg-p" style="width:89%"></div><div class="seg-n" style="width:11%"></div><div class="seg-d" style="width:0%"></div></div>
+      <div class="enps-prev">▲ +18 pts</div>
+      <div class="enps-tooltip">
+        <div class="enps-tt-head">9 respondentes</div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#1A7840"></span>Promotores<span class="enps-tt-num">8</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#E0E0DC"></span>Neutros<span class="enps-tt-num">1</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#C42020"></span>Detratores<span class="enps-tt-num">0</span></div>
+      </div>
+    </div>
+    <div class="enps-row">
+      <div class="enps-name">Tech Solutions</div>
+      <div class="enps-score" style="color:var(--green)">58</div>
+      <div class="enps-segments"><div class="seg-p" style="width:64%"></div><div class="seg-n" style="width:30%"></div><div class="seg-d" style="width:6%"></div></div>
+      <div class="enps-prev">▼ -2 pts</div>
+      <div class="enps-tooltip">
+        <div class="enps-tt-head">62 respondentes</div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#1A7840"></span>Promotores<span class="enps-tt-num">40</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#E0E0DC"></span>Neutros<span class="enps-tt-num">18</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#C42020"></span>Detratores<span class="enps-tt-num">4</span></div>
+      </div>
+    </div>
+    <div class="enps-row">
+      <div class="enps-name">Abasteceshop</div>
+      <div class="enps-score" style="color:var(--green)">56</div>
+      <div class="enps-segments"><div class="seg-p" style="width:65%"></div><div class="seg-n" style="width:26%"></div><div class="seg-d" style="width:9%"></div></div>
+      <div class="enps-prev">▲ +3 pts</div>
+      <div class="enps-tooltip">
+        <div class="enps-tt-head">34 respondentes</div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#1A7840"></span>Promotores<span class="enps-tt-num">22</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#E0E0DC"></span>Neutros<span class="enps-tt-num">9</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#C42020"></span>Detratores<span class="enps-tt-num">3</span></div>
+      </div>
+    </div>
+    <div class="enps-row">
+      <div class="enps-name">Finanças</div>
+      <div class="enps-score" style="color:var(--yellow)">29</div>
+      <div class="enps-segments"><div class="seg-p" style="width:50%"></div><div class="seg-n" style="width:29%"></div><div class="seg-d" style="width:21%"></div></div>
+      <div class="enps-prev">▲ +16 pts</div>
+      <div class="enps-tooltip">
+        <div class="enps-tt-head">14 respondentes</div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#1A7840"></span>Promotores<span class="enps-tt-num">7</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#E0E0DC"></span>Neutros<span class="enps-tt-num">4</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#C42020"></span>Detratores<span class="enps-tt-num">3</span></div>
+      </div>
+    </div>
+    <div class="enps-row">
+      <div class="enps-name">Girotrade</div>
+      <div class="enps-score" style="color:var(--yellow)">31</div>
+      <div class="enps-segments"><div class="seg-p" style="width:58%"></div><div class="seg-n" style="width:15%"></div><div class="seg-d" style="width:27%"></div></div>
+      <div class="enps-prev">▼ -19 pts</div>
+      <div class="enps-tooltip">
+        <div class="enps-tt-head">26 respondentes</div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#1A7840"></span>Promotores<span class="enps-tt-num">15</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#E0E0DC"></span>Neutros<span class="enps-tt-num">4</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#C42020"></span>Detratores<span class="enps-tt-num">7</span></div>
+      </div>
+    </div>
+    <div class="enps-row">
+      <div class="enps-name">Girotrade CD</div>
+      <div class="enps-score" style="color:var(--yellow)">30</div>
+      <div class="enps-segments"><div class="seg-p" style="width:54%"></div><div class="seg-n" style="width:22%"></div><div class="seg-d" style="width:24%"></div></div>
+      <div class="enps-prev">▼ -3 pts</div>
+      <div class="enps-tooltip">
+        <div class="enps-tt-head">50 respondentes</div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#1A7840"></span>Promotores<span class="enps-tt-num">27</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#E0E0DC"></span>Neutros<span class="enps-tt-num">11</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#C42020"></span>Detratores<span class="enps-tt-num">12</span></div>
+      </div>
+    </div>
+    <div class="enps-row">
+      <div class="enps-name">Business Solutions</div>
+      <div class="enps-score" style="color:var(--red)">8</div>
+      <div class="enps-segments"><div class="seg-p" style="width:31%"></div><div class="seg-n" style="width:46%"></div><div class="seg-d" style="width:23%"></div></div>
+      <div class="enps-prev">▼ -23 pts</div>
+      <div class="enps-tooltip">
+        <div class="enps-tt-head">13 respondentes</div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#1A7840"></span>Promotores<span class="enps-tt-num">4</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#E0E0DC"></span>Neutros<span class="enps-tt-num">6</span></div>
+        <div class="enps-tt-line"><span class="enps-tt-dot" style="background:#C42020"></span>Detratores<span class="enps-tt-num">3</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn-next" onclick="nextPage()"><span class="next-label">Próxima ·</span> Qualitativo →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 04 — QUALITATIVO
+══════════════════════════════════════ -->
+<div id="page-qualitativo" class="page">
+  <h1 class="page-title">Insights <em>qualitativos</em></h1>
+  <p class="page-sub">Bate-papos realizados com todas as áreas após a Pulse para aprofundar percepções dos yandecos.</p>
+
+ <!-- ── PADRÕES TRANSVERSAIS ── -->
+
+<div class="section-divider" style="margin-top:0;">
+  <div class="section-label">Leitura Organizacional</div>
+  <h2>5 pontos de melhoria que se repetem <em>entre as áreas</em></h2>
+  <p>Os números mostram percepções pontuais. O qualitativo revela temas estruturais de forma mais aprofundada.</p>
+</div>
+
+<div class="insight-grid" style="grid-column: span 1;">
+
+  <div class="insight-card">
+    <div class="insight-number">01</div>
+    <div class="insight-title">Comunicação e Desdobramento Estratégico</div>
+
+
+<div class="insight-body">
+  <span class="insight-lead">A estratégia não chega traduzida ao dia a dia.</span>
+  A dor não é ausência de comunicação, e sim a clareza sobre decisões e mudanças. Falta reforçar o contexto por trás das mensagens e os próximos passos esperados de cada time.
+</div>
+
+<div class="insight-tags">
+  <span class="insight-tag">Todas as B.U.s</span>
+</div>
+  </div>
+  <div class="insight-card">
+<div class="insight-number">02</div>
+<div class="insight-title">Gestão e Priorização</div>
+
+<div class="insight-body">
+  <span class="insight-lead">Prioridades mudam rápido e geram retrabalho.</span>
+  Mudanças frequentes de direção e baixa previsibilidade levam à sobrecarga e a uma atuação reativa, que reduz o planejamento e a execução consistente.
+</div>
+
+<div class="insight-tags">
+  <span class="insight-tag">Foco em Tech Solutions</span>
+</div>
+
+
+  </div>
+
+  <div class="insight-card">
+
+
+<div class="insight-number">03</div>
+<div class="insight-title">Conexão com a Alta Liderança</div>
+
+<div class="insight-body">
+  <span class="insight-lead">A liderança direta é bem avaliada; a alta liderança é percebida como distante.</span>
+  O gap está entre as decisões executivas e o dia a dia dos times. Falta presença, visibilidade das decisões e alinhamento entre os níveis de liderança.
+</div>
+
+<div class="insight-tags">
+  <span class="insight-tag">Foco em Tech Solutions</span>
+</div>
+
+
+  </div>
+
+  <div class="insight-card">
+
+<div class="insight-number">04</div>
+<div class="insight-title">Desenvolvimento</div>
+
+<div class="insight-body">
+  <span class="insight-lead">O problema não é a avaliação, é a devolutiva.</span>
+  O modelo é claro, mas chega de forma desigual: dúvidas sobre critérios, pouca percepção de evolução e ausência de feedback estruturado voltado ao desenvolvimento.
+</div>
+
+<div class="insight-tags">
+  <span class="insight-tag">Todas as B.U.s</span>
+</div>
+
+  </div>
+
+  <div class="insight-card">
+<div class="insight-number">05</div>
+<div class="insight-title">Integração e Colaboração entre Áreas</div>
+
+<div class="insight-body">
+  <span class="insight-lead">As áreas operam em silos, com pouca visibilidade entre si.</span>
+  A baixa circulação de informação sobre prioridades das outras áreas gera retrabalho, menos colaboração e perda de eficiência nos resultados coletivos.
+</div>
+
+<div class="insight-tags">
+  <span class="insight-tag">Foco em Tech Solutions</span>
+</div>
+
+
+  </div>
+
+</div>
+
+
+  <div class="page-nav">
+    <button class="btn-next" onclick="nextPage()"><span class="next-label">Próxima ·</span> Plano →</button>
+  </div>
+</div>
+<!-- ══════════════════════════════════════
+     PAGE 05 — PLANO
+══════════════════════════════════════ -->
+<div id="page-plano" class="page">
+  <h1 class="page-title">Plano de Ação <em>e Governança</em></h1>
+  <p class="page-sub">Meta: aumentar +5 a +8 p.p. na Pesquisa de Clima (próximo ciclo, julho 2026).</p>
+
+  <!-- ── PLANOS TEMÁTICOS ── -->
+  <div class="section-divider" style="margin-top:0;">
+    <div class="section-label">Ações Prioritárias</div>
+    <h2>Seis frentes de trabalho <em>para o próximo ciclo</em></h2>
+    <p>Cada frente conecta a uma dor do qualitativo. O status indica o andamento de cada ação.</p>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:36px;">
+    <div class="action-block">
+      <h4>01 · Comunicação <span style="font-weight:400;color:var(--text-3);font-size:13px;margin-left:6px;">Dor transversal · Todas as áreas</span></h4>
+      <div class="plan-item">
+        <p>Estruturar protocolo institucional para comunicação de mudanças organizacionais relevantes.</p>
+        <div class="owners"><span class="status status-andamento">Em andamento</span></div>
+      </div>
+      <div class="plan-item">
+        <p>Cascatear estratégia do fechamento do mês de forma mais estruturada, com foco nos próximos passos.</p>
+        <div class="owners"><span class="status status-andamento">Em andamento</span></div>
+      </div>
+    </div>
+
+    <div class="action-block">
+      <h4>02 · AVD e ciclo de pessoas <span style="font-weight:400;color:var(--text-3);font-size:13px;margin-left:6px;">Carreira e devolutiva</span></h4>
+      <div class="plan-item">
+        <p>Campanha de comunicação e treinamento sobre AVD antes do próximo ciclo.</p>
+        <div class="owners"><span class="status status-planejado">Planejado</span></div>
+      </div>
+      <div class="plan-item">
+        <p>Ampliar modelos de devolutiva de AVD e ferramentas para realização de ciclos de feedback.</p>
+        <div class="owners"><span class="status status-planejado">Planejado</span></div>
+      </div>
+      <div class="plan-item">
+        <p>Consolidar PDI como principal instrumento para plano de carreira, ampliando insturmentos de como cria-lo para fortalecer o desenvolvimento profissional individual.</p>
+        <div class="owners"><span class="status status-planejado">Planejado</span></div>
+      </div>
+    </div>
+
+    <div class="action-block">
+      <h4>03 · Sinergia entre áreas <span style="font-weight:400;color:var(--text-3);font-size:13px;margin-left:6px;">Silos e colaboração</span></h4>
+      <div class="plan-item">
+        <p>Aumentar clareza sobre papéis, responsabilidades e interfaces entre áreas por meio de um mapa de áreas.</p>
+        <div class="owners"><span class="status status-andamento">Em andamento</span></div>
+      </div>
+    </div>
+
+    <div class="action-block">
+      <h4>04 · Evolução das trilhas de Treinamento <span style="font-weight:400;color:var(--text-3);font-size:13px;margin-left:6px;">Programas de desenvolvimento</span></h4>
+      <div class="plan-item">
+        <p><strong>Tech Journey</strong> — programa de desenvolvimento para Tech, reformulado para 2026.</p>
+        <div class="owners"><span class="status status-andamento">Em andamento</span></div>
+      </div>
+      <div class="plan-item">
+        <p><strong>Jornada de Vendas</strong> — programa de desenvolvimento para a B.U. de Vendas, reformulado para 2026.</p>
+        <div class="owners"><span class="status status-andamento">Em andamento</span></div>
+      </div>
+      <div class="plan-item">
+        <p><strong>Impulsionar</strong> — redefinido e organizado por área, com diagnósticos e multiplicadores internos.</p>
+        <div class="owners"><span class="status status-andamento">Em andamento</span></div>
+      </div>
+     <div class="plan-item">
+        <p><strong>Lider Y</strong> — reestruturação do programade lideranças, com foco em cascateamento estratégico e fortalcimento dos papéis de liderança</p>
+        <div class="owners"><span class="status status-andamento">Em andamento</span></div>
+      </div>
+            <div class="plan-item">
+        <p><strong>Key Talents</strong> — foco em retenção e valorização de talentos, programa com foco em engajamento de pessoas chave para a Yandeh.</p>
+        <div class="owners"><span class="status status-andamento">Em andamento</span></div>
+      </div>
+    </div>
+
+    <div class="action-block">
+      <h4>05 · Detratores e riscos de engajamento <span style="font-weight:400;color:var(--text-3);font-size:13px;margin-left:6px;">e-NPS em queda</span></h4>
+      <div class="plan-item">
+        <p>Estruturar rituais de escuta e acompanhamento para antecipar riscos de desengajamento e apoiar planos de ação direcionados a yandecos pouco engajados.</p>
+        <div class="owners"><span class="status status-andamento">Em andamento</span></div>
+      </div>
+    </div>
+
+    <div class="action-block" style="border-left:3px solid var(--blue);">
+      <h4>06 · Ponto de atenção: Tech Solutions <span style="font-weight:400;color:var(--text-3);font-size:13px;margin-left:6px;">Clareza, sobrecarga e liderança</span></h4>
+      <div class="plan-item">
+        <p>Fortalecer e reimplementar rituais de sinergia entre áreas (All Hands).</p>
+        <div class="owners"><span class="status status-andamento">Em andamento</span></div>
+      </div>
+      <div class="plan-item">
+        <p>Definir metodologia prática   de priorização e gestão do fluxo de trabalho para reduzir sobrecarga e aumentar foco.</p>
+        <div class="owners"><span class="status status-planejado">Planejado</span></div>
+      </div>
+      <div class="plan-item">
+        <p>Envolver e desenvolver a alta liderança (Weslley e Bueno) como símbolos de liderança de Tech Solutions.</p>
+        <div class="owners"><span class="status status-planejado">Planejado</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showPage(id, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showDim(id, el) {
+  el.parentElement.querySelectorAll('.dim-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('[id^="dim-panel-"]').forEach(p => p.classList.remove('active'));
+  document.getElementById('dim-panel-' + id).classList.add('active');
+}
+
+function toggleAccordion(el) {
+  el.classList.toggle('open');
+}
+
+function nextPage() {
+  const tabs = Array.from(document.querySelectorAll('.nav-tab'));
+  const current = tabs.findIndex(t => t.classList.contains('active'));
+  if (current > -1 && current < tabs.length - 1) {
+    tabs[current + 1].click();
+  }
+}
+
+function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(() => {});
+  } else {
+    document.exitFullscreen();
+  }
+}
+
+document.addEventListener('fullscreenchange', () => {
+  const label = document.getElementById('fs-label');
+  const icon = document.getElementById('fs-icon');
+  if (document.fullscreenElement) {
+    label.textContent = 'Sair';
+    icon.textContent = '⛶';
+  } else {
+    label.textContent = 'Tela cheia';
+    icon.textContent = '⛶';
+  }
+});
+</script>
+</body>
+</html>
