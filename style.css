@@ -1454,3 +1454,36 @@ main { margin-top: var(--nav-h); }
   width: 70px;
   height: 70px;
 }
+
+  .btn-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.btn-fullscreen {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--accent2);
+  background: var(--white);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-fullscreen:hover { background: var(--bg); color: var(--text); border-color: var(--accent2); }
+
+/* ── ESTADO "APERTADO" DOS BOTÕES (rosa) ── */
+.btn-next:active,
+.btn-fullscreen:active {
+  background: var(--medio-bg);
+  color: var(--bg);
+  border-color: var(--accent2);
+}
