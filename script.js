@@ -1122,7 +1122,8 @@ document.getElementById("planoGrid").innerHTML = buildPlano();
 // ─── Datas ──────────────────────────────────────────────────
 const ds = new Date().toLocaleDateString("pt-BR",{year:"numeric",month:"long"}).toUpperCase();
 document.getElementById("capaDate").textContent   = ds;
-document.getElementById("footerDate").textContent = ds;
+const footerDateEl = document.getElementById("footerDate");
+if (footerDateEl) footerDateEl.textContent = ds;
 
 // ─── Tela Cheia ──────────────────────────────────────────────────
 
