@@ -9,7 +9,7 @@ const talentos = [
     risco:"Baixo",        
     impacto:"Alto",  
     tempoCasa:"1 ano e 3 meses",  
-    foto:"fotos/Gabriel.jpeg",
+    foto:"Fotos/Gabriel.jpeg",
     motivoImpacto:"Possui forte influência sobre uma equipe numerosa, amplo conhecimento do contexto organizacional e elevada credibilidade junto ao time, que demonstra confiança e aderência à sua liderança. Sua eventual saída geraria impacto significativo na continuidade da operação, no engajamento da equipe e na retenção do conhecimento do negócio.",
     motivoRisco:"O colaborador demonstra alto nível de engajamento e abertura na relação com a liderança e com os Business Partners, sinalizando desconfortos e insatisfações de forma transparente quando necessário. Até o momento, não apresenta indícios de desengajamento ou intenção de desligamento, reduzindo o risco de uma saída não antecipada.",
     resumoImpacto:"Forte influência sobre equipe numerosa; saída impacta operação e retenção de conhecimento.",
@@ -76,9 +76,9 @@ posicao9box:{ col:1, row:0 } },
     impacto:"Alto",  
     tempoCasa:"3 anos e 5 meses",  
     foto:"fotos/Jack.jpeg",
-    motivoImpacto:"Profissional reconhecido como referência técnica, especialmente em temas de Inteligência Artificial, com forte influência nas discussões estratégicas e relacionamento direto com a alta liderança. Possui elevada exposição na organização e lidera uma equipe numerosa e altamente engajada. Sua eventual saída representaria uma perda significativa de conhecimento crítico, capacidade de inovação e estabilidade da equipe.",
+    motivoImpacto:"Profissional reconhecido como referência técnica, especialmente em temas relacionados à Inteligência Artificial, com forte influência nas discussões estratégicas e relacionamento direto com a alta liderança. Possui elevada exposição na organização e lidera uma equipe numerosa e altamente engajada. Sua eventual saída representaria uma perda significativa de conhecimento crítico, capacidade de inovação e estabilidade da equipe.",
     motivoRisco:"O colaborador informou ter recebido uma proposta externa e, em função de sua alta atratividade no mercado, foi estruturada uma alternativa de modelo de trabalho internamente como ação de retenção. Apesar do movimento ter contribuído para sua permanência, ele continua sendo um profissional frequentemente assediado pelo mercado, o que mantém o risco de saída em um patamar elevado e demanda acompanhamento contínuo.",
-    resumoImpacto:"Referência técnica em IA e influência estratégica; saída representa perda crítica de capacidade.",
+    resumoImpacto:"Referência técnica e influência estratégica; saída representa perda crítica de capacidade.",
     resumoRisco:"Recebeu proposta externa; permanece por ação de retenção, mas segue sendo assediado pelo mercado.",
     gestor:"Weslley Figueiredo", 
     posicaoFaixa:78, 
@@ -183,14 +183,14 @@ posicao9box:{ col:2, row:0 } },
     area:"Tech Solutions",      
     produto:"Relacionamento com Cliente Externo",
     subproduto:["Cliente Externo"],        
-    risco:"Baixo",         
+    risco:"Médio",         
     impacto:"Médio", 
     tempoCasa:"4 anos e 4 meses",  
     foto:"fotos/Luana.jpeg",
     motivoImpacto:"Embora seja responsável por uma área relevante e detenha conhecimento importante dos processos sob sua gestão, a operação apresenta menor risco de descontinuidade devido à proximidade da liderança e à existência de um coordenador preparado para oferecer suporte e garantir a continuidade das atividades. Dessa forma, uma eventual saída seria gerenciável sob a perspectiva operacional.",
-    motivoRisco:"A colaboradora possui uma longa trajetória na empresa, construiu uma carreira sólida internamente e recentemente passou por importantes marcos profissionais e pessoais, incluindo uma promoção, a ampliação de seu escopo com a incorporação de um novo time e o retorno da licença maternidade. Esses fatores indicam um elevado nível de vínculo e reconhecimento, reduzindo o risco de desligamento no curto prazo.",
+    motivoRisco:"A colaboradora possui uma longa trajetória na empresa, construiu uma carreira sólida internamente e recentemente passou por importantes marcos profissionais e pessoais, incluindo uma promoção, a ampliação de seu escopo com a incorporação de um novo time e o retorno da licença maternidade. Esses fatores indicam um elevado nível de vínculo e reconhecimento, reduzindo o risco de desligamento no curto prazo. No entanto, o modelo de trabalho atual tem impactado negativamente seu bem-estar e seu equilíbrio entre vida pessoal e profissional, configurando um ponto de atenção que pode influenciar sua satisfação e engajamento.",
     resumoImpacto:"Processos bem documentados; impacto de saída gerenciável com suporte do coordenador.",
-    resumoRisco:"Longa trajetória, promoção e retorno da licença maternidade reforçam vínculos.",
+    resumoRisco:"Longa trajetória, promoção e retorno da licença maternidade reforçam vínculos, porém modelo de trabalho pode afetar o bem estar.",
     gestor:"Rafael Prado", 
     posicaoFaixa: "76", 
     ultimoReajuste:"H1/2026", 
@@ -457,13 +457,10 @@ highlightTab();
 // ─── CONTEXTO ───────────────────────────────────────────────
 document.getElementById("kCtxTal").textContent  = TOTAL;
 document.getElementById("kCtxAlto").textContent = riscoAlto;
-document.getElementById("kCtxSuc").textContent  = "0%";
 document.getElementById("lgCtxTal").textContent =
   `${TOTAL} de ${TOTAL_AVD} participantes da AVD, representa ${Math.round((TOTAL/TOTAL_AVD)*100)}% dos avaliados`;
 document.getElementById("lgCtxAlto").textContent =
   `${pct(riscoAlto, TOTAL)} dos talentos estratégicos, pois não possuimos talentos com risco alto.`;
-document.getElementById("lgCtxSuc").textContent =
-  "Projeto de planejamento sucessório já em andamento";
   const techTalentos = talentos.filter(t => t.area === "Tech Solutions").length;
 document.getElementById("kCtxTech").textContent  = Math.round((techTalentos/TOTAL)*100) + "%";
 document.getElementById("lgCtxTech").textContent = techTalentos + " de " + TOTAL + " talentos alocados em Tech Solutions";
@@ -475,9 +472,13 @@ document.getElementById("lgCtxTurnover").textContent = desligados.length + " des
 // ─── TALENTOS ───────────────────────────────────────────────
 document.getElementById("ttlTalentos").textContent = `${TOTAL} Talentos Mapeados`;
 
+// Para cada nível: id do card + título que aparece no topo do modal.
+// Edite o "titulo" à mão como quiser — não há mais fórmula que acrescenta "es".
 const nivelMap = {
-  "Head":"head", "Gerente":"gerente",
-  "Coordenador":"coordenador", "Não Liderança":"nao-lideranca"
+  "Head":          { id:"head",          titulo:"Heads" },
+  "Gerente":       { id:"gerente",       titulo:"Gerentes" },
+  "Coordenador":   { id:"coordenador",   titulo:"Coordenadores" },
+  "Não Liderança": { id:"nao-lideranca", titulo:"Não Liderança" }
 };
 
 function nineBoxPosition(dg, vg) {
@@ -647,7 +648,7 @@ function personCardHTML(t) {
     </div>`;
 }
 
-Object.entries(nivelMap).forEach(([nivel, id]) => {
+Object.entries(nivelMap).forEach(([nivel, { id, titulo }]) => {
   const grupo = talentos.filter(t=>t.nivel===nivel);
   const card  = document.getElementById("card-"+id);
   if (!card) return;
@@ -660,7 +661,7 @@ Object.entries(nivelMap).forEach(([nivel, id]) => {
     card.classList.add("open");
     openModal(`
       <div class="modal-header">
-        <span class="modal-title">${nivel}es — ${grupo.length} talento${grupo.length>1?"s":""}</span>
+        <span class="modal-title">${titulo} — ${grupo.length} talento${grupo.length>1?"s":""}</span>
         <button class="modal-close" onclick="closeModal()">×</button>
       </div>
       <div class="modal-cards-wrap"><div class="modal-cards">${grupo.map(personCardHTML).join("")}</div></div>
@@ -841,7 +842,7 @@ openModal(
     '</div>' +
     '<button class="modal-close" onclick="closeModal()">×</button>' +
   '</div>' +
-  '<p class="modal-subtitle">'+grupo.length+' responsável'+(grupo.length>1?'is':'')+'</p>' +
+  '<p class="modal-subtitle">'+grupo.length+' '+(grupo.length>1?'responsáveis':'responsável')+'</p>' +
   '<div class="pp-grid">'+cards+'</div>'
 );
 }
