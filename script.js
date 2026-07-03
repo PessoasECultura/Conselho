@@ -1122,3 +1122,35 @@ document.getElementById("planoGrid").innerHTML = buildPlano();
 const ds = new Date().toLocaleDateString("pt-BR",{year:"numeric",month:"long"}).toUpperCase();
 document.getElementById("capaDate").textContent   = ds;
 document.getElementById("footerDate").textContent = ds;
+
+// ─── Tela Cheia ──────────────────────────────────────────────────
+
+function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(() => {});
+  } else {
+    document.exitFullscreen();
+  }
+}
+
+document.addEventListener('fullscreenchange', () => {
+  const label = document.getElementById('fs-label');
+  const icon = document.getElementById('fs-icon');
+  if (document.fullscreenElement) {
+    label.textContent = 'Sair';
+    icon.textContent = '⛶';
+  } else {
+    label.textContent = 'Tela cheia';
+    icon.textContent = '⛶';
+  }
+});
+
+const btn = document.getElementById('fs-btn');
+
+btn.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+});
