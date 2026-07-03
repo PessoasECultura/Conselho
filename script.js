@@ -9,7 +9,7 @@ const talentos = [
     risco:"Baixo",        
     impacto:"Alto",  
     tempoCasa:"1 ano e 3 meses",  
-    foto:"Fotos/Gabriel.jpeg",
+    foto:"fotos/Gabriel.jpeg",
     motivoImpacto:"Possui forte influência sobre uma equipe numerosa, amplo conhecimento do contexto organizacional e elevada credibilidade junto ao time, que demonstra confiança e aderência à sua liderança. Sua eventual saída geraria impacto significativo na continuidade da operação, no engajamento da equipe e na retenção do conhecimento do negócio.",
     motivoRisco:"O colaborador demonstra alto nível de engajamento e abertura na relação com a liderança e com os Business Partners, sinalizando desconfortos e insatisfações de forma transparente quando necessário. Até o momento, não apresenta indícios de desengajamento ou intenção de desligamento, reduzindo o risco de uma saída não antecipada.",
     resumoImpacto:"Forte influência sobre equipe numerosa; saída impacta operação e retenção de conhecimento.",
