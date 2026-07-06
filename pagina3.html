@@ -50,7 +50,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 20px;
+  height: 64px;
   position: sticky;
   top: 0;
   z-index: 200;
@@ -91,7 +91,7 @@ header {
   gap: 0;
   overflow-x: auto;
   position: sticky;
-  top: 60px;
+  top: 64px;
   z-index: 190;
 }
 
@@ -118,7 +118,11 @@ header {
   max-width: 1040px;
   margin: 0 auto;
   padding: 40px 48px 60px;
-  scroll-margin-top: 120px; /* compensa header + nav fixos ao ancorar */
+  scroll-margin-top: 112px; /* compensa header + nav fixos ao ancorar */
+}
+
+.page:first-of-type {
+  padding-top: 28px; /* respiro menor logo abaixo da faixa preta */
 }
 
 /* divisória sutil entre seções na rolagem contínua */
@@ -366,49 +370,26 @@ header {
 .context-box p:last-child { margin-bottom: 0; }
 .context-box strong { color: var(--text); font-weight: 600; }
 
-/* ── COVER PAGE ── */
-.cover {
-  min-height: calc(100vh - 60px);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 60px 48px;
-  max-width: 1040px;
-  margin: 0 auto;
+/* ── CAPA COMPACTA (integrada à primeira seção) ── */
+.cover-inline {
+  padding-bottom: 20px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--border);
 }
-.cover .kicker {
-  font-size: 13px;
+.cover-inline .kicker {
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
   color: var(--pink);
-  margin-bottom: 18px;
+  margin-bottom: 8px;
 }
-.cover h1 {
+.cover-inline h1 {
   font-family: 'Rethink Sans', sans-serif;
-  font-size: 52px;
-  line-height: 1.08;
-  letter-spacing: -1px;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
   color: var(--text);
-  margin-bottom: 18px;
-  max-width: 780px;
-}
-.cover h2 {
-  font-size: 21px;
-  font-weight: 400;
-  color: var(--text-2);
-  margin-bottom: 28px;
-}
-.cover .meta {
-  font-size: 14px;
-  color: var(--text-3);
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-  width: 100%;
-  max-width: 480px;
 }
 
 /* footnote under table */
@@ -534,13 +515,13 @@ header {
   <div class="nav-tab" data-page="pesos">04 · Centros de Custo</div>
 </nav>
 
-<!-- ══════════════ SLIDE 1 — CAPA ══════════════ -->
-<section class="cover" id="capa">
-  <div class="kicker">Pessoas &amp; Cultura&nbsp; |&nbsp; Julho 2026</div>
-  <h1>Apuração OKRs H1 2026</h1>
-</section>
-
+<!-- ══════════════ SLIDE 1 — VISÃO GERAL (capa integrada) ══════════════ -->
 <section class="page" id="visao-geral">
+  <div class="cover-inline">
+    <div class="kicker">Pessoas &amp; Cultura&nbsp; |&nbsp; Julho 2026</div>
+    <h1>Apuração OKRs H1 2026</h1>
+  </div>
+
   <div class="page-sub">Prévia de custo de bônus H1 2026, calculada sobre o atingimento preliminar de OKRs por centro de custo.</div>
 
   <div class="grid-2" style="margin-bottom: 20px;">
