@@ -59,7 +59,7 @@ body {
   flex-shrink: 0;
 }
 .nav-logo { height: 30px; width: auto; display: block; }
-
+  
 .nav-top-right {
   display: flex;
   align-items: center;
@@ -138,7 +138,7 @@ main { margin-top: var(--nav-h); }
 
 /* ─── CAPA ─── */
 .capa-section {
-  min-height: calc(70vh - var(--nav-h));
+  min-height: calc(45vh - var(--nav-h));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,9 +162,9 @@ main { margin-top: var(--nav-h); }
 
 /* ─── CONTEXTO: cabe em 1 tela ─── */
 #contexto {
-  min-height: calc(100vh - var(--nav-h));
+  min-height: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 #contexto .page-inner {
   padding-top: 36px;
