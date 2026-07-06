@@ -1,1158 +1,1519 @@
-const talentos = [
-  // ── HEADS (7) ──────────────────────────────────────────────
-  { nome:"Gabriel Liberman Fernandes",    
-    nivel:"Head",          
-    cargo:"Head de Negócios",   
-    area:"Business Solutions",  
-    produto:"Relacionamento com Cliente Externo",
-    subproduto:["Cliente Externo"],  
-    risco:"Baixo",        
-    impacto:"Alto",  
-    tempoCasa:"1 ano e 3 meses",  
-    foto:"fotos/Gabriel.jpeg",
-    motivoImpacto:"Possui forte influência sobre uma equipe numerosa, amplo conhecimento do contexto organizacional e elevada credibilidade junto ao time, que demonstra confiança e aderência à sua liderança. Sua eventual saída geraria impacto significativo na continuidade da operação, no engajamento da equipe e na retenção do conhecimento do negócio.",
-    motivoRisco:"O colaborador demonstra alto nível de engajamento e abertura na relação com a liderança e com os Business Partners, sinalizando desconfortos e insatisfações de forma transparente quando necessário. Até o momento, não apresenta indícios de desengajamento ou intenção de desligamento, reduzindo o risco de uma saída não antecipada.",
-    resumoImpacto:"Forte influência sobre equipe numerosa; saída impacta operação e retenção de conhecimento.",
-    resumoRisco:"Alto engajamento e transparência — sem indícios de intenção de saída.",
-    gestor:"Lucas Sanches", 
-    posicaoFaixa:99, 
-    ultimoReajuste:"H1/2026", 
-    tipoReajuste:"Promoção", 
-    pctReajuste:"20%",
-    avd:{ desempenhoGestor:4, valoresGestor:4, desempenhoAuto:4, valoresAuto:5 },
-posicao9box:{ col:2, row:1 } },
+/* ─── Reset & Base ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  { nome:"Gisele Pires Silva Almeida",   
-    nivel:"Head",          
-    cargo:"Head de Delivery & Suporte",       
-    area:"Tech Solutions",      
-    produto:"Relacionamento com Cliente Externo",
-    subproduto:["Cliente Externo"],       
-    risco:"Baixo",        
-    impacto:"Alto",  
-    tempoCasa:"7 anos e 6 meses",  
-    foto:"fotos/Gisele Almeida.jpeg",
-    motivoImpacto:"Profissional com longa trajetória na Yandeh, possui profundo conhecimento do negócio, forte relacionamento com clientes e é reconhecida como uma referência em sua área de atuação. Além disso, lidera uma equipe numerosa, tornando sua eventual saída um risco significativo para a continuidade operacional, manutenção do conhecimento e relacionamento com clientes.",
-    motivoRisco:"A colaboradora já manifestou intenção de desligamento anteriormente em função de desafios na relação com outra liderança. Atualmente, encontra-se em um momento mais positivo, com boas conexões e maior satisfação no relacionamento com outras áreas. Apesar do cenário atual ser estável, o histórico indica a necessidade de acompanhamento próximo para mitigar potenciais fatores de risco.",
-    resumoImpacto:"Referência em sua área, líder de equipe numerosa; saída é risco operacional significativo.",
-    resumoRisco:"Histórico de tensão com liderança anterior; momento atual mais estável, mas requer acompanhamento.",
-    gestor:"Rafael Prado", 
-    posicaoFaixa:83, 
-    ultimoReajuste:"H1/2026", 
-    tipoReajuste:"Mérito", 
-    pctReajuste:"30%",
-    avd:{ desempenhoGestor:4, valoresGestor:4, desempenhoAuto:4, valoresAuto:4 },
-posicao9box:{ col:2, row:1 } },
-
-  { nome:"Guilherme Dello Russo",     
-    nivel:"Head",          
-    cargo:"Head de Negócios",           
-    area:"Girotrade",          
-    produto:"Girotrade",
-    subproduto:["Girotrade"],            
-    risco:"Médio",        
-    impacto:"Alto",  
-    tempoCasa:"1 ano e 1 mês",  
-    foto:"fotos/Russo.jpg",
-    motivoImpacto:"Profissional com forte capacidade técnica e reconhecido por sua alta inteligência e profundidade de conhecimento. Sua eventual saída representaria perda significativa de conhecimento crítico, podendo gerar impactos relevantes na continuidade das entregas e na capacidade técnica da área.",
-    motivoRisco:"O colaborador vem absorvendo elevada pressão relacionada à gestão do time e às entregas desde a saída da última gestão. A recente mudança de liderança também representa um período de adaptação. Além disso, demonstra baixo nível de vínculo emocional com a equipe e com a empresa, o que pode aumentar sua abertura para oportunidades externas caso o cenário atual de pressão se mantenha.",
-    resumoImpacto:"Forte capacidade técnica; saída gera perda de conhecimento crítico e impacto na equipe.",
-    resumoRisco:"Absorve alta pressão pós-troca de gestão; baixo vínculo emocional pode aumentar abertura a propostas.",
-    gestor:"Lucas Sanches", 
-    posicaoFaixa:"149", 
-    ultimoReajuste:"H1/2026", 
-    tipoReajuste:"Promoção", 
-    pctReajuste:"5%",
-    avd:{ desempenhoGestor:3, valoresGestor:4, desempenhoAuto:3, valoresAuto:4 },
-posicao9box:{ col:1, row:0 } },
-
-  { nome:"Jackson Junior Marques Almeida",      
-    nivel:"Head",          
-    cargo:"Head de Design de Produto",           
-    area:"Tech Solutions",          
-    produto:"Tech Solutions",
-    subproduto:["Design de Produto"],            
-    risco:"Médio",         
-    impacto:"Alto",  
-    tempoCasa:"3 anos e 5 meses",  
-    foto:"fotos/Jack.jpeg",
-    motivoImpacto:"Profissional reconhecido como referência técnica, especialmente em temas relacionados à Inteligência Artificial, com forte influência nas discussões estratégicas e relacionamento direto com a alta liderança. Possui elevada exposição na organização e lidera uma equipe numerosa e altamente engajada. Sua eventual saída representaria uma perda significativa de conhecimento crítico, capacidade de inovação e estabilidade da equipe.",
-    motivoRisco:"O colaborador informou ter recebido uma proposta externa e, em função de sua alta atratividade no mercado, foi estruturada uma alternativa de modelo de trabalho internamente como ação de retenção. Apesar do movimento ter contribuído para sua permanência, ele continua sendo um profissional frequentemente assediado pelo mercado, o que mantém o risco de saída em um patamar elevado e demanda acompanhamento contínuo.",
-    resumoImpacto:"Referência técnica e influência estratégica; saída representa perda crítica de capacidade.",
-    resumoRisco:"Recebeu proposta externa; permanece por ação de retenção, mas segue sendo assediado pelo mercado.",
-    gestor:"Weslley Figueiredo", 
-    posicaoFaixa:78, 
-    ultimoReajuste:"H2/2025", 
-    tipoReajuste:"Mérito", 
-    pctReajuste:"10%",
-    avd:{ desempenhoGestor:4, valoresGestor:3, desempenhoAuto:3, valoresAuto:3 },
-    posicao9box:{ col:2, row:1 } },
-
-  { nome:"Marcelo Ricardo Bueno de Campos",  
-    nivel:"Head",          
-    cargo:"Head de Tecnologia",   
-    area:"Tech Solutions",  
-    produto:"Tech Solutions",
-    subproduto:["Abasteceshop", "SmartCenter", "SmartCare", "SmartForce", "SmartSales", "SmartCore"],   
-    risco:"Médio", 
-    impacto:"Alto",  
-    tempoCasa:"3 anos e 7 meses",   
-    foto:"fotos/Bueno.jpeg",
-    motivoImpacto:"Profissional de elevada capacidade técnica e amplamente reconhecido como um solucionador de problemas dentro da organização. Além do conhecimento crítico que detém, possui forte exposição junto ao time e é frequentemente acionado para apoiar temas complexos e destravar entregas. Sua eventual saída representaria perda relevante de conhecimento e capacidade de resposta para desafios estratégicos e operacionais.",
-    motivoRisco:"O colaborador já manifestou, em diferentes momentos, o desejo de se dedicar a projetos pessoais no futuro. Embora não haja um prazo definido ou sinais imediatos de desligamento, a existência de planos externos gera uma incerteza que deve ser acompanhada, uma vez que uma decisão de saída pode ocorrer de forma pouco previsível.",
-    resumoImpacto:"Solucionador de problemas reconhecido; saída impacta entregas e capacidade de resposta.",
-    resumoRisco:"Manifestou desejo de projetos pessoais no futuro; risco imprevisível de saída.",
-    gestor:"Weslley Figueiredo", 
-    posicaoFaixa:119, 
-    ultimoReajuste:"H1/2026", 
-    tipoReajuste:"Mérito", 
-    pctReajuste:"10%",
-    avd:{ desempenhoGestor:5, valoresGestor:5, desempenhoAuto:0, valoresAuto:0 },
-    posicao9box:{ col:2, row:0 } },
-
-  { nome:"Priscilla Cardoso", 
-    nivel:"Head",          
-    cargo:"Head Comercial",               
-    area:"Girotrade",           
-    produto:"Girotrade",
-    subproduto:["Girotrade"],             
-    risco:"Baixo",        
-    impacto:"Alto",  
-    tempoCasa:"8 meses",  
-    foto:"fotos/Priscilla.jpg",
-    motivoImpacto:"Profissional de forte capacidade técnica e elevada credibilidade junto à equipe, que demonstra alto nível de confiança e engajamento em sua liderança. Sua eventual saída representaria uma perda relevante de conhecimento, além de impactos na continuidade das entregas e na estabilidade e engajamento do time.",
-    motivoRisco:"A colaboradora possui alta exposição junto à liderança em função de suas entregas e visibilidade na organização. Embora não haja sinais concretos de intenção de desligamento, seu desempenho e reconhecimento a tornam uma profissional com potencial atratividade para o mercado e uma pessoa-chave a ser acompanhada em termos de engajamento e perspectivas de carreira.",
-    resumoImpacto:"Forte credibilidade junto à equipe; saída impacta entregas e estabilidade do time.",
-    resumoRisco:"Alto desempenho a torna atraente ao mercado; sem sinais concretos, mas requer acompanhamento.",
-    gestor:"Lucas Sanches", 
-    posicaoFaixa:127, 
-    ultimoReajuste:"H1/2026", 
-    tipoReajuste:"Mérito", 
-    pctReajuste:"10%",
-    avd:{ desempenhoGestor:4, valoresGestor:4, desempenhoAuto:3, valoresAuto:3 },
-posicao9box:{ col:2, row:1 } },
-
-  { nome:"Rafael Martins Prado de Oliveira",   
-    nivel:"Head",          
-    cargo:"Head de Engenharia de Software",            
-    area:"Tech Solutions",           
-    produto:"Tech Solutions",
-    subproduto:["Abasteceshop"],             
-    risco:"Baixo",        
-    impacto:"Alto",  
-    tempoCasa:"4 anos e 5 meses",  
-    foto:"fotos/Prado.jpeg",
-    motivoImpacto:"Profissional com amplo conhecimento do negócio e forte influência devido à quantidade de áreas e iniciativas sob sua responsabilidade. Sua eventual saída representaria uma perda significativa de contexto organizacional, além de gerar impactos relevantes na continuidade de projetos e na articulação entre diferentes áreas da empresa.",
-    motivoRisco:"O colaborador vive um momento positivo na organização, impulsionado pela chegada do novo time e pelo envolvimento em projetos de maior porte e visibilidade. O protagonismo nas iniciativas tem sido um importante fator de engajamento e motivação, contribuindo para um cenário de baixo risco de desligamento no curto prazo.",
-    resumoImpacto:"Amplo conhecimento do negócio e múltiplas áreas sob responsabilidade; saída gera perda de contexto.",
-    resumoRisco:"Momento positivo com novos projetos e protagonismo; baixo risco no curto prazo.",
-    gestor:"Weslley Figueiredo", 
-    posicaoFaixa:95, 
-    ultimoReajuste:"-", 
-    tipoReajuste:"-", 
-    pctReajuste:"-",
-    avd:{ desempenhoGestor:3, valoresGestor:4, desempenhoAuto:3, valoresAuto:4 },
-posicao9box:{ col:1, row:0 } },
-
-  // ── GERENTES (5) ────────────────────────────────────────────
-  { nome:"Jesse Souza Cavalcanti Neto",     
-    nivel:"Gerente",       
-    cargo:"Tech Manager",          
-    area:"Tech Solutions",  
-    produto:"Tech Solutions",
-    subproduto:["SmartSales"],   
-    risco:"Médio",        
-    impacto:"Alto", 
-    tempoCasa:"2 anos e 5 meses",  
-    foto:"fotos/Jesse.jpeg",
-    motivoImpacto:"Profissional de forte capacidade técnica e referência em temas críticos para a área. Sua eventual saída representaria uma perda significativa de conhecimento e expertise, gerando impactos relevantes na continuidade das entregas e no desenvolvimento técnico das equipes que apoia.",
-    motivoRisco:"O colaborador encontra-se em um momento de alta valorização interna, tendo sido recentemente promovido e sendo constantemente reconhecido por suas contribuições. Demonstra forte engajamento, segue apoiando seu antigo time e assumiu a responsabilidade de desenvolver uma nova equipe, fatores que reforçam seu vínculo com a organização. Mudanças recentes de organograma geraram sensação de insegurança frente a Yandeh.",
-    resumoImpacto:"Referência técnica na área; saída impacta continuidade das entregas.",
-    resumoRisco:"Recentemente promovido e reconhecido; forte engajamento e vínculo com a organização.",
-    gestor:"Marcelo Bueno", 
-    posicaoFaixa:41, 
-    ultimoReajuste:"H1/2026", 
-    tipoReajuste:"Promoção", 
-    pctReajuste:"15%",
-    avd:{ desempenhoGestor:5, valoresGestor:5, desempenhoAuto:4, valoresAuto:4 },
-posicao9box:{ col:2, row:0 } },
-
-  { nome:"Luana Lopes da Silva",     
-    nivel:"Gerente",       
-    cargo:"Gerente de Serviços Financeiros",           
-    area:"Tech Solutions",      
-    produto:"Relacionamento com Cliente Externo",
-    subproduto:["Cliente Externo"],        
-    risco:"Médio",         
-    impacto:"Médio", 
-    tempoCasa:"4 anos e 4 meses",  
-    foto:"fotos/Luana.jpeg",
-    motivoImpacto:"Embora seja responsável por uma área relevante e detenha conhecimento importante dos processos sob sua gestão, a operação apresenta menor risco de descontinuidade devido à proximidade da liderança e à existência de um coordenador preparado para oferecer suporte e garantir a continuidade das atividades. Dessa forma, uma eventual saída seria gerenciável sob a perspectiva operacional.",
-    motivoRisco:"A colaboradora possui uma longa trajetória na empresa, construiu uma carreira sólida internamente e recentemente passou por importantes marcos profissionais e pessoais, incluindo uma promoção, a ampliação de seu escopo com a incorporação de um novo time e o retorno da licença maternidade. Esses fatores indicam um elevado nível de vínculo e reconhecimento, reduzindo o risco de desligamento no curto prazo. No entanto, o modelo de trabalho atual tem impactado negativamente seu bem-estar e seu equilíbrio entre vida pessoal e profissional, configurando um ponto de atenção que pode influenciar sua satisfação e engajamento.",
-    resumoImpacto:"Processos bem documentados; impacto de saída gerenciável com suporte do coordenador.",
-    resumoRisco:"Longa trajetória, promoção e retorno da licença maternidade reforçam vínculos, porém modelo de trabalho pode afetar o bem estar.",
-    gestor:"Rafael Prado", 
-    posicaoFaixa: "76", 
-    ultimoReajuste:"H1/2026", 
-    tipoReajuste:"Promoção", 
-    pctReajuste:"20%",
-    avd:{ desempenhoGestor:4, valoresGestor:4, desempenhoAuto:3, valoresAuto:3 },
-posicao9box:{ col:2, row:1 }  },
-
-  { nome:"Rennan Prado Freitas",      
-    nivel:"Gerente",       
-    cargo:"Tech Manager",        
-    area:"Tech Solutions",          
-    produto:"Tech Solutions",
-    subproduto:["SmartCare", "Onboarding"],            
-    risco:"Baixo",        
-    impacto:"Médio", 
-    tempoCasa:"3 anos",  
-    foto:"fotos/Rennan.jpeg",
-    motivoImpacto:"Embora possua conhecimento relevante do negócio, atualmente está alocado no SmartCare com menor criticidade e menor concentração de contexto organizacional em comparação à sua atuação anterior no Abasteceshop. Dessa forma, sua eventual saída geraria impactos controlados, com menor risco para a continuidade das operações em relação a outras posições mais centrais para o negócio.",
-    motivoRisco:"O colaborador possui uma longa trajetória na Yandeh, demonstra forte identificação com a empresa e encontra-se em uma posição de estabilidade. Além disso, apresenta alto nível de dedicação e engajamento com o trabalho, fatores que contribuem para um baixo risco de desligamento no curto e médio prazo.",
-    resumoImpacto:"Alocado em produto de menor criticidade; impacto de saída controlado.",
-    resumoRisco:"Longa trajetória e forte identificação com a Yandeh; baixo risco no curto prazo.",
-    gestor:"Weslley Figueiredo", 
-    posicaoFaixa:87, 
-    ultimoReajuste:"H2/2024", 
-    tipoReajuste:"Mérito", 
-    pctReajuste:"14%",
-    avd:{ desempenhoGestor:3, valoresGestor:3, desempenhoAuto:0, valoresAuto:0 },
-posicao9box:{ col:1, row:1 } },
-
-  { nome:"Rodrigo Madeiro Dos Santos",   
-    nivel:"Gerente",       
-    cargo:"Tech Manager",            
-    area:"Tech Solutions",           
-    produto:"Tech Solutions",
-    subproduto:["SmartForce"],             
-    risco:"Baixo",        
-    impacto:"Alto", 
-    tempoCasa:"1 ano e 8 meses",  
-    foto:"fotos/Rodrigo.jpeg",
-    motivoImpacto:"Profissional com forte capacidade técnica e detentor de conhecimentos relevantes para a área. Sua eventual saída representaria uma perda de expertise e poderia gerar impactos na continuidade das entregas e na transferência de conhecimento, especialmente em temas de maior complexidade técnica.",
-    motivoRisco:"O colaborador demonstra alto nível de engajamento, mantém uma relação positiva com a equipe e é reconhecido e valorizado pela organização. O cenário atual indica boa satisfação e vínculo com a empresa, reduzindo a probabilidade de desligamento no curto prazo.",
-    resumoImpacto:"Capacidade técnica relevante; saída gera perda de expertise e impacto nas entregas.",
-    resumoRisco:"Alto engajamento e reconhecimento interno; risco baixo no momento.",
-    gestor:"Marcelo Bueno", 
-    posicaoFaixa:91, 
-    ultimoReajuste:"H2/2025", 
-    tipoReajuste:"Mérito", 
-    pctReajuste:"5%",
-    avd:{ desempenhoGestor:3, valoresGestor:5, desempenhoAuto:4, valoresAuto:4 },
-posicao9box:{ col:1, row:0 } },
-
-  { nome:"Valdo Melo Lima Guerra",  
-    nivel:"Gerente",       
-    cargo:"Tech Manager",         
-    area:"Tech Solutions",           
-    produto:"Tech Solutions",
-    subproduto:["SmartCenter", "Abasteceshop"],             
-    risco:"Médio",        
-    impacto:"Alto", 
-    tempoCasa:"4 anos e 3 meses",  
-    foto:"fotos/Valdo.jpeg",
-    motivoImpacto:"Profissional com forte capacidade técnica e elevada credibilidade junto à equipe, que demonstra alto engajamento e confiança em sua atuação. Sua eventual saída representaria uma perda relevante de conhecimento técnico e poderia impactar a estabilidade e o engajamento do time, além de gerar desafios na continuidade das entregas.",
-    motivoRisco:"O colaborador possui uma longa trajetória na empresa, demonstra forte identificação com a Yandeh e mantém uma relação positiva com o time. O alto nível de pertencimento e satisfação com o ambiente de trabalho contribui para um cenário de baixo risco de desligamento.",
-    resumoImpacto:"Capacidade técnica e credibilidade junto à equipe; saída impacta conhecimento e estabilidade.",
-    resumoRisco:"Longa trajetória e alto pertencimento; ambiente positivo. Há atritos com a liderança direta, o que aumenta o risco de desligamento.",
-    gestor:"Marcelo Bueno", 
-    posicaoFaixa:81, 
-    ultimoReajuste:"H2/2025", 
-    tipoReajuste:"Mérito", 
-    pctReajuste:"15%",
-    avd:{ desempenhoGestor:3, valoresGestor:5, desempenhoAuto:3, valoresAuto:3 },
-    posicao9box:{ col:1, row:0 } },
-
-  // ── COORDENADORES (2) ────────────────────────────────────────
-  { nome:"Douglas Alves De Brito Neves",      
-    nivel:"Coordenador",   
-    cargo:"Coordenador de Negócios",        
-    area:"Business Solutions",          
-    produto:"Relacionamento com Cliente Externo",
-    subproduto:["Cliente Externo"],            
-    risco:"Médio",         
-    impacto:"Médio", 
-    tempoCasa:"1 ano e 5 meses",   
-    foto:"fotos/Douglas.jpg",
-    motivoImpacto:"Profissional de boa capacidade técnica e com forte influência junto à equipe, que demonstra confiança em sua atuação. Apesar de sua saída gerar impactos na continuidade das entregas e no engajamento do time, o conhecimento e as competências associadas à função são encontradas com relativa disponibilidade no mercado, tornando a substituição mais viável em comparação a perfis de conhecimento mais crítico ou específico.",
-    motivoRisco:"O colaborador demonstra certo desalinhamento com aspectos da cultura organizacional, possui uma visão crítica sobre a empresa e não se sente inspirado pela alta liderança. Esses fatores podem impactar seu nível de engajamento no médio prazo e aumentar a abertura para oportunidades externas, especialmente caso não haja maior conexão com a estratégia e o direcionamento da organização.",
-    resumoImpacto:"Boa capacidade técnica; perfil com disponibilidade no mercado torna substituição mais viável.",
-    resumoRisco:"Desalinhamento cultural pode aumentar abertura a oportunidades externas no médio prazo.",
-    gestor:"Gabriel Liberman", 
-    posicaoFaixa:114, 
-    ultimoReajuste:"H1/2026", 
-    tipoReajuste:"Mérito", 
-    pctReajuste:"15%",
-    avd:{ desempenhoGestor:4, valoresGestor:3, desempenhoAuto:4, valoresAuto:4 },
-posicao9box:{ col:2, row:1 } },
-
-  // ── NÃO LIDERANÇA (2) ────────────────────────────────────────
-  { nome:"Joao Vitor Alfieri Duarte",      
-    nivel:"Não Liderança", 
-    cargo:"Especialista de Design de Produto",      
-    area:"Tech Solutions",  
-    produto:"Tech Solutions",
-    subproduto:["Design de Produto"],   
-    risco:"Baixo",         
-    impacto:"Alto",  
-    tempoCasa:"1 ano e 4 meses",  
-    foto:"fotos/Joao.jpeg",
-    motivoImpacto:"Profissional com forte capacidade técnica e excelente relacionamento com os clientes, sendo reconhecido como uma referência em sua atuação. Sua eventual saída representaria não apenas uma perda de conhecimento e expertise, mas também um potencial impacto no relacionamento e na confiança dos clientes, além de desafios para a continuidade das entregas.",
-    motivoRisco:"O colaborador recebeu uma proposta externa recentemente, o que demonstra sua atratividade no mercado. Por outro lado, foi reconhecido internamente com um mérito recente e possui alta visibilidade junto à liderança, fatores que reforçam seu engajamento e percepção de valorização. O cenário sugere um risco baixo, que demanda acompanhamento contínuo e ações de retenção.",
-    resumoImpacto:"Conhecimento técnico relevante; substituição mais viável dado disponibilidade do perfil.",
-    resumoRisco:"Percepção de remuneração abaixo do mercado é fator de vulnerabilidade.",
-    gestor:"Jackson Almeida", 
-    posicaoFaixa:109, 
-    ultimoReajuste:"H1/2026", 
-    tipoReajuste:"Mérito", 
-    pctReajuste:"20%",
-    avd:{ desempenhoGestor:5, valoresGestor:5, desempenhoAuto:4, valoresAuto:4 },
-posicao9box:{ col:2, row:0 } },
-
-  { nome:"Pietra Nascimento de Souza e Silva",    
-    nivel:"Não Liderança", 
-    cargo:"Analista de Produto Pleno",      
-    area:"Tech Solutions",      
-    produto:"Tech Solutions",
-    subproduto:["Abasteceshop", "SmartCenter", "SmartCare", "SmartForce", "SmartSales", "SmartCore"],        
-    risco:"Médio",        
-    impacto:"Médio",  
-    tempoCasa:"2 anos",   
-    foto:"fotos/Pietra.jpeg",
-    motivoImpacto:"Profissional com conhecimento técnico relevante para a operação. Entretanto, as competências e experiências associadas à função possuem boa disponibilidade no mercado, tornando a substituição viável e reduzindo o impacto organizacional de uma eventual saída.",
-    motivoRisco:"A colaboradora demonstra maior conexão e engajamento com as pessoas e relações construídas na empresa do que propriamente com a organização em si. Além disso, sua percepção de remuneração abaixo do mercado representa um fator de vulnerabilidade e aumenta significativamente a probabilidade de considerar oportunidades externas.",
-    resumoImpacto:"Conhecimento técnico relevante; substituição viável dado disponibilidade do perfil.",
-    resumoRisco:"Percepção de remuneração abaixo do mercado e desejo de mudança de cidade elevam risco.",
-    gestor:"Valdo Guerra", 
-    posicaoFaixa:73, 
-    ultimoReajuste:"H1/2026", 
-    tipoReajuste:"Mérito", 
-    pctReajuste:"30%",
-    avd:{ desempenhoGestor:5, valoresGestor:5, desempenhoAuto:5, valoresAuto:4 },
-posicao9box:{ col:2, row:0 } }
-];
-
-// ─── DESLIGADOS H1/2026 (Key Talents Turnover) ─────────────
-const desligados = [
-  { nome:"Nicole Ferreira dos Santos",
-    cargo:"Gerente de Cultura e Comunicação",
-    area:"Pessoas & Cultura",
-    foto:"fotos/Nicole.jpg",
-    tempoCasa:"4 anos e 2 meses",
-    resumoImpacto:"Conhecimento de processos internos; saída impacta continuidade.",
-    resumoRisco:"Engajamento estável; acompanhar expectativas de carreira.",
-    tipo:"Voluntário",
-    motivo:"Motivos pessoais" },
-
-  { nome:"Pedro Victor Miranda de Carvalho",
-    cargo:"Teach Lead",
-    area:"SmartPlace",
-    foto:"fotos/Pedro.jpg",
-    tempoCasa:"2 anos e 8 meses",
-    resumoImpacto:"Capacidade técnica em desenvolvimento; impacto de saída moderado.",
-    resumoRisco:"Perfil em crescimento; manter plano de desenvolvimento.",
-    tipo:"Voluntário",
-    motivo:"Nova proposta de trabalho" },
-
-  { nome:"Robson Joiner",
-    cargo:"Head de Business Solutions",
-    area:"Business Solutions",
-    foto:"fotos/Robson.jpg",
-    tempoCasa:"1 ano e 5 meses",
-    resumoImpacto:"Influência relevante na área; saída impacta continuidade.",
-    resumoRisco:"Acompanhar nível de satisfação e expectativas de carreira.",
-    tipo:"Voluntário",
-    motivo:"Nova proposta de trabalho" },
-
-  { nome:"Phablo Jose Vilas Boas Pinto Sena",
-    cargo:"Teach Lead",
-    area:"SmartSales",
-    foto:"fotos/Phablo.jpeg",
-    tempoCasa:"4 anos e 1 mês",
-    tipo:"Voluntário",
-    motivo:"Nova proposta de trabalho" }
-];
-
-// Legenda de notas AVD
-const notaLabel = { 1:"Insatisfatório", 2:"Abaixo das expectativas", 3:"Dentro das expectativas", 4:"Acima das expectativas", 5:"Excepcional" };
-const notaColor = { 1:"#991b1b", 2:"#ef4444", 3:"#d97706", 4:"#4ade80", 5:"#15803d" };
-
-// ─── Helpers ────────────────────────────────────────────────
-function riscoClass(r) {
-  if (r==="Baixo") return "baixo";
-  if (r==="Médio") return "medio";
-  if (r==="Alto")  return "alto";
-  return "na";
-}
-function initials(nome) {
-  return nome.split(" ").slice(0,2).map(n=>n[0]).join("");
-}
-function pct(n,total) {
-  return Math.round((n/total)*100)+"% do total";
+:root {
+  --bg:        #f4f6fb;
+  --surface:   #ffffff;
+  --surface2:  #f0f2f8;
+  --border:    #e2e6f0;
+  --text:      #111827;
+  --muted:     #6b7280;
+  --light:     #9ca3af;
+  --accent1:   #111827;
+  --accent2:   #374151;
+  --grad:      linear-gradient(135deg, var(--accent1), var(--accent2));
+  --baixo:     #16a34a;
+  --baixo-bg:  #f0fdf4;
+  --medio:     #d97706;
+  --medio-bg:  #fffbeb;
+  --alto:      #dc2626;
+  --alto-bg:   #fef2f2;
+  --na:        #6b7280;
+  --na-bg:     #f9fafb;
+  --rosa:      #ec1e79;
+  --rosa-bg:   #fdeef5;
+  --nav-h:     108px;
+  --rad:       14px;
 }
 
-const TOTAL_AVD = 235;
-const TOTAL     = talentos.length;
-const riscoAlto = talentos.filter(t=>t.risco==="Médio").length;
+html { scroll-behavior: smooth; }
 
-// ─── Modal (com pilha para voltar ao anterior) ──────────────
-const overlay  = document.getElementById("modalOverlay");
-const modalBox = document.getElementById("modalBox");
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
 
-let modalStack = []; // pilha de HTMLs anteriores
+/* ─── NAV (2 níveis) ─── */
+.topnav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  box-shadow: 0 1px 6px rgba(0,0,0,.06);
+}
 
-function openModal(html, pushCurrent = false) {
-  if (pushCurrent && modalBox.innerHTML) {
-    modalStack.push(modalBox.innerHTML);
+/* Nível 1: faixa branca com marca + botão */
+.nav-top {
+  height: 60px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.nav-logo { height: 30px; width: auto; display: block; }
+
+.nav-top-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.nav-period {
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: .03em;
+  white-space: nowrap;
+}
+
+/* Nível 2: faixa escura com as abas */
+.nav-bar {
+  height: 48px;
+  background: var(--accent1);
+  display: flex;
+  align-items: stretch;
+  gap: 30px;
+  padding: 0 48px;
+  overflow-x: auto;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  border: none;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,.6);
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: color .15s, border-color .15s;
+  white-space: nowrap;
+}
+.tab:hover     { color: #fff; }
+.tab.is-active { color: var(--rosa); border-bottom-color: var(--rosa); font-weight: 700; }
+
+/* ─── SECTIONS ─── */
+main { margin-top: var(--nav-h); }
+
+.section {
+  background: var(--surface);
+  scroll-margin-top: var(--nav-h);
+}
+.section-alt { background: var(--bg); }
+
+.page-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 36px 48px;
+}
+
+.page-header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.page-tag {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--accent1);
+}
+.page-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px; font-weight: 400;
+  color: var(--text);
+}
+
+/* ─── CAPA ─── */
+.capa-section {
+  min-height: calc(100vh - var(--nav-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.capa-wrap { text-align: center; max-width: 520px; padding: 48px 24px; }
+.capa-label {
+  font-size: 11px; font-weight: 600; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 28px;
+}
+.capa-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(56px, 9vw, 88px);
+  font-weight: 400; line-height: 1.05;
+  background: var(--grad);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 16px;
+}
+.capa-sub  { font-size: 18px; color: var(--muted); font-weight: 300; margin-bottom: 40px; }
+.capa-divider { width: 48px; height: 3px; background: var(--grad); border-radius: 2px; margin: 0 auto 24px; }
+.capa-date { font-size: 12px; color: var(--light); letter-spacing: .1em; text-transform: uppercase; }
+
+/* ─── CONTEXTO: cabe em 1 tela ─── */
+#contexto {
+  min-height: calc(100vh - var(--nav-h));
+  display: flex;
+  align-items: center;
+}
+#contexto .page-inner {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  width: 100%;
+}
+#contexto .page-header {
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+}
+#contexto .apres-grid {
+  width: 100%;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+#contexto .apres-card {
+  padding: 18px 16px;
+  
+}
+#contexto .apres-icon {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+#contexto .apres-card h3 { margin-bottom: 6px; }
+#contexto .apres-card p  { line-height: 1.5; }
+#contexto .ctx-grid { gap: 14px; }
+#contexto .ctx-card { padding: 22px 20px; }
+#contexto .ctx-num  { font-size: 32px; margin-bottom: 6px; }
+
+/* ─── APRESENTAÇÃO cards ─── */
+.apres-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.apres-card {
+  background: var(--surface);
+  border: 1px solid var(--rosa);
+  border-radius: var(--rad);
+  padding: 28px 22px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  transition: box-shadow .2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.apres-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+.apres-icon {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  background: var(--grad);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 12px;
+}
+.apres-card h3 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.apres-card p  { font-size: 12px; color: var(--muted); line-height: 1.65; }
+
+/* ─── CONTEXTO ─── */
+.ctx-single-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--rad);
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  position: relative;
+}
+
+.ctx-single-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--rad);
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  position: relative;
+
+  max-width: 1200px; /* ajuste como preferir */
+  margin: 0 auto;    /* centraliza */
+}
+
+.ctx-item {
+  flex: 1;
+  padding: 14px 20px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ctx-separator {
+  width: 1px;
+  background: var(--border);
+  margin: 12px 0;
+}
+
+.ctx-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px; line-height: 1;
+  background: var(--grad);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 2px;
+}
+
+.ctx-single-card{
+    max-width: 1100px;
+    margin: 40px auto 0;
+}
+
+.ctx-item.highlight-alto .ctx-num {
+  background: none; -webkit-text-fill-color: var(--alto); color: var(--alto);
+}
+
+.ctx-label  { font-size: 11px; font-weight: 600; color: var(--text); }
+.ctx-legend { font-size: 10px; color: var(--muted); line-height: 1.5; }
+
+
+/* ─── TALENTOS ─── */
+.nivel-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 4px;
+}
+.nivel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--rad);
+  padding: 28px 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow .2s, transform .2s, border-color .2s;
+  position: relative; overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+}
+.nivel-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: var(--grad);
+}
+.nivel-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,.1);
+  transform: translateY(-2px);
+  border-color: rgba(17,24,39,.25);
+}
+.nivel-card.open { border-color: rgba(17,24,39,.4); box-shadow: 0 6px 20px rgba(17,24,39,.08); }
+
+.nivel-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.nivel-num   { font-family: 'DM Serif Display', serif; font-size: 48px; line-height: 1; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 6px; }
+.nivel-pct   { font-size: 11px; color: var(--muted); margin-bottom: 14px; }
+.nivel-cta   { font-size: 12px; color: var(--accent1); font-weight: 600; }
+
+/* ─── DRILLS ─── */
+.drill {
+  display: none;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 24px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--rad);
+  animation: fadeIn .2s ease;
+}
+.drill.open { display: flex; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+/* Person cards */
+.person-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 16px;
+  width: 168px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  transition: box-shadow .15s;
+}
+.person-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+.person-card.small { width: 152px; }
+
+.person-photo { width: 54px; height: 54px; border-radius: 50%; overflow: hidden; margin-bottom: 6px; }
+.person-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.avatar-fallback {
+  width: 54px; height: 54px; border-radius: 50%;
+  background: var(--grad);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; font-weight: 700; color: white;
+}
+.person-name  { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.3; }
+.person-area  { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; }
+.person-cargo { font-size: 11px; color: var(--muted); line-height: 1.35; }
+.person-meta  { display: flex; flex-direction: column; align-items: center; gap: 5px; margin-top: 6px; }
+
+.meta-pill {
+  font-size: 10px; color: var(--muted);
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 20px; padding: 2px 8px;
+}
+
+/* Risco badges */
+.risco-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 9px; border-radius: 20px;
+  font-size: 10px; font-weight: 700; letter-spacing: .04em;
+}
+.risco-badge::before { content:''; width:5px; height:5px; border-radius:50%; flex-shrink:0; }
+.risco-badge.baixo { background: var(--baixo-bg); color: var(--baixo); }
+.risco-badge.baixo::before { background: var(--baixo); }
+.risco-badge.medio { background: var(--medio-bg); color: var(--medio); }
+.risco-badge.medio::before { background: var(--medio); }
+.risco-badge.alto  { background: var(--alto-bg);  color: var(--alto); }
+.risco-badge.alto::before  { background: var(--alto); }
+.risco-badge.na    { background: var(--na-bg);    color: var(--na); }
+.risco-badge.na::before    { background: var(--na); }
+
+/* ─── SOLUÇÕES ─── */
+.sol-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.sol-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--rad);
+  padding: 24px 28px;
+  cursor: pointer;
+  position: relative; overflow: hidden;
+  transition: box-shadow .2s, transform .2s, border-color .2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+}
+.sol-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; bottom: 0; width: 4px;
+  background: var(--grad);
+}
+.sol-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+  transform: translateY(-2px); border-color: rgba(17,24,39,.25);
+}
+.sol-card.open { border-color: rgba(17,24,39,.4); box-shadow: 0 6px 20px rgba(17,24,39,.08); }
+
+.sol-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.sol-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(17,24,39,.06);
+  border: 1px solid rgba(17,24,39,.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: var(--accent1);
+  flex-shrink: 0;
+}
+
+.sol-card-headtext { min-width: 0; }
+.sol-name     { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 2px; line-height: 1.3; }
+.sol-sub-line { font-size: 11px; color: var(--muted); }
+
+.sol-card-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 32px;
+  line-height: 1;
+  background: var(--grad);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.sol-progress-wrap { margin-bottom: 16px; }
+.sol-progress-bar {
+  height: 6px;
+  background: var(--surface2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.sol-progress-fill {
+  height: 100%;
+  background: var(--grad);
+  border-radius: 4px;
+  transition: width .5s ease;
+}
+.sol-progress-label { font-size: 11px; color: var(--light); }
+
+.sol-mini-fotos {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.sol-mini-foto, .sol-mini-avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--surface);
+  margin-left: -8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.sol-mini-fotos > *:first-child { margin-left: 0; }
+.sol-mini-avatar {
+  background: var(--grad);
+  color: white;
+  font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.sol-mini-extra {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--surface);
+  margin-left: -8px;
+  background: var(--surface2);
+  color: var(--muted);
+  font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.sol-cta { font-size: 12px; color: var(--text); font-weight: 600; }
+
+#drill-sol { margin-top: 16px; }
+
+/* ─── MATRIZ ─── */
+.matriz-wrap {
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.eixo-y-label {
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  font-size: 10px; font-weight: 700; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--muted);
+  white-space: nowrap; align-self: center;
+}
+.matriz-inner { flex: 1; }
+
+.eixo-x-labels {
+  display: grid;
+  grid-template-columns: 88px repeat(2, 1fr);
+  margin-bottom: 6px;
+}
+.ex-label {
+  text-align: center;
+  font-size: 10px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted);
+}
+.matriz-rows { display: flex; flex-direction: column; gap: 6px; }
+.matriz-row {
+  display: grid;
+  grid-template-columns: 88px repeat(2, 1fr);
+  gap: 6px; align-items: stretch;
+}
+.ey-label {
+  display: flex; align-items: center; justify-content: flex-end;
+  padding-right: 14px;
+  font-size: 10px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted);
+}
+.matriz-cell {
+  border-radius: 12px; padding: 16px;
+  min-height: 110px;
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid transparent;
+}
+.zona-verde    { background: #f0fdf4; border-color: #bbf7d0; }
+.zona-amarela  { background: #fffbeb; border-color: #fde68a; }
+.zona-laranja  { background: #fff7ed; border-color: #fed7aa; }
+.zona-vermelha { background: #fef2f2; border-color: #fecaca; }
+
+.cell-zone-label {
+  font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+}
+.zona-verde    .cell-zone-label { color: var(--baixo); }
+.zona-amarela  .cell-zone-label { color: var(--medio); }
+.zona-laranja  .cell-zone-label { color: #ea580c; }
+.zona-vermelha .cell-zone-label { color: var(--alto); }
+
+.cell-dots { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+
+.matriz-dot {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--grad);
+  color: white; font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  cursor: default; position: relative;
+}
+.matriz-dot:hover .dot-tooltip { display: flex; }
+.dot-tooltip {
+  display: none; position: absolute;
+  bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+  background: var(--text); color: white;
+  border-radius: 8px; padding: 8px 12px;
+  flex-direction: column; gap: 2px;
+  white-space: nowrap; z-index: 100;
+  font-size: 11px; pointer-events: none;
+}
+.dot-tooltip strong { font-size: 12px; }
+.dot-tooltip::after {
+  content: ''; position: absolute;
+  top: 100%; left: 50%; transform: translateX(-50%);
+  border: 5px solid transparent; border-top-color: var(--text);
+}
+.eixo-x-label {
+  text-align: center;
+  font-size: 10px; font-weight: 700; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--muted);
+  margin-top: 10px;
+}
+
+.na-strip {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-top: 20px; padding: 14px 18px;
+  background: var(--na-bg); border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.na-title { font-size: 11px; font-weight: 700; color: var(--na); letter-spacing: .05em; text-transform: uppercase; }
+.na-pill {
+  font-size: 12px; color: var(--muted);
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 20px; padding: 3px 12px;
+}
+
+
+
+/* ─── MODAL OVERLAY ─── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(17,24,39,.45);
+  backdrop-filter: blur(4px);
+  z-index: 500;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal-overlay.open { display: flex; }
+
+.modal-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 90vw;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 64px rgba(0,0,0,.18);
+  animation: modalIn .22s ease;
+}
+@keyframes modalIn {
+  from { opacity:0; transform: scale(.96) translateY(10px); }
+  to   { opacity:1; transform: none; }
+}
+
+.modal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 24px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.modal-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px; font-weight: 400; color: var(--text);
+}
+.modal-close {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--surface2);
+  font-size: 16px; color: var(--muted);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background .15s;
+  flex-shrink: 0;
+}
+.modal-close:hover { background: var(--border); }
+
+.modal-cards-wrap {
+  overflow-x: auto;
+  padding: 4px 0 12px 0;
+}
+.modal-cards {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 14px;
+  width: max-content;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Modal de pessoa (mapa de risco) */
+.modal-person {
+  display: flex; gap: 28px; align-items: flex-start;
+}
+.modal-person-photo {
+  width: 88px; height: 88px; border-radius: 50%;
+  overflow: hidden; flex-shrink: 0;
+}
+.modal-person-photo img { width:100%; height:100%; object-fit:cover; }
+.modal-avatar-lg {
+  width: 88px; height: 88px; border-radius: 50%;
+  background: var(--grad);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; font-weight: 700; color: white;
+}
+.modal-person-info { flex: 1; }
+.modal-person-name { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.modal-person-cargo { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+.modal-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.impacto-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 10px; border-radius: 20px;
+  font-size: 11px; font-weight: 700;
+  background: rgba(255,5,173,.08); color: var(--accent1);
+  border: 1px solid rgba(255,5,173,.2);
+}
+.modal-section { margin-bottom: 16px; }
+.modal-section-title {
+  font-size: 10px; font-weight: 700; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
+}
+.modal-section p { font-size: 13px; color: var(--text); line-height: 1.65; }
+
+/* ─── MATRIZ — foto + nome ─── */
+.matriz-dot {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  width: auto; height: auto;
+  background: none;
+  cursor: pointer; position: relative;
+}
+
+.dot-photo {
+  width: 38px; height: 38px; border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  transition: transform .15s, box-shadow .15s;
+}
+.dot-photo img { width:100%; height:100%; object-fit:cover; }
+.dot-avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--grad);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: white;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  transition: transform .15s, box-shadow .15s;
+}
+.matriz-dot:hover .dot-photo,
+.matriz-dot:hover .dot-avatar {
+  transform: scale(1.12);
+  box-shadow: 0 4px 12px rgba(0,0,0,.22);
+}
+
+.dot-name {
+  font-size: 9px; font-weight: 600; color: var(--text);
+  text-align: center; line-height: 1.2;
+  max-width: 56px; word-break: break-word;
+}
+.dot-cargo-sm {
+  font-size: 8px; color: var(--muted); text-align: center;
+  max-width: 56px; line-height: 1.2;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  padding: 14px 48px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  display: flex; justify-content: space-between;
+  font-size: 12px; color: var(--muted);
+}
+.footer strong { color: var(--text); font-weight: 600; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 860px) {
+  .nav-top, .nav-bar { padding: 0 16px; }
+  .nav-bar   { gap: 18px; }
+  .tab       { font-size: 12px; }
+  .page-inner { padding: 40px 20px; }
+  .apres-grid { grid-template-columns: repeat(2,1fr); }
+  .ctx-grid  { grid-template-columns: 1fr; }
+  .nivel-grid { grid-template-columns: repeat(2,1fr); }
+  .sol-grid   { grid-template-columns: 1fr; }
+
+  .matriz-row { grid-template-columns: 60px repeat(2,1fr); }
+  .footer    { padding: 14px 20px; }
+}
+
+/* ─── 9BOX MODAL ─── */
+.nb-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+/* Left: grid + notas */
+.nb-left { display: flex; flex-direction: column; gap: 20px; }
+
+.nb-grid-wrap { display: flex; gap: 8px; align-items: flex-start; }
+
+.nb-axis-y {
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  font-size: 9px; font-weight: 700; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--muted);
+  align-self: center; white-space: nowrap;
+}
+
+.nb-grid-inner { flex: 1; }
+
+.nb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.nb-cell {
+  border-radius: 8px;
+  padding: 10px 8px;
+  min-height: 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--border);
+  position: relative;
+  transition: opacity .15s;
+  background: #f5f5f7;
+}
+
+.nb-active {
+  border-color: rgba(17,24,39,.2) !important;
+  box-shadow: 0 0 0 2px rgba(17,24,39,.08);
+}
+.nb-active .nb-label {
+  font-weight: 700;
+}
+
+.nb-label {
+  font-size: 8px; font-weight: 600;
+  text-align: center;
+  text-transform: uppercase; letter-spacing: .05em;
+  line-height: 1.3;
+}
+
+
+
+.nb-axis-x {
+  text-align: center;
+  font-size: 9px; font-weight: 700; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--muted);
+  margin-top: 6px;
+}
+
+/* Notas */
+.nb-notas { }
+.nb-notas-title {
+  font-size: 10px; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+}
+
+/* Par de notas gestor — mais largas, menos altas */
+.nb-notas-pair {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+.nb-nota-main {
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex; flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+.nb-nota-big  {
+  font-family: 'DM Serif Display', serif;
+  font-size: 44px; font-weight: 400; line-height: 1;
+  flex-shrink: 0;
+}
+.nb-nota-body { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.nb-nota-desc {
+  font-size: 12px; font-weight: 600; color: var(--text); line-height: 1.3;
+}
+.nb-nota-tipo {
+  font-size: 10px; color: var(--muted);
+}
+
+/* Autoavaliação inline pequena */
+.nb-auto-row {
+  border-top: 1px solid var(--border);
+  padding-top: 5px;
+  margin-top: 4px;
+}
+.nb-auto-inline {
+  display: flex; align-items: baseline; gap: 4px; flex-wrap: wrap;
+}
+.nb-auto-inline { display: flex; flex-direction: column; gap: 1px; }
+.nb-auto-line1  { display: flex; align-items: baseline; gap: 3px; }
+.nb-auto-num    { font-size: 9px; font-weight: 700; color: var(--light); }
+.nb-auto-leg    { font-size: 8px; font-weight: 500; color: var(--light); }
+.nb-auto-tipo   { font-size: 7px; color: var(--light); font-weight: 400; letter-spacing: .04em; }
+
+/* Right: pessoa + info */
+.nb-right { display: flex; flex-direction: column; gap: 20px; }
+
+.nb-person-header {
+  display: flex; gap: 14px; align-items: center;
+  padding-bottom: 16px; border-bottom: 1px solid var(--border);
+}
+
+.nb-info-grid { display: flex; flex-direction: column; gap: 0; }
+
+.nb-info-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+}
+.nb-info-label {
+  font-size: 11px; font-weight: 600; color: var(--muted);
+  white-space: nowrap; flex-shrink: 0;
+}
+.nb-info-val {
+  font-size: 13px; color: var(--text); text-align: right;
+  display: flex; align-items: center; gap: 8px;
+}
+
+.faixa-bar-wrap {
+  width: 80px; height: 6px;
+  background: var(--border); border-radius: 3px;
+  overflow: hidden; flex-shrink: 0;
+}
+.faixa-bar {
+  height: 100%;
+  background: var(--grad);
+  border-radius: 3px;
+  transition: width .4s ease;
+  display: block !important;
+  min-width: 0;
+}
+
+
+
+/* Button 9box inside person card */
+.btn-9box {
+  margin-top: 8px;
+  background: none; border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  padding: 0;
+  opacity: .8;
+  transition: opacity .15s;
+}
+.btn-9box:hover { opacity: 1; }
+
+@media (max-width: 700px) {
+  .nb-layout { grid-template-columns: 1fr; }
+  .nb-notas-row { grid-template-columns: 1fr 1fr; }
+}
+
+/* ─── Botão voltar no modal 9box ─── */
+.modal-close.voltar {
+  width: auto;
+  padding: 0 14px;
+  font-size: 13px;
+  border-radius: 50px;
+}
+/* ─── FOTOS CARD ─── */
+.fotos-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--rad);
+  padding: 24px 28px;
+  margin-top: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+}
+
+.fotos-card-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.fotos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 4px 16px 12px;
+}
+
+.foto-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.foto-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--border);
+}
+
+.foto-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.foto-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.foto-nome {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  max-width: 80px;
+  line-height: 1.3;
+}
+/* ─── MATRIZ DE COBERTURA (soluções) ─── */
+.mz-wrap {
+  overflow-x: auto;
+  margin-bottom: 4px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.mz-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.mz-th-name {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  min-width: 130px;
+}
+
+.mz-th-sub {
+  text-align: center;
+  padding: 10px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+.mz-td-name {
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.mz-td-name span {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.mz-cell {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+.mz-table tbody tr:last-child td { border-bottom: none; }
+.mz-table tbody tr:hover { background: var(--surface2); }
+
+.mz-foto {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.mz-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.mz-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text);
+}
+
+/* Prod cards below matrix */
+.prod-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.prod-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  min-width: 160px;
+  flex: 1;
+  max-width: 240px;
+  cursor: pointer;
+  transition: box-shadow .15s, border-color .15s, transform .15s;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.prod-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,.1);
+  border-color: rgba(17,24,39,.2);
+  transform: translateY(-1px);
+}
+.prod-card-name { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.3; }
+.prod-card-num  { font-size: 11px; color: var(--muted); }
+.prod-card-cta  { font-size: 11px; color: var(--text); font-weight: 600; margin-top: 4px; }
+
+.modal-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+/* ─── PERSON CARDS COM TAGS DE PRODUTO (soluções) ─── */
+.pp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.pp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  position: relative;
+}
+
+.pp-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--medio-bg);
+  color: var(--medio);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: .02em;
+}
+
+.pp-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-right: 80px;
+}
+
+.pp-photo, .pp-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.pp-avatar {
+  background: var(--grad);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pp-headtext { min-width: 0; }
+.pp-name  { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.3; }
+.pp-cargo { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+.pp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.pp-tag {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.pp-risco {
+  display: inline-flex;
+}
+
+.ver-matriz-btn {
+  margin-top: 20px;
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  transition: background .15s;
+}
+.ver-matriz-btn:hover { background: var(--border); }
+
+@media (max-width: 700px) {
+  .pp-grid { grid-template-columns: 1fr; }
+}
+/* ─── TURNOVER CARD KPI ─── */
+.ctx-item-clickable {
+  cursor: pointer;
+  transition: background .15s;
+}
+.ctx-item-clickable:hover { background: var(--surface2); }
+
+.ctx-cta {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 6px;
+}
+
+/* ─── TURNOVER MODAL CARDS ─── */
+.tv-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tv-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.tv-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.tv-meta-item {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.tv-motivo {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.tv-motivo strong {
+  color: var(--text);
+  font-weight: 600;
+}
+/* ─── RISCO SUB-TABS ─── */
+.risco-tabs{display:flex;gap:4px;margin-bottom:28px;border-bottom:1px solid var(--border);}
+.risco-tab{padding:8px 20px;border:none;background:transparent;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s,border-color .15s;}
+.risco-tab:hover{color:var(--text);}
+.risco-tab.active{color:var(--text);border-bottom-color:var(--text);font-weight:600;}
+
+/* ─── HOVER TOOLTIP ─── */
+.dot-hover-tooltip{display:none;position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:var(--text);color:white;border-radius:10px;padding:12px 14px;width:220px;flex-direction:column;gap:6px;z-index:300;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.2);}
+.dot-hover-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--text);}
+.matriz-dot{overflow:visible!important;}
+.matriz-dot:hover .dot-hover-tooltip{display:flex;}
+.dht-name{font-size:12px;font-weight:700;}
+.dht-cargo{font-size:10px;opacity:.7;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.15);}
+.dht-row{font-size:11px;line-height:1.5;opacity:.9;}
+.dht-row b{font-weight:600;}
+
+/* ─── SCATTER PLOT ─── */
+.scatter-wrap{display:flex;gap:8px;align-items:stretch;}
+.scatter-y-axis{display:flex;flex-direction:row;align-items:center;gap:4px;flex-shrink:0;}
+.scatter-y-label{writing-mode:vertical-rl;transform:rotate(180deg);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+.scatter-y-ticks{position:relative;height:400px;width:20px;flex-shrink:0;}
+.scatter-tick-y{position:absolute;right:0;transform:translateY(-50%);font-size:10px;color:var(--muted);font-weight:600;}
+.scatter-right{flex:1;display:flex;flex-direction:column;gap:4px;min-width:0;}
+.scatter-plot{position:relative;width:100%;height:400px;border:1px solid var(--border);border-radius:12px;overflow:visible;background:var(--surface);}
+.scatter-bg{position:absolute;}
+.scatter-bg-ps{background:rgba(240,253,244,.6);top:0;left:0;bottom:50%;right:25%;border-radius:12px 0 0 0;}
+.scatter-bg-ai{background:rgba(254,242,242,.6);top:0;right:0;bottom:50%;left:75%;border-radius:0 12px 0 0;}
+.scatter-bg-rc{background:rgba(248,250,252,.6);bottom:0;left:0;top:50%;right:25%;border-radius:0 0 0 12px;}
+.scatter-bg-mp{background:rgba(255,251,235,.6);bottom:0;right:0;top:50%;left:75%;border-radius:0 0 12px 0;}
+.scatter-line-v{position:absolute;top:0;bottom:0;width:1px;border-left:1px dashed #9ca3af;}
+.scatter-line-h{position:absolute;left:0;right:0;height:1px;border-top:1px dashed #9ca3af;}
+.scatter-quad-label{position:absolute;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;opacity:.65;pointer-events:none;white-space:nowrap;}
+.scatter-dot{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;z-index:10;}
+.scatter-dot:hover .mz-dot-foto,.scatter-dot:hover .mz-dot-avatar{transform:scale(1.15);box-shadow:0 4px 14px rgba(0,0,0,.22);}
+.scatter-label{font-size:9px;font-weight:600;color:var(--text);text-align:center;white-space:nowrap;background:white;padding:1px 5px;border-radius:4px;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.07);pointer-events:none;}
+.scatter-x-ticks{position:relative;height:20px;}
+.scatter-tick-x{position:absolute;transform:translateX(-50%);font-size:10px;color:var(--muted);font-weight:600;}
+.scatter-x-label{text-align:center;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:2px;}
+.mz-dot-foto{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,.15);transition:transform .15s,box-shadow .15s;display:block;}
+.mz-dot-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#111827,#374151);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:white;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,.15);transition:transform .15s,box-shadow .15s;}
+
+.sol-logos-grid{
+  display: flex;
+  flex-wrap: nowrap;     /* impede quebrar linha */
+  justify-content: center;
+  align-items: flex-start;  /* alinha os ícones pelo topo, mesmo se o nome quebrar em 2 linhas */
+  gap: 16px;
+}
+
+.sol-logo-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90px;      /* diminua ou aumente aqui */
+  cursor: pointer;
+}
+
+.sol-logo-item svg{
+  width: 50px;      /* diminua o ícone */
+  height: 50px;
+}
+
+.sol-logo-nome{
+  margin-top: 6px;
+  font-size: 11px;
+  text-align: center;
+}
+.sol-logos-section{
+  margin-top: 30px;
+}
+/* ===== MODAL RESUMO ===== */
+
+.resumo-modal-layout{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  padding-top:10px;
+}
+
+.resumo-modal-top{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--border);
+}
+
+.resumo-modal-name{
+  font-size:24px;
+  font-weight:700;
+  color:var(--text);
+}
+
+.resumo-modal-cargo{
+  margin-top:4px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.modal-avatar-lg{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background:var(--grad);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  font-weight:700;
+  flex-shrink:0;
+}
+
+.resumo-modal-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.resumo-bloco{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+}
+
+.resumo-info-title{
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--muted);
+  margin-bottom:18px;
+}
+
+.resumo-info-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.resumo-info-row:last-child{
+  border-bottom:none;
+}
+
+.resumo-info-row span{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.resumo-info-row strong{
+  color:var(--text);
+  font-size:14px;
+  text-align:right;
+}
+
+.resumo-bloco p{
+  margin:0;
+}
+
+@media (max-width:768px){
+
+  .resumo-modal-top{
+    flex-direction:column;
+    text-align:center;
   }
-  modalBox.innerHTML = html;
-  overlay.classList.add("open");
-  document.body.style.overflow = "hidden";
-}
 
-function closeModal() {
-  if (modalStack.length > 0) {
-    // volta para o modal anterior
-    modalBox.innerHTML = modalStack.pop();
-  } else {
-    overlay.classList.remove("open");
-    document.body.style.overflow = "";
-    document.querySelectorAll(".nivel-card").forEach(c=>c.classList.remove("open"));
-    modalStack = [];
+  .resumo-modal-grid{
+    grid-template-columns:1fr;
   }
 }
 
-function closeModalAll() {
-  overlay.classList.remove("open");
-  document.body.style.overflow = "";
-  document.querySelectorAll(".nivel-card").forEach(c=>c.classList.remove("open"));
-  modalStack = [];
-  modalBox.innerHTML = "";
+.sub-modal-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0;
 }
 
-overlay.addEventListener("click", e => {
-  if (e.target === overlay) closeModalAll();
-});
-document.addEventListener("keydown", e => {
-  if (e.key==="Escape") closeModalAll();
-});
-
-// ─── Nav highlight on scroll ────────────────────────────────
-const sections = document.querySelectorAll(".section");
-const tabs     = document.querySelectorAll(".tab");
-function highlightTab() {
-  let current = "";
-  sections.forEach(sec => {
-    if (window.scrollY >= sec.offsetTop - 80) current = sec.id;
-  });
-  tabs.forEach(t => {
-    t.classList.toggle("is-active", t.getAttribute("href")==="#"+current);
-  });
-}
-window.addEventListener("scroll", highlightTab, { passive: true });
-highlightTab();
-
-// ─── CONTEXTO ───────────────────────────────────────────────
-document.getElementById("kCtxTal").textContent  = TOTAL;
-document.getElementById("kCtxAlto").textContent = riscoAlto;
-document.getElementById("lgCtxTal").textContent =
-  `${TOTAL} de ${TOTAL_AVD} participantes da AVD, representa ${Math.round((TOTAL/TOTAL_AVD)*100)}% dos avaliados`;
-document.getElementById("lgCtxAlto").textContent =
-  `${pct(riscoAlto, TOTAL)} dos talentos estratégicos, pois não possuimos talentos com risco alto.`;
-  const techTalentos = talentos.filter(t => t.area === "Tech Solutions").length;
-document.getElementById("kCtxTech").textContent  = Math.round((techTalentos/TOTAL)*100) + "%";
-document.getElementById("lgCtxTech").textContent = techTalentos + " de " + TOTAL + " talentos alocados em Tech Solutions";
-
-// Turnover KPI
-document.getElementById("kCtxTurnover").textContent = Math.round((desligados.length / TOTAL) * 100) + "%";
-document.getElementById("lgCtxTurnover").textContent = desligados.length + " desligamento" + (desligados.length > 1 ? "s" : "") + " de Key Talents no H1/2026";
-
-// ─── TALENTOS ───────────────────────────────────────────────
-document.getElementById("ttlTalentos").textContent = `${TOTAL} Talentos Mapeados`;
-
-// Para cada nível: id do card + título que aparece no topo do modal.
-// Edite o "titulo" à mão como quiser — não há mais fórmula que acrescenta "es".
-const nivelMap = {
-  "Head":          { id:"head",          titulo:"Heads" },
-  "Gerente":       { id:"gerente",       titulo:"Gerentes" },
-  "Coordenador":   { id:"coordenador",   titulo:"Coordenadores" },
-  "Não Liderança": { id:"nao-lideranca", titulo:"Não Liderança" }
-};
-
-function nineBoxPosition(dg, vg) {
-  // cols: desempenho 1-2=col1, 3=col2, 4-5=col3
-  // rows: valores 1-2=row1(bottom), 3=row2(mid), 4-5=row3(top)
-  const col = dg <= 2 ? 0 : dg === 3 ? 1 : 2;
-  const row = vg <= 2 ? 2 : vg === 3 ? 1 : 0;
-  return { col, row };
+.sub-modal-logo svg {
+  width: 70px;
+  height: 70px;
 }
 
-const nineBoxLabels = [
-  ["Potencial a Desenvolver", "Forte Desempenho",   "Excepcional"],
-  ["Insuficiente",            "Pleno",               "Forte Desempenho"],
-  ["Insuficiente",            "Insuficiente",        "Potencial a Desenvolver"]
-];
-
-// cor do texto de cada célula (não ativa)
-const nineBoxCellTextColor = [
-  ["#ef9999", "#6fcf97", "#27ae60"],
-  ["#e74c3c", "#f1c40f", "#6fcf97"],
-  ["#c0392b", "#c0392b", "#ef9999"]
-];
-
-// bg neutro para células não ativas
-const nineBoxColors = [
-  ["#fafafa","#fafafa","#fafafa"],
-  ["#fafafa","#fafafa","#fafafa"],
-  ["#fafafa","#fafafa","#fafafa"]
-];
-
-function open9BoxModal(t) {
-  if (!t.avd) return;
-const { desempenhoGestor:dg, valoresGestor:vg, desempenhoAuto:da, valoresAuto:va } = t.avd;
-const pos = t.posicao9box ? t.posicao9box : nineBoxPosition(dg, vg);
-
-  // Build 9box grid HTML
-  // Cores do quadrante ativo por posição [row][col]
-  const activeBg  = [["#fef2f2","#dcfce7","#16a34a"],["#fef2f2","#fef9c3","#dcfce7"],["#fef2f2","#fef2f2","#fef2f2"]];
-  const activeTxt = [["#dc2626","#16a34a","#ffffff"],["#dc2626","#854d0e","#16a34a"],["#dc2626","#dc2626","#dc2626"]];
-
-  let gridHTML = '';
-  for (let r = 0; r < 3; r++) {
-    for (let c = 0; c < 3; c++) {
-      const active    = (r === pos.row && c === pos.col);
-      const label     = nineBoxLabels[r][c];
-      const textColor = nineBoxCellTextColor[r][c];
-      const cellBg    = active ? activeBg[r][c] : '#f5f5f7';
-      const cellTxt   = active ? activeTxt[r][c] : textColor;
-      gridHTML += `<div class="nb-cell${active?' nb-active':''}" style="background:${cellBg};">
-        <span class="nb-label" style="color:${cellTxt};">${label}</span>
-      </div>`;
-    }
-  }
-
-    function notaGestorBlock(nd, nv, da, va) {
-    const semNota = (n) => n === 0 || n === null || n === undefined || n === '' || n === 'NA';
-    const corNota = (n) => semNota(n) ? '#9ca3af' : (notaColor[n] || '#6b7280');
-    const numDisplay  = (n) => semNota(n) ? '—' : n;
-    const descDisplay = (n) => semNota(n) ? 'Não realizado' : (notaLabel[n] || 'Não realizado');
-
-    const cd = corNota(nd);
-    const cv = corNota(nv);
-
-    const autoSmall = (n, tipo) => {
-      const c = corNota(n);
-      return `<div class="nb-auto-inline"><div class="nb-auto-line1"><span class="nb-auto-num" style="color:${c}">${numDisplay(n)}</span> <span class="nb-auto-leg">${descDisplay(n)}</span></div><div class="nb-auto-tipo">${tipo}</div></div>`;
-    };
-    return `
-      <div class="nb-notas-pair">
-        <div class="nb-nota-main" style="border-color:${cd}30;background:${cd}08">
-          <div class="nb-nota-big" style="color:${cd}">${numDisplay(nd)}</div>
-          <div class="nb-nota-body">
-            <div class="nb-nota-desc">${descDisplay(nd)}</div>
-            <div class="nb-nota-tipo">Desempenho · Gestor</div>
-            <div class="nb-auto-row">${autoSmall(da, 'Desempenho · Auto')}</div>
-          </div>
-        </div>
-        <div class="nb-nota-main" style="border-color:${cv}30;background:${cv}08">
-          <div class="nb-nota-big" style="color:${cv}">${numDisplay(nv)}</div>
-          <div class="nb-nota-body">
-            <div class="nb-nota-desc">${descDisplay(nv)}</div>
-            <div class="nb-nota-tipo">Valores · Gestor</div>
-            <div class="nb-auto-row">${autoSmall(va, 'Valores · Auto')}</div>
-          </div>
-        </div>
-      </div>`;
-  }
-
-  const cl = riscoClass(t.risco);
-  const img = t.foto
-    ? `<img src="${t.foto}" alt="${t.nome}">`
-    : `<div class="modal-avatar-lg">${initials(t.nome)}</div>`;
-
-  openModal(`
-    <div class="modal-header">
-      <span class="modal-title">9Box · ${t.nome}</span>
-      <button class="modal-close voltar" onclick="closeModal()">← Voltar</button>
-    </div>
-    <div class="nb-layout">
-
-      <div class="nb-left">
-        <!-- notas ACIMA do grid -->
-        <div class="nb-notas">
-          <div class="nb-notas-title">Avaliação</div>
-          ${notaGestorBlock(dg, vg, da, va)}
-        </div>
-
-        <!-- 9box grid -->
-        <div class="nb-grid-wrap">
-          <div class="nb-axis-y">Potencial (Valores)</div>
-          <div class="nb-grid-inner">
-            <div class="nb-grid">${gridHTML}</div>
-            <div class="nb-axis-x">Desempenho</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="nb-right">
-        <div class="nb-person-header">
-          <div class="modal-person-photo">${img}</div>
-          <div>
-            <div class="modal-person-name">${t.nome}</div>
-            <div class="modal-person-cargo">${t.cargo}</div>
-            <span class="risco-badge ${cl}">${t.risco}</span>
-          </div>
-        </div>
-
-        <div class="nb-info-grid">
-          <div class="nb-info-row"><span class="nb-info-label">Área</span><span class="nb-info-val">${t.area}</span></div>
-          <div class="nb-info-row"><span class="nb-info-label">Gestor</span><span class="nb-info-val">${t.gestor || '-'}</span></div>
-          <div class="nb-info-row"><span class="nb-info-label">Tempo de Casa</span><span class="nb-info-val">${t.tempoCasa}</span></div>
-          <div class="nb-info-row"><span class="nb-info-label">Posição na Faixa</span><span class="nb-info-val">
-            <span class="faixa-bar-wrap"><span class="faixa-bar" style="width:${t.posicaoFaixa||0}%"></span></span>
-            <strong>${t.posicaoFaixa || '-'}%</strong>
-          </span></div>
-          <div class="nb-info-row"><span class="nb-info-label">Último Reajuste</span><span class="nb-info-val">${t.ultimoReajuste || '-'}</span></div>
-          <div class="nb-info-row"><span class="nb-info-label">Tipo</span><span class="nb-info-val">${t.tipoReajuste || '-'}</span></div>
-          <div class="nb-info-row"><span class="nb-info-label">% de Reajuste</span><span class="nb-info-val">${t.pctReajuste || '-'}</span></div>
-        </div>
-
-
-      </div>
-
-    </div>
-  `, true);
+  .btn-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
 }
 
-function personCardHTML(t) {
-  const cl  = riscoClass(t.risco);
-  const cli = riscoClass(t.impacto);
-  const img = t.foto
-    ? `<img src="${t.foto}" alt="${t.nome}">`
-    : `<div class="avatar-fallback">${initials(t.nome)}</div>`;
-  const nomeId = t.nome.replace(/\s+/g,'-');
-  return `
-    <div class="person-card" id="pc-${nomeId}">
-      <div class="person-photo">${img}</div>
-      <div class="person-name">${t.nome}</div>
-      <div class="person-area">${t.area}</div>
-      <div class="person-cargo">${t.cargo}</div>
-      <div class="person-meta">
-        <span class="meta-pill">⏱ ${t.tempoCasa}</span>
-        <span class="risco-badge ${cl}">Risco ${t.risco}</span>
-        <span class="risco-badge ${cli}">Impacto ${t.impacto}</span>
-      </div>
-      ${t.avd ? `<button class="btn-9box" onclick="event.stopPropagation();open9BoxModal(talentos.find(x=>x.nome==='${t.nome.replace(/'/g,"\\'")}'))">acessar 9box</button>` : ''}
-    </div>`;
+.btn-fullscreen {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--rosa);
+  background: var(--surface);
+  color: var(--rosa);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
 }
 
-Object.entries(nivelMap).forEach(([nivel, { id, titulo }]) => {
-  const grupo = talentos.filter(t=>t.nivel===nivel);
-  const card  = document.getElementById("card-"+id);
-  if (!card) return;
+.btn-fullscreen:hover { background: var(--rosa); color: #fff; border-color: var(--rosa); }
 
-  card.querySelector(".nivel-num").textContent = grupo.length;
-  card.querySelector(".nivel-pct").textContent = pct(grupo.length, TOTAL);
-
-  card.addEventListener("click", () => {
-    document.querySelectorAll(".nivel-card").forEach(c=>c.classList.remove("open"));
-    card.classList.add("open");
-    openModal(`
-      <div class="modal-header">
-        <span class="modal-title">${titulo} — ${grupo.length} talento${grupo.length>1?"s":""}</span>
-        <button class="modal-close" onclick="closeModal()">×</button>
-      </div>
-      <div class="modal-cards-wrap"><div class="modal-cards">${grupo.map(personCardHTML).join("")}</div></div>
-    `);
-  });
-});
-
-// ─── SOLUÇÕES (produto=grupo, subproduto=array) ─────────────
-const grupoIconMap = {
-  "Tech Solutions":                     "TS",
-  "Relacionamento com Cliente Externo": "RC",
-  "Girotrade":                          "GT",
-};
-
-const solGrid = document.getElementById("solGrid");
-const grupos  = [...new Set(talentos.map(t => t.produto))].sort();
-
-// helper: normalise subproduto to array
-function getSubs(t) {
-  if (!t.subproduto) return ["adicionar"];
-  return Array.isArray(t.subproduto) ? t.subproduto : [t.subproduto];
+/* ── ESTADO "APERTADO" DOS BOTÕES (rosa) ── */
+.btn-next:active,
+.btn-fullscreen:active {
+  background: var(--rosa);
+  color: #fff;
+  border-color: var(--rosa);
 }
-
-// ── Matriz de cobertura ──────────────────────────────────────
-function buildMatriz(grupoNome) {
-  const talentosDo = talentos.filter(t => t.produto === grupoNome);
-  // collect all unique subprodutos for this group
-  const allSubs = [...new Set(talentosDo.flatMap(t => getSubs(t)))].sort();
-
-  // table header
-  let thead = '<tr><th class="mz-th-name">Talento</th>'
-    + allSubs.map(s => '<th class="mz-th-sub">' + s + '</th>').join('')
-    + '</tr>';
-
-  // rows
-  let tbody = talentosDo.map(t => {
-    const subs = getSubs(t);
-    const img  = t.foto
-      ? '<img src="' + t.foto + '" alt="' + t.nome + '" class="mz-foto">'
-      : '<div class="mz-avatar">' + initials(t.nome) + '</div>';
-    const cells = allSubs.map(s =>
-      '<td class="mz-cell">' + (subs.includes(s) ? '<span class="mz-dot"></span>' : '') + '</td>'
-    ).join('');
-    return '<tr><td class="mz-td-name">' + img + '<span>' + t.nome.split(' ')[0] + '</span></td>' + cells + '</tr>';
-  }).join('');
-
-  return '<div class="mz-wrap"><table class="mz-table"><thead>' + thead + '</thead><tbody>' + tbody + '</tbody></table></div>';
-}
-
-function openGrupoModal(grupoNome) {
-  const talentosDo = talentos.filter(t => t.produto === grupoNome);
-  const allSubs    = [...new Set(talentosDo.flatMap(t => getSubs(t)))].sort();
-  const total      = talentosDo.length;
-
-  // ordena: quem cobre mais produtos aparece primeiro
-  const ordenado = [...talentosDo].sort((a, b) => getSubs(b).length - getSubs(a).length);
-
-  const personCards = ordenado.map(t => {
-    const subs    = getSubs(t);
-    const isMulti = subs.length > 1 && subs[0] !== "adicionar";
-    const cl      = riscoClass(t.risco);
-    const img     = t.foto
-      ? '<img src="' + t.foto + '" alt="' + t.nome + '" class="pp-photo">'
-      : '<div class="pp-avatar">' + initials(t.nome) + '</div>';
-
-    const tags = subs.map(s => '<span class="pp-tag">' + s + '</span>').join('');
-
-    return '<div class="pp-card">'
-      + (isMulti ? '<div class="pp-badge">Multi-produto</div>' : '')
-      + '<div class="pp-head">'
-        + img
-        + '<div class="pp-headtext">'
-          + '<div class="pp-name">' + t.nome + '</div>'
-          + '<div class="pp-cargo">' + t.cargo + '</div>'
-        + '</div>'
-      + '</div>'
-      + '<div class="pp-tags">' + tags + '</div>'
-      + '<span class="risco-badge ' + cl + ' pp-risco">' + t.risco + '</span>'
-    + '</div>';
-  }).join('');
-
-  openModal(
-    '<div class="modal-header">'
-    + '<span class="modal-title">' + grupoNome + '</span>'
-    + '<button class="modal-close" onclick="closeModal()">×</button>'
-    + '</div>'
-    + '<p class="modal-subtitle">' + total + ' talento' + (total > 1 ? 's' : '') + ' · ' + allSubs.length + ' produto' + (allSubs.length > 1 ? 's' : '') + '</p>'
-    + '<div class="pp-grid">' + personCards + '</div>'
-    + '<button class="ver-matriz-btn" onclick="openMatrizDetalhe(this)" data-grupo="' + grupoNome.replace(/"/g,'&quot;') + '">Ver matriz de cobertura completa →</button>'
-  );
-}
-
-window.openMatrizDetalhe = function(el) {
-  const grupoNome = el.dataset.grupo;
-  const talentosDo = talentos.filter(t => t.produto === grupoNome);
-  const allSubs     = [...new Set(talentosDo.flatMap(t => getSubs(t)))].sort();
-  const matriz      = buildMatriz(grupoNome);
-
-  openModal(
-    '<div class="modal-header">'
-    + '<span class="modal-title">' + grupoNome + ' · Matriz de cobertura</span>'
-    + '<button class="modal-close voltar" onclick="closeModal()">← Voltar</button>'
-    + '</div>'
-    + matriz,
-    true
-  );
-};
-
-
-
-const TOTAL_TALENTOS_SOL = talentos.length;
-
-grupos.forEach(grupoNome => {
-  const talentosDo = talentos.filter(t => t.produto === grupoNome);
-  const allSubs    = [...new Set(talentosDo.flatMap(t => getSubs(t)))];
-  const icon       = grupoIconMap[grupoNome] || grupoNome.slice(0, 2).toUpperCase();
-  const sharePct   = Math.round((talentosDo.length / TOTAL_TALENTOS_SOL) * 100);
-
-  // mini fotos (até 5, +N se tiver mais)
-  const maxFotos = 5;
-  const fotosArr = talentosDo.slice(0, maxFotos).map(t => {
-    return t.foto
-      ? '<img class="sol-mini-foto" src="' + t.foto + '" alt="' + t.nome + '" title="' + t.nome + '">'
-      : '<div class="sol-mini-avatar" title="' + t.nome + '">' + initials(t.nome) + '</div>';
-  }).join('');
-  const extraCount = talentosDo.length - maxFotos;
-  const extraBadge = extraCount > 0 ? '<div class="sol-mini-extra">+' + extraCount + '</div>' : '';
-
-  const card = document.createElement("div");
-  card.className = "sol-card";
-  card.innerHTML = ''
-    + '<div class="sol-card-top">'
-      + '<div class="sol-icon">' + icon + '</div>'
-      + '<div class="sol-card-headtext">'
-        + '<div class="sol-name">' + grupoNome + '</div>'
-        + '<div class="sol-sub-line">' + allSubs.length + ' produto' + (allSubs.length > 1 ? 's' : '') + ' mapeado' + (allSubs.length > 1 ? 's' : '') + '</div>'
-      + '</div>'
-      + '<div class="sol-card-num">' + talentosDo.length + '</div>'
-    + '</div>'
-    + '<div class="sol-progress-wrap">'
-      + '<div class="sol-progress-bar"><div class="sol-progress-fill" style="width:' + sharePct + '%"></div></div>'
-      + '<div class="sol-progress-label">' + sharePct + '% dos talentos estratégicos</div>'
-    + '</div>'
-    + '<div class="sol-mini-fotos">' + fotosArr + extraBadge + '</div>'
-    + '<div class="sol-cta">Ver matriz de cobertura →</div>';
-
-  card.addEventListener("click", () => openGrupoModal(grupoNome));
-  solGrid.appendChild(card);
-});
-
-// ── Logos por subproduto ──────────────────────────────────
-const subprodutoLogos = {
-  "SmartSales":    `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#1e3a5f"/><path d="M10 36 L20 20 L28 28 L38 12" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="38" cy="12" r="3" fill="#4ade80"/></svg>`,
-  "SmartForce":    `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#1e1b4b"/><path d="M24 8 L28 19 H40 L31 26 L34 37 L24 30 L14 37 L17 26 L8 19 H20 Z" fill="#a78bfa"/></svg>`,
-  "SmartCare":     `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#0f4c3a"/><path d="M24 36 C24 36 10 28 10 18 C10 13 14 10 18 10 C21 10 23 12 24 13 C25 12 27 10 30 10 C34 10 38 13 38 18 C38 28 24 36 24 36Z" fill="#34d399"/></svg>`,
-  "SmartCenter":   `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#1c1917"/><rect x="10" y="13" width="28" height="20" rx="3" stroke="#fb923c" stroke-width="2.5" fill="none"/><path d="M17 13 V10 M31 13 V10" stroke="#fb923c" stroke-width="2.5" stroke-linecap="round"/><path d="M15 22 H33 M15 27 H25" stroke="#fb923c" stroke-width="2" stroke-linecap="round"/></svg>`,
-  "Abasteceshop":  `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#1a2744"/><path d="M10 14 H14 L17 26 H34 L37 17 H20" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="20" cy="32" r="3" fill="#60a5fa"/><circle cx="31" cy="32" r="3" fill="#60a5fa"/></svg>`,
-  "Design de Produto":`<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#2d1b69"/><circle cx="24" cy="21" r="9" fill="none" stroke="#e879f9" stroke-width="2.5"/><path d="M24 12 V8 M24 34 V38 M13 21 H9 M39 21 H35" stroke="#e879f9" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="21" r="3.5" fill="#e879f9"/></svg>`,
-  "Onboarding":    `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#0c4a6e"/><circle cx="24" cy="18" r="7" fill="none" stroke="#38bdf8" stroke-width="2.5"/><path d="M12 38 C12 32 17 28 24 28 C31 28 36 32 36 38" stroke="#38bdf8" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>`,
-  "SmartCore":     `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#1a1a2e"/><circle cx="24" cy="22" r="9" fill="none" stroke="#818cf8" stroke-width="2.5"/><circle cx="24" cy="22" r="4" fill="#818cf8"/></svg>`,
-  "Girotrade":     `<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#14532d"/><path d="M24 12 C17 12 11 18 11 24 C11 30 16 35 22 36 L22 31 C18 30 15 27 15 24 C15 20 19 16 24 16 C26 16 28 17 30 19 L26 19 L26 24 L36 24 L36 14 L32 14 C30 12.5 27 12 24 12Z" fill="#4ade80"/></svg>`,
-  "Cliente Externo":`<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#7c2d12"/><circle cx="18" cy="18" r="6" fill="#fdba74"/><circle cx="30" cy="18" r="6" fill="#fb923c"/><path d="M9 38 C9 32 13 28 18 28 C21 28 23 29 24 30 C25 29 27 28 30 28 C35 28 39 32 39 38" stroke="#fdba74" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>`,
-};
-
-function openSubprodutoModal(sub) {
-  const grupo = talentos.filter(t => getSubs(t).includes(sub));
-  const logo  = subprodutoLogos[sub] || '';
-  const cards = grupo.map(t => {
-    const cl  = riscoClass(t.risco);
-    const img = t.foto ? '<img src="'+t.foto+'" alt="'+t.nome+'" class="pp-photo">' : '<div class="pp-avatar">'+initials(t.nome)+'</div>';
-    return '<div class="pp-card"><div class="pp-head">'+img+'<div class="pp-headtext"><div class="pp-name">'+t.nome+'</div><div class="pp-cargo">'+t.cargo+'</div></div></div><span class="risco-badge '+cl+'">'+t.risco+'</span></div>';
-  }).join('');
-openModal(
-  '<div class="modal-header">' +
-    '<div class="sub-header">' +
-      (logo ? '<div class="sub-modal-logo">'+logo+'</div>' : '') +
-      '<span class="modal-title">'+sub+'</span>' +
-    '</div>' +
-    '<button class="modal-close" onclick="closeModal()">×</button>' +
-  '</div>' +
-  '<p class="modal-subtitle">'+grupo.length+' '+(grupo.length>1?'responsáveis':'responsável')+'</p>' +
-  '<div class="pp-grid">'+cards+'</div>'
-);
-}
-
-// Grade de logos abaixo dos cards
-const logosSection = document.createElement('div');
-logosSection.className = 'sol-logos-section';
-logosSection.innerHTML = '<div class="sol-logos-title">Produtos</div><div class="sol-logos-grid" id="solLogosGrid"></div>';
-document.getElementById('solGrid').parentElement.appendChild(logosSection);
-
-const allSubsUniq = [...new Set(talentos.flatMap(t => getSubs(t)))].filter(s => s !== 'adicionar').sort();
-allSubsUniq.forEach(sub => {
-  const logo = subprodutoLogos[sub];
-  if (!logo) return;
-  const el = document.createElement('div');
-  el.className = 'sol-logo-item';
-  el.innerHTML = logo + '<div class="sol-logo-nome">'+sub+'</div>';
-  el.addEventListener('click', () => openSubprodutoModal(sub));
-  document.getElementById('solLogosGrid').appendChild(el);
-});
-
-// ─── MAPA DE RISCO ──────────────────────────────────────────
-function openPersonModal(t) {
-  const cl  = riscoClass(t.risco);
-  const img = t.foto
-    ? `<img src="${t.foto}" alt="${t.nome}">`
-    : `<div class="modal-avatar-lg">${initials(t.nome)}</div>`;
-  openModal(`
-    <div class="modal-header">
-      <span class="modal-title">Análise de Risco</span>
-      <button class="modal-close" onclick="closeModal()">×</button>
-    </div>
-    <div class="modal-person">
-      <div class="modal-person-photo">${img}</div>
-      <div class="modal-person-info">
-        <div class="modal-person-name">${t.nome}</div>
-        <div class="modal-person-cargo">${t.cargo} · ${t.area}</div>
-        <div class="modal-badges">
-          <span class="risco-badge ${cl}">Risco ${t.risco}</span>
-          <span class="impacto-badge">Impacto ${t.impacto}</span>
-          <span class="meta-pill">⏱ ${t.tempoCasa}</span>
-        </div>
-        <div class="modal-section">
-          <div class="modal-section-title">Por que esse nível de impacto?</div>
-          <p>${t.motivoImpacto}</p>
-        </div>
-        <div class="modal-section">
-          <div class="modal-section-title">Por que esse risco mapeado?</div>
-          <p>${t.motivoRisco}</p>
-        </div>
-      </div>
-    </div>
-  `);
-}
-
-const matrizEl  = document.getElementById("matrizGrid");
-const xLabels   = ["Impacto Médio","Impacto Alto"];
-const yLabels   = ["Baixo","Médio","Alto"];
-const avaliados = talentos.filter(t=>t.risco!=="Não Avaliado");
-const naoAval   = talentos.filter(t=>t.risco==="Não Avaliado");
-
-const zonaMap = {
-  "Baixo-Médio":"zona-verde",   "Baixo-Alto":"zona-amarela",
-  "Médio-Médio":"zona-amarela", "Médio-Alto":"zona-laranja",
-  "Alto-Médio":"zona-laranja",  "Alto-Alto":"zona-vermelha"
-};
-const zonaLabel = {
-  "zona-verde":"Baixo risco","zona-amarela":"Atenção",
-  "zona-laranja":"Risco moderado","zona-vermelha":"Risco crítico"
-};
-
-let html = `<div class="matriz-wrap">
-  <div class="eixo-y-label">Probabilidade de Saída</div>
-  <div class="matriz-inner">
-    <div class="eixo-x-labels">
-      <div></div>
-      ${xLabels.map(l=>`<div class="ex-label">${l}</div>`).join("")}
-    </div>
-    <div class="matriz-rows">`;
-
-[...yLabels].reverse().forEach(yr => {
-  html += `<div class="matriz-row"><div class="ey-label">${yr}</div>`;
-  xLabels.forEach(xl => {
-    const impacto = xl.replace("Impacto ","");
-    const key     = `${yr}-${impacto}`;
-    const zClass  = zonaMap[key] || "zona-verde";
-    const zLabel  = zonaLabel[zClass];
-    const pessoas = avaliados.filter(t=>t.risco===yr && t.impacto===impacto);
-
-    const dots = pessoas.map(p => {
-      const photoEl = p.foto
-        ? `<div class="dot-photo"><img src="${p.foto}" alt="${p.nome}"></div>`
-        : `<div class="dot-avatar">${initials(p.nome)}</div>`;
-      return `<div class="matriz-dot" data-nome="${p.nome}">
-        ${photoEl}
-        <div class="dot-name">${p.nome.split(" ")[0]}</div>
-        <div class="dot-cargo-sm">${p.cargo.split(" ").slice(0,3).join(" ")}</div>
-        <div class="dot-hover-tooltip">
-          <div class="dht-name">${p.nome}</div>
-          <div class="dht-cargo">${p.cargo}</div>
-          ${p.resumoRisco   ? `<div class="dht-row"><b>Risco:</b> ${p.resumoRisco}</div>`   : ''}
-          ${p.resumoImpacto ? `<div class="dht-row"><b>Impacto:</b> ${p.resumoImpacto}</div>` : ''}
-        </div>
-      </div>`;
-    }).join("");
-
-    html += `<div class="matriz-cell ${zClass}">
-      <div class="cell-zone-label">${zLabel}</div>
-      <div class="cell-dots">${dots}</div>
-    </div>`;
-  });
-  html += `</div>`;
-});
-
-html += `</div>
-    <div class="eixo-x-label">Impacto na Organização</div>
-  </div>
-</div>`;
-
-if (naoAval.length) {
-  html += `<div class="na-strip">
-    <span class="na-title">Não avaliados (${naoAval.length})</span>
-    ${naoAval.map(t=>`<span class="na-pill">${t.nome}</span>`).join("")}
-  </div>`;
-}
-
-
-matrizEl.innerHTML = html;
-
-// Event delegation para dots da matriz
-matrizEl.addEventListener("click", e => {
-  const dot = e.target.closest(".matriz-dot");
-  if (!dot) return;
-  const nome   = dot.dataset.nome;
-  const talento = talentos.find(t=>t.nome===nome);
-  if (talento) openPersonModal(talento);
-});
-
-// ─── FOTOS GRID ─────────────────────────────────────────────
-const fotosGrid = document.getElementById("fotosGrid");
-if (fotosGrid) {
-  talentos.forEach(t => {
-    const img = t.foto ? `<img src="${t.foto}" alt="${t.nome}">` : `<div class="foto-avatar">${initials(t.nome)}</div>`;
-    const item = document.createElement("div");
-    item.className = "foto-item";
-    item.style.cursor = "pointer";
-    item.innerHTML = `<div class="foto-circle">${img}</div><div class="foto-nome">${t.nome.split(" ")[0]}</div>`;
-    item.addEventListener("click", () => openResumoModal(t));
-    fotosGrid.appendChild(item);
-  });
-}
-
-function openResumoModal(t) {
-  const cl = riscoClass(t.risco), cli = riscoClass(t.impacto);
-  const img = t.foto ? `<img src="${t.foto}" alt="${t.nome}" style="width:80px;height:80px;border-radius:50%;object-fit:cover;flex-shrink:0">` : `<div class="modal-avatar-lg">${initials(t.nome)}</div>`;
-  const plano = typeof planoData !== 'undefined' ? planoData.find(x => x.nome.toLowerCase().includes(t.nome.split(' ')[0].toLowerCase())) : null;
-  const qcores = {"Plano de Sucessão":{bg:"#f0fdf4",txt:"#16a34a"},"Ação Imediata":{bg:"#fef2f2",txt:"#dc2626"},"Risco Controlado":{bg:"#f8fafc",txt:"#64748b"},"Monitorar de Perto":{bg:"#fffbeb",txt:"#d97706"}};
-  const qc = plano ? (qcores[plano.quad]||qcores["Risco Controlado"]) : null;
-  const nbL=[["Potencial a Desenvolver","Forte Desempenho","Excepcional"],["Insuficiente","Pleno","Forte Desempenho"],["Insuficiente","Insuficiente","Potencial a Desenvolver"]];
-  const q9 = t.posicao9box ? nbL[t.posicao9box.row][t.posicao9box.col] : '—';
-  openModal(`<div class="modal-header"><span class="modal-title">${t.nome}</span><button class="modal-close" onclick="closeModal()">×</button></div>
-    <div class="resumo-modal-layout">
-      <div class="resumo-modal-top">${img}<div><div class="resumo-modal-name">${t.nome}</div><div class="resumo-modal-cargo">${t.cargo} · ${t.area}</div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><span class="risco-badge ${cl}">Risco ${t.risco}</span><span class="risco-badge ${cli}">Impacto ${t.impacto}</span></div></div></div>
-      <div class="resumo-modal-grid">
-        <div class="resumo-bloco"><div class="resumo-info-title">Informações</div>
-          <div class="resumo-info-row"><span>Gestor</span><strong>${t.gestor||'—'}</strong></div>
-          <div class="resumo-info-row"><span>Tempo de Casa</span><strong>${t.tempoCasa}</strong></div>
-          <div class="resumo-info-row"><span>Posição na Faixa</span><strong style="display:flex;align-items:center;gap:8px"><span style="width:60px;height:5px;background:var(--border);border-radius:3px;overflow:hidden;display:inline-block"><span style="display:block;height:100%;width:${t.posicaoFaixa||0}%;background:var(--grad);border-radius:3px"></span></span>${t.posicaoFaixa||'—'}%</strong></div>
-          <div class="resumo-info-row"><span>Último Reajuste</span><strong>${t.ultimoReajuste||'—'}</strong></div>
-          <div class="resumo-info-row"><span>% Reajuste</span><strong>${t.pctReajuste||'—'}</strong></div>
-        </div>
-        <div class="resumo-bloco"><div class="resumo-info-title">Posicionamento</div>
-          <div class="resumo-info-row"><span>9Box</span><strong>${q9}</strong></div>
-          ${plano?`<div class="resumo-info-row"><span>Plano de Ação</span><strong><span style="background:${qc.bg};color:${qc.txt};padding:2px 10px;border-radius:20px;font-size:11px">${plano.quad}</span></strong></div><div class="resumo-info-row"><span>Score</span><strong>${plano.score}</strong></div><div class="resumo-info-row"><span>Prob. Saída</span><strong>${plano.prob}/5</strong></div><div class="resumo-info-row"><span>Impacto</span><strong>${plano.imp}/5</strong></div>`:''}
-        </div>
-      </div>
-      ${t.resumoRisco?`<div class="resumo-bloco"><div class="resumo-info-title">Risco de Saída</div><p style="font-size:13px;color:var(--text);line-height:1.65;margin-top:8px">${t.resumoRisco}</p></div>`:''}
-      ${t.resumoImpacto?`<div class="resumo-bloco"><div class="resumo-info-title">Impacto da Perda</div><p style="font-size:13px;color:var(--text);line-height:1.65;margin-top:8px">${t.resumoImpacto}</p></div>`:''}
-      ${plano&&plano.acao?`<div class="resumo-bloco"><div class="resumo-info-title">Ação Recomendada</div><p style="font-size:13px;color:var(--text);line-height:1.65;margin-top:8px">${plano.acao}</p></div>`:''}
-    </div>`);
-}
-
-// ─── MODAL TURNOVER ─────────────────────────────────────────
-function openTurnoverModal() {
-  const cards = desligados.map(d => {
-    const img = d.foto
-      ? '<img src="' + d.foto + '" alt="' + d.nome + '" class="pp-photo">'
-      : '<div class="pp-avatar">' + initials(d.nome) + '</div>';
-    const tipoCl = d.tipo === "Voluntário" ? "medio" : "alto";
-    const tipoLabel = d.tipo === "Voluntário" ? "Voluntário" : "Involuntário";
-    return '<div class="tv-card">'
-      + '<div class="pp-head">'
-        + img
-        + '<div class="pp-headtext">'
-          + '<div class="pp-name">' + d.nome + '</div>'
-          + '<div class="pp-cargo">' + d.cargo + '</div>'
-        + '</div>'
-      + '</div>'
-      + '<div class="tv-meta">'
-        + '<span class="tv-meta-item">📍 ' + d.area + '</span>'
-        + '<span class="tv-meta-item">⏱ ' + d.tempoCasa + '</span>'
-        + '<span class="risco-badge ' + tipoCl + '">' + tipoLabel + '</span>'
-      + '</div>'
-      + '<div class="tv-motivo"><strong>Motivo:</strong> ' + d.motivo + '</div>'
-    + '</div>';
-  }).join('');
-
-  openModal(
-    '<div class="modal-header">'
-    + '<span class="modal-title">Turnover de Key Talents · H1/2026</span>'
-    + '<button class="modal-close" onclick="closeModal()">×</button>'
-    + '</div>'
-    + '<p class="modal-subtitle">' + desligados.length + ' desligamento' + (desligados.length > 1 ? 's' : '') + ' no período</p>'
-    + '<div class="tv-grid">' + cards + '</div>'
-  );
-}
-
-// ─── RISCO SUB-TABS ─────────────────────────────────────────
-document.querySelectorAll(".risco-tab").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".risco-tab").forEach(t => t.classList.remove("active"));
-    btn.classList.add("active");
-    const target = btn.dataset.risco;
-    document.getElementById("matrizGrid").style.display = target === "matriz" ? "" : "none";
-    document.getElementById("planoGrid").style.display  = target === "plano"  ? "" : "none";
-  });
-});
-
-// ─── PLANO DE AÇÃO ───────────────────────────────────────────
-const planoData = [
-  { nome:"Marcelo Bueno",     prob:3, imp:4.3, score:12.9, quad:"Plano de Sucessão",   acao:"Mapear sucessor interno. Garantir documentação de conhecimento crítico. Conversa de carreira sobre expectativas." },
-  { nome:"Jackson Almeida",   prob:3, imp:3.3, score:9.9,  quad:"Risco Controlado",    acao:"Monitorar engajamento. Avaliar alinhamento salarial no próximo ciclo. Manter diálogo com liderança." },
-  { nome:"Valdo Guerra",      prob:3, imp:3,   score:9,    quad:"Risco Controlado",    acao:"Acompanhar sinais de atrito com gestão. Incluir em projetos estratégicos." },
-  { nome:"Gisele Almeida",    prob:2, imp:4,   score:8,    quad:"Plano de Sucessão",   acao:"Acelerar mapeamento de sucessão. Fortalecer reconhecimento e visibilidade interna." },
-  { nome:"Gabriel Fernandes", prob:2, imp:3.7, score:7.4,  quad:"Risco Controlado",    acao:"Oferecer desafios de alta visibilidade. Revisar expectativas de crescimento." },
-  { nome:"Douglas Neves",     prob:2, imp:2.3, score:4.6,  quad:"Risco Controlado",    acao:"Alinhar expectativas sobre entrega de resultados." },
-  { nome:"Luana Silva",       prob:2, imp:2,   score:4,    quad:"Risco Controlado",    acao:"Avaliar flexibilidade de modelo de trabalho. Conversa de desenvolvimento." },
-  { nome:"Pietra Silva",      prob:3, imp:1,   score:3,    quad:"Risco Controlado",    acao:"Verificar alinhamento salarial. Avaliar viabilidade de trabalho remoto." },
-  { nome:"Rafael Oliveira",   prob:1, imp:3,   score:3,    quad:"Risco Controlado",    acao:"Aumentar exposição estratégica." },
-  { nome:"Rodrigo Santos",    prob:1, imp:3,   score:3,    quad:"Risco Controlado",    acao:"Monitorar atritos com gestão." },
-  { nome:"Guilherme Russo",   prob:1, imp:3,   score:3,    quad:"Risco Controlado",    acao:"Manter engajamento com entregas." },
-  { nome:"Jesse Neto",        prob:1, imp:2.7, score:2.7,  quad:"Risco Controlado",    acao:"Perfil estável. Manter acompanhamento de rotina." },
-  { nome:"Joao Duarte",       prob:1, imp:2.7, score:2.7,  quad:"Risco Controlado",    acao:"Garantir boa experiência de integração." },
-  { nome:"Priscilla Cardoso", prob:1, imp:2.7, score:2.7,  quad:"Risco Controlado",    acao:"Manter acompanhamento periódico." },
-  { nome:"Phablo Sena",       prob:1, imp:1.7, score:1.7,  quad:"Risco Controlado",    acao:"Risco baixo. Manter acompanhamento padrão." },
-  { nome:"Rennan Freitas",    prob:1, imp:1.7, score:1.7,  quad:"Risco Controlado",    acao:"Risco baixo. Monitorar atritos com gestão." },
-];
-
-function openPlanoPersonModal(el) {
-  const p = planoData.find(x => x.nome === el.dataset.nome);
-  if (!p) return;
-  const tal = talentos.find(x => x.nome.toLowerCase().includes(p.nome.split(' ')[0].toLowerCase()));
-  const qc = {"Plano de Sucessão":{bg:"#f0fdf4",txt:"#16a34a"},"Ação Imediata":{bg:"#fef2f2",txt:"#dc2626"},"Risco Controlado":{bg:"#f8fafc",txt:"#64748b"},"Monitorar de Perto":{bg:"#fffbeb",txt:"#d97706"}};
-  const c = qc[p.quad] || qc["Risco Controlado"];
-  const img = (tal && tal.foto) ? '<img src="'+tal.foto+'" alt="'+p.nome+'" style="width:72px;height:72px;border-radius:50%;object-fit:cover;flex-shrink:0">' : '<div class="modal-avatar-lg">'+initials(p.nome)+'</div>';
-  openModal('<div class="modal-header"><span class="modal-title">Plano de Ação · '+p.nome+'</span><button class="modal-close" onclick="closeModal()">×</button></div>'
-    +'<div style="display:flex;gap:20px;align-items:flex-start;margin-bottom:20px">'+img+'<div><div style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:4px">'+p.nome+'</div>'+(tal?'<div style="font-size:13px;color:var(--muted);margin-bottom:10px">'+tal.cargo+'</div>':'')+'<span style="background:'+c.bg+';color:'+c.txt+';font-size:10px;font-weight:700;padding:4px 12px;border-radius:20px;border:1px solid '+c.txt+'30">'+p.quad+'</span></div></div>'
-    +'<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px">'+[['Prob. Saída',p.prob+'/5'],['Impacto',p.imp+'/5'],['Score',p.score]].map(([l,v])=>'<div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center"><div style="font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:4px">'+l+'</div><div style="font-size:22px;font-family:DM Serif Display,serif;color:var(--text)">'+v+'</div></div>').join('')+'</div>'
-    +'<div style="background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:18px"><div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Ação Recomendada</div><div style="font-size:13px;color:var(--text);line-height:1.7">'+p.acao+'</div></div>');
-}
-
-function buildPlano() {
-  function toX(v){return((v-1)/4*100).toFixed(1);} function toY(v){return((5-v)/4*100).toFixed(1);}
-  const cx=toX(4),cy=toY(4);
-  const dots=planoData.map(p=>{
-    const tal=talentos.find(x=>x.nome.toLowerCase().includes(p.nome.split(' ')[0].toLowerCase()));
-    const img=(tal&&tal.foto)?'<img src="'+tal.foto+'" alt="'+p.nome+'" class="mz-dot-foto">':"<div class='mz-dot-avatar'>"+initials(p.nome)+"</div>";
-    return '<div class="scatter-dot" data-nome="'+p.nome.replace(/"/g,'&quot;')+'" onclick="openPlanoPersonModal(this)" style="left:'+toX(p.prob)+'%;top:'+toY(p.imp)+'%">'+img+'<div class="scatter-label">'+p.nome.split(' ').slice(0,2).join(' ')+'</div></div>';
-  }).join('');
-  const ql=[{l:"Plano de Sucessão",x:2,y:2,c:"#16a34a"},{l:"Ação Imediata",x:77,y:2,c:"#dc2626"},{l:"Risco Controlado",x:2,y:78,c:"#64748b"},{l:"Monitorar de Perto",x:77,y:78,c:"#d97706"}].map(q=>'<div class="scatter-quad-label" style="left:'+q.x+'%;top:'+q.y+'%;color:'+q.c+'">'+q.l+'</div>').join('');
-  const tX=[1,2,3,4,5].map(v=>'<div class="scatter-tick-x" style="left:'+toX(v)+'%">'+v+'</div>').join('');
-  const tY=[1,2,3,4,5].map(v=>'<div class="scatter-tick-y" style="top:'+toY(v)+'%">'+v+'</div>').join('');
-  return '<div class="scatter-wrap"><div class="scatter-y-axis"><div class="scatter-y-label">Impacto da Perda</div><div class="scatter-y-ticks">'+tY+'</div></div><div class="scatter-right"><div class="scatter-plot"><div class="scatter-bg scatter-bg-ps" style="right:'+(100-parseFloat(cx))+'%;bottom:'+(100-parseFloat(cy))+'%"></div><div class="scatter-bg scatter-bg-ai" style="left:'+cx+'%;bottom:'+(100-parseFloat(cy))+'%"></div><div class="scatter-bg scatter-bg-rc" style="right:'+(100-parseFloat(cx))+'%;top:'+cy+'%"></div><div class="scatter-bg scatter-bg-mp" style="left:'+cx+'%;top:'+cy+'%"></div><div class="scatter-line-v" style="left:'+cx+'%"></div><div class="scatter-line-h" style="top:'+cy+'%"></div>'+ql+dots+'</div><div class="scatter-x-ticks">'+tX+'</div><div class="scatter-x-label">Probabilidade de Saída</div></div></div>';
-}
-document.getElementById("planoGrid").innerHTML = buildPlano();
-
-// ─── Datas ──────────────────────────────────────────────────
-const ds = new Date().toLocaleDateString("pt-BR",{year:"numeric",month:"long"}).toUpperCase();
-document.getElementById("capaDate").textContent   = ds;
-const footerDateEl = document.getElementById("footerDate");
-if (footerDateEl) footerDateEl.textContent = ds;
-
-// ─── Tela Cheia ──────────────────────────────────────────────────
-
-function toggleFullscreen() {
-  if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen().catch(() => {});
-  } else {
-    document.exitFullscreen();
-  }
-}
-
-document.addEventListener('fullscreenchange', () => {
-  const label = document.getElementById('fs-label');
-  const icon = document.getElementById('fs-icon');
-  if (document.fullscreenElement) {
-    label.textContent = 'Sair';
-    icon.textContent = '⛶';
-  } else {
-    label.textContent = 'Tela cheia';
-    icon.textContent = '⛶';
-  }
-});
-
-const btn = document.getElementById('fs-btn');
-
-btn.addEventListener('click', () => {
-    if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen();
-    } else {
-        document.exitFullscreen();
-    }
-});
