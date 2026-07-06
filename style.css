@@ -138,7 +138,7 @@ main { margin-top: var(--nav-h); }
 
 /* ─── CAPA ─── */
 .capa-section {
-  min-height: calc(100vh - var(--nav-h));
+  min-height: calc(70vh - var(--nav-h));
   display: flex;
   align-items: center;
   justify-content: center;
