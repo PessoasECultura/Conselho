@@ -465,9 +465,9 @@ document.getElementById("lgCtxAlto").textContent =
 document.getElementById("kCtxTech").textContent  = Math.round((techTalentos/TOTAL)*100) + "%";
 document.getElementById("lgCtxTech").textContent = techTalentos + " de " + TOTAL + " talentos alocados em Tech Solutions";
 
-// Turnover KPI
-document.getElementById("kCtxTurnover").textContent = Math.round((desligados.length / TOTAL) * 100) + "%";
-document.getElementById("lgCtxTurnover").textContent = desligados.length + " desligamento" + (desligados.length > 1 ? "s" : "") + " de Key Talents no H1/2026";
+// Turnover KPI (valores fixos)
+document.getElementById("kCtxTurnover").textContent = "17%";
+document.getElementById("lgCtxTurnover").textContent = "4 desligamentos de Key Talents no H1/2026";
 
 // ─── TALENTOS ───────────────────────────────────────────────
 document.getElementById("ttlTalentos").textContent = `${TOTAL} Talentos Mapeados`;
@@ -851,7 +851,8 @@ openModal(
 const logosSection = document.createElement('div');
 logosSection.className = 'sol-logos-section';
 logosSection.innerHTML = '<div class="sol-logos-title">Produtos</div><div class="sol-logos-grid" id="solLogosGrid"></div>';
-document.getElementById('solGrid').parentElement.appendChild(logosSection);
+const solGridEl = document.getElementById('solGrid');
+solGridEl.parentElement.insertBefore(logosSection, solGridEl);
 
 const allSubsUniq = [...new Set(talentos.flatMap(t => getSubs(t)))].filter(s => s !== 'adicionar').sort();
 allSubsUniq.forEach(sub => {
